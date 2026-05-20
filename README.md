@@ -48,19 +48,16 @@ On a SWaT P1+P2 substrate with 14 MCP tools:
 | Cross-model T3 validation | Locked partition {A₂, W₁, W₂} invariant across qwen3:14b and llama3.1:8b |
 | Real-agent end-to-end (N=10 operational-condition sweep) | A₁ 10/10 → 0/10 with defence; W₂ 9/10 unchanged (T3 runtime-only by design) |
 
-Full provenance — every number above traces to a JSON output and a
-campaign script — is in [`paper/PROVENANCE.md`](paper/PROVENANCE.md).
+Full provenance — every number above traces to a JSON output in
+`mission_3b/results/` (and `mission_2c/results/` for the M2C baselines)
+and to a campaign script under `mission_*/experiments/` or
+`mission_2d/scripts/`. The paper LaTeX source and the
+paper-claim-to-JSON map (`PROVENANCE.md`) are tracked outside this
+public artifact repository.
 
 ## Repository layout
 
 ```
-paper/                           # LaTeX source + compiled PDF + PROVENANCE
-├── main.tex                     # 11pp body + refs + 6 appendices
-├── sections/                    # per-section .tex
-├── refs.bib                     # bibliography (all citations de-anonymized)
-├── PROVENANCE.md                # paper-claim → JSON / source-file map
-└── scripts/backfill_macros.py   # JSON → \newcommand backfill driver
-
 mission_1a/grammar/              # Lark grammar for class C
 mission_1b/                      # SWaT P1+P2 plant simulator + MCP server
 ├── plant/                       # mass-balance + linearised chemistry DT
@@ -134,29 +131,10 @@ python3 mission_2d/scripts/run_campaign.py \
     --out-aggregate mission_3b/results/real_agent_asr_n10.json
 ```
 
-All campaign outputs land in `mission_3b/results/*.json`. Then:
-
-```bash
-python3 paper/scripts/backfill_macros.py
-cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
-```
-
-builds `paper/main.pdf` with every empirical number filled from the
-JSON outputs.
-
-### Reproduce the paper PDF only
-
-```bash
-cd paper
-pdflatex -interaction=nonstopmode main.tex
-bibtex main
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
-```
-
-The current `paper/main.tex` ships with macro values backfilled from
-the JSON outputs already in `mission_3b/results/`, so it compiles
-without re-running any campaign.
+All campaign outputs land in `mission_3b/results/*.json`. The paper
+LaTeX source consumes these JSONs via a separate backfill driver
+that is not part of this artifact repository; the JSON outputs
+themselves are the canonical record of every paper claim.
 
 ### Smoke test
 

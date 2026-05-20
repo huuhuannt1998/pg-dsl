@@ -54,3 +54,6 @@ overleaf-example/            # paper-template reference only
 # Internal review documents (not part of public release)
 pg_dsl_presubmission_review.md
 
+# Paper LaTeX source kept separate from the public artifact
+paper/
+
