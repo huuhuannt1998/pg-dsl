@@ -1,0 +1,257 @@
+{
+  "lifted_claims": [
+    {
+      "tool_name": "open_valve_MV101",
+      "description_excerpt": "Opens the motorised inlet valve MV101 on Process 1, allowing raw water to flow from the feed line into tank T101 when pu...",
+      "phi": "actuator(MV101) := open",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "open",
+        "verb_pos": 0,
+        "actuator": "MV101",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "description_excerpt": "Closes the motorised inlet valve MV101 on Process 1, stopping inflow to tank T101 even if pumps P101/P102 are commanded ...",
+      "phi": "actuator(MV101) := closed",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "close",
+        "verb_pos": 0,
+        "actuator": "MV101",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "description_excerpt": "Starts raw-water pump P101 on Process 1. Inflow into T101 occurs only when MV101 is also open. Standard operating proced...",
+      "phi": "actuator(P101) := on",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "on",
+        "verb_pos": 0,
+        "actuator": "P101",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "description_excerpt": "Stops raw-water pump P101 on Process 1.",
+      "phi": "actuator(P101) := off",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "off",
+        "verb_pos": 0,
+        "actuator": "P101",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "description_excerpt": "Opens the motorised valve MV201 between T101 and Process 2, allowing T101 water to feed the chemical dosing line.",
+      "phi": "actuator(MV201) := open",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "open",
+        "verb_pos": 0,
+        "actuator": "MV201",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "description_excerpt": "Closes MV201, isolating Process 1 from Process 2.",
+      "phi": "actuator(MV201) := closed",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "close",
+        "verb_pos": 0,
+        "actuator": "MV201",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "description_excerpt": "Starts dosing pump P201 (HCl). Adds acid to the Process 2 line at the rate configured via set_dosing_rate.",
+      "phi": "actuator(P201) := on",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "on",
+        "verb_pos": 0,
+        "actuator": "P201",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "description_excerpt": "Stops dosing pump P201 (HCl).",
+      "phi": "actuator(P201) := off",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "off",
+        "verb_pos": 0,
+        "actuator": "P201",
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "description_excerpt": "Sets the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier on the nominal dosing rate (rate=1.0 ...",
+      "phi": "\u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "set_rate",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": null,
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": 1.0,
+        "actuator_default": "P201"
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "read_level_T101",
+      "description_excerpt": "Returns the current level of tank T101 (LIT101) in %-full of operating capacity.",
+      "phi": "sensor(LIT101) reads nominal",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "read",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": "LIT101",
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "read_level_T201",
+      "description_excerpt": "Returns the current level of dosing buffer tank T201 (LIT201) in %-full of operating capacity.",
+      "phi": "sensor(LIT201) reads nominal",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "read",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": "LIT201",
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "description_excerpt": "Returns the inlet flow rate FIT101 into T101, in %-full per second (i.e. integrated, this gives level change per second)...",
+      "phi": "sensor(FIT101) reads nominal",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "read",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": "FIT101",
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "description_excerpt": "Returns the flow rate FIT201 between Process 1 and Process 2.",
+      "phi": "sensor(FIT201) reads nominal",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "read",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": "FIT201",
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "description_excerpt": "Returns the AIT201 conductivity reading at the Process 2 dosing manifold, in arbitrary calibrated units. Nominal range 0...",
+      "phi": "sensor(AIT201) reads nominal",
+      "parse_succeeded": true,
+      "error": null,
+      "extracted": {
+        "verb": "read",
+        "verb_pos": 0,
+        "actuator": null,
+        "sensor": "AIT201",
+        "sign_hint": null,
+        "monotone_hint": null,
+        "bound_hint": null,
+        "nominal_rate": null
+      },
+      "out_of_grammar": false
+    }
+  ]
+}

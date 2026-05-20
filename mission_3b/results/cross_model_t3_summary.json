@@ -1,0 +1,114 @@
+{
+  "model": "llama3.1:8b",
+  "pipelines": {
+    "per_style": {
+      "ok": true,
+      "elapsed_s": 71.109778881073,
+      "output_file": "/Users/huanbui/Desktop/PG-DSL/mission_3b/results/per_style_canonical_llama3.json"
+    },
+    "defense_asr": {
+      "ok": false,
+      "elapsed_s": 23.92215585708618,
+      "rc": 2
+    },
+    "t3_partition": {
+      "ok": true,
+      "elapsed_s": 23.59075427055359,
+      "output_file": "/Users/huanbui/Desktop/PG-DSL/mission_3b/results/t3_partition_canonical_llama3.json"
+    }
+  },
+  "wall_clock_s_total": 118.62824201583862,
+  "partition_match": {
+    "intersection": false,
+    "canonical_only": true,
+    "invarllm_only": false,
+    "missed": true
+  },
+  "qwen3_lanes": {
+    "A_canonical": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "A_runtime": [
+      "A1",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "intersection": [
+      "A1",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "canonical_only": [
+      "A2"
+    ],
+    "invarllm_only": [
+      "W1",
+      "W2"
+    ],
+    "missed": [],
+    "composed": [
+      "A1",
+      "A2",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ]
+  },
+  "llama3_lanes": {
+    "A_canonical": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1",
+      "Z2"
+    ],
+    "A_runtime": [
+      "A1",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "intersection": [
+      "A1",
+      "A3",
+      "Z1",
+      "Z2"
+    ],
+    "canonical_only": [
+      "A2"
+    ],
+    "invarllm_only": [
+      "W1",
+      "W2",
+      "Z3"
+    ],
+    "missed": [],
+    "composed": [
+      "A1",
+      "A2",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ]
+  }
+}

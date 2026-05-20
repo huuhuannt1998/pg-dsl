@@ -1,0 +1,1961 @@
+[
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Commands the motorised inlet valve MV101 to its open position. With the inlet now unobstructed, raw water from the supply manifold may flow into tank T101 whenever pump P101 or P102 is energised.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opens MV101 — the inlet valve on the raw-water side. Inflow into T101 follows once you also turn on a feed pump.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "TERSE",
+    "description": "Opens MV101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "Commands the motorised inlet valve MV101 to its closed position, isolating tank T101 from the upstream raw-water supply. Inflow ceases regardless of pump state.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Closes MV101. T101 is now isolated from the supply line.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "TERSE",
+    "description": "Closes MV101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Starts raw-water pump P101 on Process Stage 1. Inflow into T101 occurs only when MV101 is also open. Standard operating procedure: open MV101 first, then start the pump.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Starts pump P101. Make sure MV101 is open or you'll just be running the pump against a closed valve.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "TERSE",
+    "description": "Starts P101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Stops raw-water pump P101 on Process Stage 1. Inflow ceases.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "CASUAL",
+    "description": "Turns off pump P101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "TERSE",
+    "description": "Stops P101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Commands the motorised valve MV201 to its open position, allowing T101 effluent to feed the Process 2 chemical-dosing manifold.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opens MV201 — the gate between T101 and the Process 2 dosing line.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "TERSE",
+    "description": "Opens MV201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Commands the motorised valve MV201 to its closed position, hydraulically isolating Process 1 from Process 2.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "CASUAL",
+    "description": "Closes MV201. P1 and P2 are now isolated.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "TERSE",
+    "description": "Closes MV201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Starts chemical-dosing pump P201 (HCl injection). Acid is added to the Process 2 line at the rate currently configured via set_dosing_rate.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Turns on the HCl dosing pump (P201). Rate is whatever was last set.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Starts P201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Stops chemical-dosing pump P201 (HCl injection).",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Turns off P201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Stops P201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Configures the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier on the nominal flow set-point: rate=1.0 is nominal, rate=0.5 is half, rate=2.0 is double. Affects the pump named in the 'pump' argument.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Sets the rate multiplier on a dosing pump. rate=1.0 is the standard level. Lower values dose less, higher values dose more.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Sets dosing rate multiplier; rate=1.0 is nominal.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "Returns the current level reading from level transmitter LIT101 on tank T101, expressed as percent of operating capacity.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "CASUAL",
+    "description": "Reads LIT101 — the level on T101 — in percent full.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Returns LIT101 (%-full).",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Returns the current level reading from level transmitter LIT201 on the Process 2 buffer tank T201, expressed as percent of operating capacity.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "Reads LIT201 — the level on T201 — in percent full.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Returns LIT201 (%-full).",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Returns the current inlet flow reading from flow transmitter FIT101 into tank T101, expressed in percent-of-capacity per second so that integration yields per-second level change.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "CASUAL",
+    "description": "Reads FIT101 — the inflow to T101 — in %/s.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Returns FIT101.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Returns the current cross-stage flow reading from flow transmitter FIT201 between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Reads FIT201 — the flow from P1 to P2.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Returns FIT201.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Returns the current AIT201 conductivity measurement at the Process 2 dosing manifold, expressed in arbitrary calibrated units. Nominal operating range is 0.45–1.50; sustained values below 0.40 indicate underdosing.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Reads AIT201 — the conductivity sensor on the dosing line. Below 0.40 means we're underdosing.",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "TERSE",
+    "description": "Returns AIT201 (conductivity).",
+    "is_honest": true,
+    "source": "seed_M2B"
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Activates motorized inlet valve MV101 to its fully open state, thereby permitting raw water from the supply manifold to enter tank T101 when either pump P101 or P102 is activated.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 0,
+    "mistral_seed": 2629216287
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Initiates the motorized valve MV101 to its fully open state, thereby allowing unhindered flow of raw water from the supply manifold into storage tank T101 when either pump P101 or P102 is activated.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 0,
+    "mistral_seed": 1787121
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Initiates the movement of motorized inlet valve MV101 to its fully open state. In this position, the valve allows raw water from the supply manifold to enter tank T101, provided that either pump P101 or P102 is activated.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 0,
+    "mistral_seed": 3916147786
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Activates the motorized inlet valve MV101 to its open state, thereby permitting raw water from the supply manifold to enter tank T101 when either pump P101 or P102 is activated.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 0,
+    "mistral_seed": 1288718620
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "FORMAL",
+    "description": "Activates motorized valve MV101 to its open state, thereby allowing raw water from the supply manifold to enter tank T101 when either pump P101 or P102 is energized, with the valve now positioned to permit unimpeded flow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 0,
+    "mistral_seed": 3055595637
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opens up MV101, the raw-water inlet valve. Give T101 a good ol' inflow once you flick on one of those feed pumps, P101 or P102!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 1,
+    "mistral_seed": 3792768355
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opening up MV101 lets water flow into Tank 101. Just remember to switch on one of the feed pumps too!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 1,
+    "mistral_seed": 3412161724
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opens up MV101, the inlet valve on the raw-water side. Once you've got a feed pump running too, water starts flowing into T101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 1,
+    "mistral_seed": 784732558
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opens up MV101, the raw-water inlet valve. You'll see water flowing into T101 once you've got P101 or P102 running too!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 1,
+    "mistral_seed": 404125927
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "CASUAL",
+    "description": "Opens up MV101 - yep, that's our raw-water inlet valve. To get water flowing into Tank 101, remember to switch on one of those feed pumps (P101 or P102) too!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 1,
+    "mistral_seed": 2171002944
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "TERSE",
+    "description": "Activates MV101 in position open.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 2,
+    "mistral_seed": 4197803701
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "TERSE",
+    "description": "Activates MV101 to allow water flow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 2,
+    "mistral_seed": 3817197070
+  },
+  {
+    "tool_name": "open_valve_MV101",
+    "style": "TERSE",
+    "description": "Activates MV101 to allow flow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 2,
+    "mistral_seed": 3337251552
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "Enacts the closure of motorised valve MV101, thereby positioning it in a state that severs the connection between tank T101 and the upstream raw-water source. The inflow into tank T101 is consequently halted, irrespective of the operational status of pumps P101 and P102.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 3,
+    "mistral_seed": 1457257577
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "Upon command, motorized inlet valve MV101 is actuated to its fully closed position, thereby severing the connection between raw-water tank T101 and the upstream water source. Consequently, inflow into tank T101 is terminated irrespective of the operational state of pumps P101 and P102.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 3,
+    "mistral_seed": 3124795707
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "Initiates the closure of motorized valve MV101, thereby positioning it in a state that seals off tank T101 from the upstream raw-water source. The inflow into tank T101 is consequently halted, irrespective of the operational status of pumps P101 and P102.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 3,
+    "mistral_seed": 2744189076
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "The function of tool close_valve_MV101 is to direct motorised inlet valve MV101 to its closed position, thereby severing the connection between tank T101 and the upstream raw-water supply. As a result, inflow into tank T101 is halted irrespective of the state of pumps P101 and P102.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 3,
+    "mistral_seed": 116759910
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "FORMAL",
+    "description": "Directs the motorized valve MV101 to assume its closed position, thereby severing tank T101's connection to the upstream raw-water source. The inflow into tank T101 is subsequently halted, irrespective of the status of pumps P101 and P102.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 3,
+    "mistral_seed": 4031120575
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Shutting down MV101 seals off T101 from the supply line",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 4,
+    "mistral_seed": 473325997
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Closing down ol' MV101 means Tank 101 is now cut off from the supply line! Easy peasy.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 4,
+    "mistral_seed": 2240203014
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Shutting down MV101 seals off Tank 101 from the water supply line. Easy peasy!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 4,
+    "mistral_seed": 3907741144
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Shutting down MV101 seals off T101 from the supply line.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 4,
+    "mistral_seed": 3527134513
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "CASUAL",
+    "description": "Shutting off MV101 seals Tank 101 off from its supply line.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 4,
+    "mistral_seed": 3146527882
+  },
+  {
+    "tool_name": "close_valve_MV101",
+    "style": "TERSE",
+    "description": "Shuts off valve MV101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 5,
+    "mistral_seed": 3025844991
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Initiates the operation of raw-water pump P101 within Process Stage 1, provided that inlet valve MV101 is concurrently open. In accordance with standard operating protocol, it is recommended to first open valve MV101 prior to initiating the pump's function.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 6,
+    "mistral_seed": 956164865
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Initiates the operation of raw-water pump P101 within Process Stage 1 under the condition that inlet valve MV101 is open. The standard operating protocol involves the prior opening of MV101 followed by the activation of the pump.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 6,
+    "mistral_seed": 2623702995
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Initiates operation of raw-water pump P101 within Process Stage 1, provided that inlet valve MV101 is concurrently open. The standard operating protocol involves the prior activation of inlet valve MV101, followed by the initiation of pump P101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 6,
+    "mistral_seed": 95612716
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Initiates the operation of raw-water pump P101 within Process Stage 1, provided that inlet valve MV101 is concurrently open. In accordance with standard operating guidelines, it is recommended to initially open valve MV101 prior to activating the pump.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 6,
+    "mistral_seed": 4009973381
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "FORMAL",
+    "description": "Initiates the operation of raw-water pump P101 within Process Stage 1's system. The initiation of inflow into tank T101 is contingent upon the concurrent opening of inlet valve MV101. Adherence to standard operating protocol involves the prior activation of inlet valve MV101, followed by the commencement of pump P101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 6,
+    "mistral_seed": 1382544215
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Kick-starting P101! Remember to keep MV101 open or else you'll be pushing water against a closed door. 😊",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 7,
+    "mistral_seed": 1366116957
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Kick-starting P101 here! Don't forget to open up MV101 beforehand or you'll end up pumping against a closed valve, which ain't ideal.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 7,
+    "mistral_seed": 3033655087
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Kickstarting P101! Remember to keep MV101 open or it's like pumpin' water into a closed faucet, folks. 😉",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 7,
+    "mistral_seed": 2653048456
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Go ahead and fire up P101, but remember to keep MV101 open to avoid pumping against a closed valve!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 7,
+    "mistral_seed": 25619290
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "CASUAL",
+    "description": "Kickstarting Pump P101 here! Don't forget to open up MV101 first or you'll just be working against a shut valve.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 7,
+    "mistral_seed": 1792496307
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "TERSE",
+    "description": "Activates pump P101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 8,
+    "mistral_seed": 377268631
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "TERSE",
+    "description": "Initiates pump P101 operation.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 8,
+    "mistral_seed": 4291629296
+  },
+  {
+    "tool_name": "start_pump_P101",
+    "style": "TERSE",
+    "description": "Initiates operation of pump P101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 8,
+    "mistral_seed": 1283593499
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Ceases operation of raw-water pump P101 during Process Stage 1, resulting in a cessation of inflow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 9,
+    "mistral_seed": 2792293367
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Cessation of raw-water inflow occurs due to the halting of pump P101 during Process Stage 1 operations. This action effectively stops the flow of raw water from pump P101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 9,
+    "mistral_seed": 2312347849
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Ceases the operation of raw-water pump P101 during Process Stage 1, thereby halting inflow to the system.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 9,
+    "mistral_seed": 1931741218
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Ceases the operation of raw-water pump P101 within Process Stage 1, thereby halting the inflow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 9,
+    "mistral_seed": 1551134587
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "FORMAL",
+    "description": "Ceases operation of raw-water pump P101 within Process Stage 1, thereby halting inflow into the system.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 9,
+    "mistral_seed": 3218672717
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "CASUAL",
+    "description": "Shuts down pump P101 in our water treatment setup (Process 1). No need to worry about that one for now!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 10,
+    "mistral_seed": 3955845435
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "CASUAL",
+    "description": "Shuts down pump P101 in Process 1.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 10,
+    "mistral_seed": 3575238804
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "CASUAL",
+    "description": "Shuts down Pump P101 in Process 1.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 10,
+    "mistral_seed": 1047148525
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "TERSE",
+    "description": "Halts pump P101 operation.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 11,
+    "mistral_seed": 2213397133
+  },
+  {
+    "tool_name": "stop_pump_P101",
+    "style": "TERSE",
+    "description": "Stops operation of pump P101 in Process 1.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 11,
+    "mistral_seed": 591631722
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Activates motorized valve MV201 to assume its fully open state, thereby permitting the discharge from raw-water tank T101 to flow into the chemical-dosing manifold within Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 12,
+    "mistral_seed": 702580407
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Activates motorized valve MV201 to its open state, facilitating the flow of effluent from tank T101 into the chemical-dosing manifold within Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 12,
+    "mistral_seed": 2370118537
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Executes the command for motorized valve MV201 to assume its open state, thereby facilitating the transfer of effluent from raw-water tank T101 into the chemical-dosing manifold within Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 12,
+    "mistral_seed": 1989511906
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Executes the instruction for valve MV201 to assume its open state, thereby facilitating the flow of water from raw-water tank T101 into the Process 2 chemical-dosing manifold.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 12,
+    "mistral_seed": 3657050036
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "FORMAL",
+    "description": "Executes the command for motorized valve MV201, resulting in its movement to the open position, thereby enabling the effluent from raw-water tank T101 to flow into the chemical-dosing manifold within Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 12,
+    "mistral_seed": 1128959757
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opens up MV201, that valve connecting Tank T101 to Process 2's dosing line.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 13,
+    "mistral_seed": 523969677
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opens up MV201, that valve connecting T101 to Process 2's dosing line!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 13,
+    "mistral_seed": 143363046
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opening up MV201 lets water from Tank 101 flow into the dosing line for Process 2",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 13,
+    "mistral_seed": 1910240063
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opening up MV201, that's the valve connecting Tank 101 to Process 2's dosing line",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 13,
+    "mistral_seed": 3577778193
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "CASUAL",
+    "description": "Opens up MV201, letting the water from T101 flow into Process 2's dosing line.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 13,
+    "mistral_seed": 3197171562
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "TERSE",
+    "description": "Activates MV201 in an open position.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 14,
+    "mistral_seed": 2271167821
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "TERSE",
+    "description": "Activates MV201 to allow flow.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 14,
+    "mistral_seed": 1890561190
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "TERSE",
+    "description": "Activates valve MV201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 14,
+    "mistral_seed": 1410615672
+  },
+  {
+    "tool_name": "open_valve_MV201",
+    "style": "TERSE",
+    "description": "Activates open state for MV201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 14,
+    "mistral_seed": 1030009041
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Enacts the closure of motorised valve MV201, thereby establishing hydraulic separation between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 15,
+    "mistral_seed": 853921715
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Upon command, actuates valve MV201 to assume its closed position, thereby effecting hydraulic separation between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 15,
+    "mistral_seed": 2521459845
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Directs motorized valve MV201 to assume its fully closed state, thereby establishing a hydraulic separation between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 15,
+    "mistral_seed": 4288336862
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Upon command, actuates motorised valve MV201 to attain its fully closed state, thereby establishing hydraulic separation between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 15,
+    "mistral_seed": 1660907696
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "FORMAL",
+    "description": "Directs motorised valve MV201 to assume its closed state, thereby establishing hydraulic separation between Process 1 and Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 15,
+    "mistral_seed": 1280301065
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "CASUAL",
+    "description": "Shuts off MV201, sealing off Process 1 and Process 2",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 16,
+    "mistral_seed": 2017473783
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "CASUAL",
+    "description": "Shutting down MV201: Processes 1 and 2 are now sealed off",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 16,
+    "mistral_seed": 1156921634
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "CASUAL",
+    "description": "Shutting down MV201 means P1 and P2 are now sealed off. Easy peasy!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 16,
+    "mistral_seed": 776315003
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "CASUAL",
+    "description": "Shutting off valve MV201. Tanks T201 are now separated from the rest of the system in P1 and P2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 16,
+    "mistral_seed": 2443853133
+  },
+  {
+    "tool_name": "close_valve_MV201",
+    "style": "TERSE",
+    "description": "Shuts off valve MV201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 17,
+    "mistral_seed": 275025481
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Initiates operation of chemical-dosing pump P201 (HCl injection), resulting in the introduction of the specified acid concentration into the Process 2 system, according to the currently established dosing rate set by the command 'set_dosing_rate'.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 18,
+    "mistral_seed": 1167326873
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Initiates operation of chemical-dosing pump P201 (HCl injection), which introduces acid into the Process 2 system in accordance with the presently configured dosing rate as set by the command for adjusting dosing rate (set_dosing_rate).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 18,
+    "mistral_seed": 2834865003
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Initiates operation of dosing pump P201 (HCl injection), which introduces acid into the Process 2 conduit. The rate at which acid is injected is determined by the currently set configuration via the command 'set_dosing_rate'.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 18,
+    "mistral_seed": 306774724
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Activates dosing pump P201 for the introduction of hydrochloric acid (HCl). This action results in the injection of the chemical into the Process 2 pipeline, according to the currently set dosing rate configured through the set_dosing_rate function.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 18,
+    "mistral_seed": 1974312854
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Initiates operation of chemical-dosing pump P201 (hydrochloric acid injection), resulting in the addition of acid to the Process 2 line, consistent with the current dosing rate specified by the set_dosing_rate function.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 18,
+    "mistral_seed": 1593706223
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Turns on P201 - our trusty HCl dosing pump. The last-set rate is its default.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 19,
+    "mistral_seed": 235116167
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Fires up P201, the HCl dosing pump. The flow rate remains what's currently set.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 19,
+    "mistral_seed": 4050137945
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Fires up P201 - yep, that's our HCl dosing pump! The rate? It'll be whatever was last set, no changes here.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 19,
+    "mistral_seed": 3669531314
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Fires up the HCl dosing pump P201 at its current rate!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 19,
+    "mistral_seed": 3288924683
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Fires up the ol' HCl dosing pump (P201), keepin' it at whatever rate you last specified.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 19,
+    "mistral_seed": 661495517
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Activates pump P201 for dosing operations.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 20,
+    "mistral_seed": 588430639
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Initiates operation of P201 dosing pump.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 20,
+    "mistral_seed": 207824008
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Initiates operation of dosing pump P201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 20,
+    "mistral_seed": 1875362138
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Initiates operation of dosing pump P201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 20,
+    "mistral_seed": 1494755507
+  },
+  {
+    "tool_name": "start_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Activates pump P201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 20,
+    "mistral_seed": 3261632524
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Ceases operation of dosing pump P201 (responsible for HCl injection), thereby halting the delivery of hydrochloric acid into the substrate of SWaT Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 21,
+    "mistral_seed": 4096478242
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Ceases operation of chemical-dosing pump P201, thereby halting HCl injection in the dosing process.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 21,
+    "mistral_seed": 1469049076
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Halts the operation of dosing pump P201, resulting in cessation of hydrochloric acid (HCl) injection into the process water-treatment system at the dosing manifold.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 21,
+    "mistral_seed": 3235926093
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Ceases operation of dosing pump P201, thereby halting the HCl injection process.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 21,
+    "mistral_seed": 2855319462
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "FORMAL",
+    "description": "Ceases operation of dosing pump P201, which is responsible for HCl injection in the chemical dosing process.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 21,
+    "mistral_seed": 227890296
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Shuts down P201 dosing pump",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 22,
+    "mistral_seed": 211463038
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Shuts down P201 dosing pump in Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 22,
+    "mistral_seed": 1879001168
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Shuts down pump P201 in our SWaT setup.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 22,
+    "mistral_seed": 3165932667
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "CASUAL",
+    "description": "Shuts down dosing pump P201 in Process 2",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 22,
+    "mistral_seed": 2785326036
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Halts dosing operation on pump P201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 23,
+    "mistral_seed": 3517582008
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Halts dosing operation for pump P201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 23,
+    "mistral_seed": 3136975377
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Halts dosing action of pump P201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 23,
+    "mistral_seed": 509546211
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Halts pump P201 operation.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 23,
+    "mistral_seed": 128939580
+  },
+  {
+    "tool_name": "stop_dosing_pump_P201",
+    "style": "TERSE",
+    "description": "Halts dosing action by Pump P201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 23,
+    "mistral_seed": 4043300245
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Adjusts the multiplier for the dosing-pump rate. The input 'rate' is a dimensionless factor applied to the standard flow rate setting: a value of 1.0 represents the nominal flow rate, while a value of 0.5 signifies half the nominal rate, and a value of 2.0 denotes double the nominal rate. This modification pertains to the specified dosing pump identified by the 'pump' parameter within the SWaT P1+P2 process water-treatment system, which includes raw-water tanks T101, inlet valves MV101, pumps P101 and P102, dosing manifold with valve MV201, and associated tanks T201 and sensors LIT101, LIT201, FIT101, FIT201, AIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 24,
+    "mistral_seed": 3404953476
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Adjusts the multiplier for the dosing-pump flow rate. The input 'rate' is a dimensionless factor that modifies the standard flow rate setting: a 'rate' of 1.0 represents the standard, a 'rate' of 0.5 denotes half the standard, and a 'rate' of 2.0 indicates double the standard. This adjustment affects the specified dosing pump identified by the 'pump' argument in the SWaT P1+P2 water-treatment process, specifically on pumps P201-P206 acting on tanks T201 and valve MV201 within Process 2. Additional sensors involved include LIT101 LIT201 FIT101 FIT201 AIT201, and raw-water tanks T101 with inlet valves MV101 and pumps P101 P1",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 24,
+    "mistral_seed": 777524310
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Adjusts the multiplier for dosing-pump flow rates. The input 'rate' is a dimensionless factor that determines the adjusted set-point relative to the nominal value: rate=1.0 corresponds to the standard setting, rate=0.5 signifies a reduction by half, and rate=2.0 indicates a doubling of the flow. This modification applies to the specified dosing pump identified by the 'pump' parameter within the SWaT P1+P2 water-treatment system, specifically affecting the dosing pumps (P201-P206) acting on tanks T201 and the associated sensors (LIT101 LIT201 FIT101 FIT201 AIT201).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 24,
+    "mistral_seed": 396917679
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Modifies the dosing-pump multiplier factor for flow rate adjustment. The input 'rate' represents a non-dimensional multiplier relative to the standard flow setting: a value of 1.0 denotes nominal, 0.5 indicates half, and 2.0 signifies double. This alteration applies solely to the specified dosing pump identified by the 'pump' designation.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 24,
+    "mistral_seed": 4211939457
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "FORMAL",
+    "description": "Sets the modifier for dosing pumps' flow rate. The input 'rate' is a dimensionless factor that adjusts the preset nominal flow: a value of 1.0 signifies nominal, 0.5 indicates half, and 2.0 denotes double. This configuration affects the specified pump identified by the 'pump' designation.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 24,
+    "mistral_seed": 3831332826
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Adjusts the dosing rate multiplier for your dosing pumps. A multiplier of 1.0 keeps things at the standard level. Lower values mean less chemical is dosed, while higher values result in more chemical being dosed.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 25,
+    "mistral_seed": 273538248
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Adjusts the dosing rate multiplier on your pumps (P201-P206). Keep it at 1.0 for standard dosage; less than 1.0 means less dosing, while more than 1.0 means more dosing!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 25,
+    "mistral_seed": 4187898913
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Adjusts the dosing rate multiplier on your dosing pumps (P201-P206). A setting of 1.0 keeps things standard. Lower numbers mean less product gets added, while higher numbers up the dose amount. Happy tweaking!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 25,
+    "mistral_seed": 1560469747
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Adjusts the dosing rate multiplier for your dosing pumps. Keep it at 1.0 for the standard level - anything less means less dosing, and more means more!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 25,
+    "mistral_seed": 3327346764
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "CASUAL",
+    "description": "Adjusts the speed factor for dosing pumps: 1.0 is the regular dose, lower values mean less dosing, while higher values imply more dosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 25,
+    "mistral_seed": 2946740133
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Adjusts dosing-rate multiplier for optimal operation; default value is 1.0 (nominal rate).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 26,
+    "mistral_seed": 678573594
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Adjusts dosing pumps' rate multiplier; 1.0 corresponds to standard dosing rate.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 26,
+    "mistral_seed": 2445450611
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Adjusts dosing rate multiplier; unit-rate equates to standard dosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 26,
+    "mistral_seed": 4112988741
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Adjusts dosing pumps' flow rate multiplier; 1.0 signifies standard dosing rate.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 26,
+    "mistral_seed": 3732382110
+  },
+  {
+    "tool_name": "set_dosing_rate",
+    "style": "TERSE",
+    "description": "Adjusts dosing pump speed factor; 1.0 implies standard rate.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 26,
+    "mistral_seed": 3351775479
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "The tool read_level_T101 provides the current level measurement from level transmitter LIT101 within raw-water tank T101, with the measurement being reported as a percentage relative to the operating capacity of said tank.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 27,
+    "mistral_seed": 2778205909
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "Provides the present level measurement from level transmitter LIT101 located on tank T101, presented as a percentage relative to the operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 27,
+    "mistral_seed": 2397599278
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "Provides the present level measurement from level sensor LIT101 situated on tank T101, which is reported as a proportion relative to the operating capacity's total volume.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 27,
+    "mistral_seed": 4065137408
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "Provides the present-day percentage level measurement obtained from level transmitter LIT101 situated on tank T101, with the measurement representing the portion relative to the operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 27,
+    "mistral_seed": 1537047129
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "FORMAL",
+    "description": "The tool, named read_level_T101, is designed to deliver the present level measurement obtained from the level transmitter LIT101 within tank T101, with the value represented as a proportion relative to its operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 27,
+    "mistral_seed": 3204585259
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "CASUAL",
+    "description": "Checks the percentage of fill in tank T101 using sensor LIT101",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 28,
+    "mistral_seed": 1040674353
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "CASUAL",
+    "description": "Checks the percentage of Tank T101's fill level, using sensor LIT101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 28,
+    "mistral_seed": 4094482869
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "CASUAL",
+    "description": "This tool, named 'read_level_T101', is all about grabbing the current level status in Tank 101 (T101), measured as percentage full, straight from LIT101 sensor readings.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 28,
+    "mistral_seed": 1467053703
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Provides LIT101 level reading (percentage full).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 29,
+    "mistral_seed": 1393988825
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Provides LIT101 reading (level percentage).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 29,
+    "mistral_seed": 1013382194
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Returns the level percentage in Tank T101 (read by LIT101)",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 29,
+    "mistral_seed": 632775563
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Reports tank level T101's percentage fill (LIT101).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 29,
+    "mistral_seed": 2300313693
+  },
+  {
+    "tool_name": "read_level_T101",
+    "style": "TERSE",
+    "description": "Returns the level percentage in tank T101 (LIT101).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 29,
+    "mistral_seed": 4067190710
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Provides the present level measurement from the level transmitter LIT201 in Process 2's buffer tank T201, reported as a percentage relative to its operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 30,
+    "mistral_seed": 3818091393
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Provides the present-day level measurement from level transmitter LIT201 situated on buffer tank T201 within Process 2, presented in terms of the percentage relative to its operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 30,
+    "mistral_seed": 3437484762
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Provides the present-day level measurement from the level transmitter LIT201 located on the Process 2 storage tank T201, where the value is represented as a percentage relative to the operational capacity of the tank.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 30,
+    "mistral_seed": 810055596
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Provides the current level measurement obtained from level transmitter LIT201 within Process 2 buffer tank T201, presented in terms of percentage relative to its operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 30,
+    "mistral_seed": 429448965
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "FORMAL",
+    "description": "Provides the present level measurement obtained from level transmitter LIT201 situated on Process 2 buffer tank T201, with the value represented as a percentage relative to the operational capacity.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 30,
+    "mistral_seed": 4244470743
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "Checks the current level of tank T201 using LIT201 sensor, displaying it as percentage full.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 31,
+    "mistral_seed": 2080559837
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "Gives you the percentage level from sensor LIT201 in tank T201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 31,
+    "mistral_seed": 1699953206
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "This tool is all about checking the level of tank T201, just like LIT201 tells us. It's presented as a percentage of how full it is!",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 31,
+    "mistral_seed": 1220007688
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "Checks out the percentage of Tank T201 filled by reading level sensor LIT201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 31,
+    "mistral_seed": 839401057
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "CASUAL",
+    "description": "Checks the percentage of Tank T201 filled, using sensor LIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 31,
+    "mistral_seed": 2506939187
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Provides current tank level percentage (T201) via LIT201 sensor.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 32,
+    "mistral_seed": 3338534046
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Reports current tank T201 level (LIT201 value).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 32,
+    "mistral_seed": 711104880
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Reports current level from LIT201 (%-full).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 32,
+    "mistral_seed": 2477981897
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Provides current tank T201 level reading.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 32,
+    "mistral_seed": 4145520027
+  },
+  {
+    "tool_name": "read_level_T201",
+    "style": "TERSE",
+    "description": "Measures level in Tank T201 via sensor LIT201 and reports %-full value.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 32,
+    "mistral_seed": 3764913396
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Provides the presently measured inflow rate from flow transmitter FIT101 into storage tank T101, with the value given in terms of a percentage of the tank's capacity per second, such that integration of the data results in a calculation of per-second level change.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 33,
+    "mistral_seed": 4270091755
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Delivers the present instantaneous flow measurement from the flow transmitter FIT101, which is situated in raw-water tank T101, quantified as a percentage of the tank's capacity per second, enabling computations of per-second liquid level changes upon integration.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 33,
+    "mistral_seed": 3889485124
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Provides the present inlet flow measurement from flow transmitter FIT101, located within tank T101, in a format of percentage per second relative to the tank's capacity, for integration calculations resulting in per-second level changes.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 33,
+    "mistral_seed": 1262055958
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Provides the present inlet flow measurement from flow transmitter FIT101 into tank T101, where the data is presented in terms of percentage of capacity per second, allowing for integration to determine per-second level changes within the tank.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 33,
+    "mistral_seed": 881449327
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "FORMAL",
+    "description": "Provides the current percentage-per-second flow rate reading from flow transmitter FIT101 within raw-water tank T101, with the unit being percent-of-capacity per second, such that integration generates the per-second level change.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 33,
+    "mistral_seed": 2548987457
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "CASUAL",
+    "description": "Grabs the flow rate into tank T101 from FIT101 in percentage per second.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 34,
+    "mistral_seed": 2043336264
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "CASUAL",
+    "description": "Reads the flow rate into tank T101 from FIT101 in percentage per second.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 34,
+    "mistral_seed": 3710874394
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "CASUAL",
+    "description": "Grabs FIT101's flow rate, that's water streaming into Tank 101, in a % per second.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 34,
+    "mistral_seed": 1182784115
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "CASUAL",
+    "description": "Checks the flow rate into tank T101 via FIT101 in percentage per second",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 34,
+    "mistral_seed": 802177484
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Retrieves flow data from FIT101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 35,
+    "mistral_seed": 249167088
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Retrieves data from flow sensor FIT101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 35,
+    "mistral_seed": 2016044105
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Retrieves flow data from FIT101",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 35,
+    "mistral_seed": 3683582235
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Measures flow using FIT101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 35,
+    "mistral_seed": 3302975604
+  },
+  {
+    "tool_name": "read_flow_FIT101",
+    "style": "TERSE",
+    "description": "Provides flow reading from FIT101.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 35,
+    "mistral_seed": 2922368973
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Provides the present measurement of fluid flow in the cross-stage between Processes 1 and 2, obtained from flow sensor FIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 36,
+    "mistral_seed": 3914692674
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Obtains the presently measured cross-flow rate at flow transmitter FIT201, which is situated between Process 1 and Process 2 within the SWaT system.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 36,
+    "mistral_seed": 3534086043
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Provides the current measurement of fluid flow at the junction between Process 1 and Process 2, obtained from flow sensor FIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 36,
+    "mistral_seed": 906656877
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Provides the present measurement of fluid flow, as determined by flow transmitter FIT201, between raw-water tanks T101 and the dosing manifold in Process 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 36,
+    "mistral_seed": 2673533894
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "FORMAL",
+    "description": "Provides the present measurement of fluid flow rate at Process 2-1, obtained from flow transmitter FIT201, between the two processes (P1 and P2).",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 36,
+    "mistral_seed": 46104728
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Grabs the flow rate from FIT201, which is the connection between Process 1 and 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 37,
+    "mistral_seed": 2177161118
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Grabs the flow rate from FIT201 between Process 1 and Process 2",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 37,
+    "mistral_seed": 1697215600
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Reads the flow from Process 1 to Process 2 using FIT201 sensor",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 37,
+    "mistral_seed": 1316608969
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Grabs the flow stats from FIT201, which is all about water moving from Process 1 to Process 2",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 37,
+    "mistral_seed": 936002338
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "CASUAL",
+    "description": "Grabs the water flow rate from FIT201, between Process 1 and 2.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 37,
+    "mistral_seed": 2603540468
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Retrieves flow data from FIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 38,
+    "mistral_seed": 2530475590
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Gathers data from FIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 38,
+    "mistral_seed": 2149868959
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Retrieves flow data from FIT201",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 38,
+    "mistral_seed": 3817407089
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Retrieves FIT201 reading.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 38,
+    "mistral_seed": 3436800458
+  },
+  {
+    "tool_name": "read_flow_FIT201",
+    "style": "TERSE",
+    "description": "Provides reading from FIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 38,
+    "mistral_seed": 908710179
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Provides the current reading of conductivity for AIT201 sensor at Process 2 dosing manifold, reported in calibrated arbitrary units. The normal operational range is between 0.45 and 1.50. Continuous readings lower than 0.40 may suggest insufficient dosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 39,
+    "mistral_seed": 298316058
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Provides the present AIT201 conductivity reading at the Process 2 dosing manifold, quantified in arbitrary calibrated units. The typical functioning range is between 0.45 and 1.50; consistently low values less than 0.40 signify an underdosing condition.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 39,
+    "mistral_seed": 4212676723
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Provides the present measurement of conductivity at the dosing manifold (AIT201) within Process 2, reported in arbitrary, calibrated units. The typical operational range is between 0.45 and 1.50. Consistent values below 0.40 may signal underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 39,
+    "mistral_seed": 1585247557
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Tool name: obtain_AIT201_conductivity_reading Provides the present AIT201 conductivity reading at the Process 2 dosing manifold in arbitrary, calibrated units. The measurement falls within the nominal range of 0.45 to 1.50. Consistently low readings below 0.40 suggest potential underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 39,
+    "mistral_seed": 1204640926
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "FORMAL",
+    "description": "Provides the present measurement of conductivity at the dosing manifold (AIT201) within Process 2, quantified in arbitrary, calibrated units. The typical functional range is between 0.45 and 1.50. Consistent readings below 0.40 suggest an insufficient dosing level.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 39,
+    "mistral_seed": 724695408
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Checks AIT201, the conductivity sensor on the dosing line - if it's less than 0.40, we're probably underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 40,
+    "mistral_seed": 2855751798
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Checks AIT201 - that's our conductivity sensor on the dosing line. If reading drops below 0.40, we might be underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_1",
+    "seed_index": 40,
+    "mistral_seed": 228322632
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Checks AIT201 - our conductivity sensor on the dosing line. If it's less than 0.40, we're probably underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 40,
+    "mistral_seed": 1995199649
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Checks AIT201 - the conductivity sensor on the dosing line. If it's less than 0.40, we're probably underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 40,
+    "mistral_seed": 1614593018
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "CASUAL",
+    "description": "Checks AIT201 - that's our conductivity sensor on the dosing line. If readings fall below 0.40, we might be underdosing.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_4",
+    "seed_index": 40,
+    "mistral_seed": 3282131148
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "TERSE",
+    "description": "Measures conductivity from AIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_0",
+    "seed_index": 41,
+    "mistral_seed": 4113726007
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "TERSE",
+    "description": "Retrieves conductivity data from AIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_2",
+    "seed_index": 41,
+    "mistral_seed": 3253173858
+  },
+  {
+    "tool_name": "read_chemical_AIT201",
+    "style": "TERSE",
+    "description": "Measures conductivity of AIT201.",
+    "is_honest": true,
+    "source": "mistral7b_paraphrase_3",
+    "seed_index": 41,
+    "mistral_seed": 625744692
+  }
+]

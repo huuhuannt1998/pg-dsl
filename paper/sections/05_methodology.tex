@@ -1,0 +1,134 @@
+\section{Methodology --- The PG-DSL Pipeline}
+\label{sec:method}
+% =====================================================================
+
+The canonical PG-DSL pipeline comprises four components:
+(i) the \emph{lifter} $L_{\text{verify}}$, (ii) the \emph{per-tool DT
+verifier}, (iii) the \emph{composition-aware DT verifier}, and
+(iv) the \emph{formal matcher}. Components (i)--(iv) are run as a
+single pre-context-injection pass; only tools whose claims survive both
+the per-tool and composition verifications are exposed to the agent.
+
+\subsection{Class $\mathcal{C}$ of CPS-Grounded Tool Descriptions}
+\label{sec:method-grammar}
+
+A description $D \in \mathcal{C}$ is a finite sequence of statements
+drawn from the grammar
+\[
+\begin{aligned}
+\text{statement} ::= {}&
+  \text{actuator}(\textit{name}) := \textit{value} \\
+&\mid\ \text{sensor}(\textit{name})\ \text{reads}\ \textit{value} \\
+&\mid\ \Delta\text{state}(\textit{var})\ \{\textit{property}^{+}\}
+\end{aligned}
+\]
+where $\textit{name}$ ranges over the SWaT P1+P2 vocabulary
+(MV101, MV201, P101--P206, LIT101, FIT101, and AIT201--AIT203),
+$\textit{value}$ over discrete actuator states or numeric sensor
+readings, and $\textit{property}$ over monotone~$[\pm]$,
+bounded~$[a, b]$, and sign~$[\pm 0]$. The grammar is
+canonical (locked) per the project's research-record-keeping
+discipline; the full Lark grammar is included in the artifact.
+
+\subsection{Lifter $L_{\text{verify}}$}
+
+$L_{\text{verify}}$ is a locked LLM (\texttt{qwen3:14b} via Ollama, at
+\texttt{temperature}~$=0.0$, \texttt{seed}~$=42$, \texttt{think}~$=
+\text{False}$ to disable thinking-mode token expenditure). The
+\texttt{seed} is fixed for environment reproducibility; with $T=0$
+and \texttt{think=False} the lifter is deterministic on a fixed
+prompt and the seed value has no effect on the output token
+distribution. The lifter prompt (``v1''/restrained variant) instructs
+the model to lift \emph{only} explicit content from the description
+under five restraint rules: (R1) explicit-content-only,
+(R2) no-inferred-$\Delta$state, (R3) per-clause-lifting,
+(R4) single-actuator-per-tool (do not lift co-actuators mentioned as
+preconditions or downstream effects), and (R5) parametric-tool-minimal
+(parametric tools emit one canonical actuator clause and one
+$\Delta$state clause; do not enumerate alternative pump targets).
+Prompt v1 was iterated in two stages: the initial formulation
+contained R1 and R2 only; the wider phrasing distribution surfaced by
+the extended $227$-paraphrase corpus exposed two systematic
+failure modes (co-actuator inference on multi-clause descriptions,
+and multi-pump enumeration on parametric tools), which the matched
+rules R4 and R5 close; R3 (per-clause-lifting) was added alongside as
+a structural disambiguator. The artifact ships the rule-evolution
+trace alongside the prior two-rule variant for ablation.
+We define
+\[
+\varepsilon_L := \sup_{D \in \mathcal{C}} d\!\left(L_{\text{verify}}(D),
+                                                 \varphi^{*}(D)\right),
+\]
+where $\varphi^{*}(D)$ is the ground-truth claim and $d(\cdot, \cdot)$
+is a semantic distance over claims realised in sensor space as the
+per-sample bias the lifter induces on the predicted trajectory.
+
+\subsection{Per-Tool DT Verifier}
+
+For each tool admitted into the pipeline, the DT verifier instantiates
+a fresh \texttt{SwatP1P2Plant} digital twin~\cite{minicps} with
+canonical $14$-tool surface, sets one of three representative initial
+states $\{\text{LOW}, \text{MID}, \text{HIGH}\}$ that sweep the
+operating envelope, executes the candidate tool's implementation, and
+records the trajectory $\psi$ over a $120$~s admission window. The
+matcher checks $\varphi \models \psi$ per state-variable; a mismatch
+on any of the three initial states rejects the tool.
+
+\subsection{Composition-Aware DT Verifier}
+
+The composition-aware verifier replays each ordered pair
+$(D_i, D_j)$ of admitted-actuator tools from each of $\{\text{LOW},
+\text{MID}, \text{HIGH}\}$ in a fresh DT for $30$~s, then flags pairs
+whose composed trajectory exits the runtime safety band $[25, 95]$
+\%-full for $L_{T101}$ or $[20, 95]$ for $L_{T201}$. The composition
+verdict outputs a \emph{blocked-pair set} that the runtime guard
+enforces; tools remain individually admitted but the agent cannot
+execute a (a, b) ordered pair if it appears in the blocked set. Reads
+and the parametric \texttt{set\_dosing\_rate} are excluded from
+composition replay (no side effects / parametric tool covered by the
+per-tool layer).
+
+The composition pass tests $|admitted_{\text{actuator}}|^2 \cdot 3$
+ordered (pair, init-state) tuples in worst case; on the canonical
+$14$-tool surface this is $168$ replays of negligible cost ($\sim
+0.2$~s) compared to the per-tool admission cost (lifter inference
+dominates). For surfaces beyond a few hundred tools, a heuristic
+pre-filter --- e.g., a monotone sign-classifier on actuator semantics
+that rejects pairs with no actuator-state intersection --- would prune
+the $O(k^2 \cdot |\mathcal{I}|)$ replay budget without loss of
+coverage; we leave this engineering optimization to future work.
+
+\subsection{Formal Matcher}
+
+The matcher walks each clause in $\varphi$ and checks satisfaction
+in $\psi$ within per-state-variable tolerance:
+\begin{itemize}
+\item $\text{actuator}(N) := v$: pass iff $\psi.\text{actuator\_post}[N]
+      = v$ (binary, exact).
+\item $\text{sensor}(N)\ \text{reads}\ V$: pass iff the tool's
+      return value equals the named sensor's oracle read within
+      $\varepsilon_{DT}$.
+\item $\Delta\text{state}(\textit{var})\,\{\textit{prop}\}$: pass iff
+      the per-state-variable trajectory summary respects the claimed
+      \texttt{sign}/\texttt{monotone}/\texttt{bounded} property within
+      tolerance.
+\end{itemize}
+The matcher's tolerances follow T1${}_v$: $\varepsilon_{DT} = 1.0$
+\%-full per sample for level coordinates; $\varepsilon_{DT} = 0.05$
+on AIT201 conductivity (one-tenth of the band width).
+
+\subsection{Implementation}
+
+The implementation comprises Python modules organised by concern:
+the \emph{plant module} (plant simulator, MCP server, attack
+mountings), the \emph{per-tool admission module} (lifter, DT
+verifier, matcher, single-tool admission orchestrator), and the
+\emph{canonical pipeline module} (canonical PG-DSL = per-tool
+$\oplus$ composition orchestrator). The MCP server speaks real
+JSON-RPC 2.0 over stdio per the official Model Context Protocol
+specification~\cite{mcp_spec}, consumable by the official Python MCP
+SDK and equivalent third-party agent harnesses. Both deterministic
+stub and \texttt{qwen3:14b} configurations are reproduced by the
+artifact.
+
+% =====================================================================

@@ -1,0 +1,19 @@
+# Mission 1B testbed — runtime requirements (smoke run, deterministic agent).
+# Pinned versions used during the smoke campaign of 2026-05-08.
+numpy==2.0.2
+matplotlib==3.9.2
+
+# MCP integration on real-LLM swap-in (PI's hardware deployment).
+# Install these when wiring claw-code-local + Qwen:
+# mcp==0.9.1                 # official Anthropic MCP Python SDK
+# httpx==0.27.0
+# pydantic==2.8.2
+
+# Notebook reproduction
+jupyter==1.0.0
+ipykernel==6.29.5
+
+# Plant simulator follows MiniCPS conventions but does NOT depend on MiniCPS.
+# To swap in real MiniCPS later, install:
+# minicps==1.1.0             # Antonioli–Tippenhauer 2015; pin a known-good
+                             # commit when PI provides one.

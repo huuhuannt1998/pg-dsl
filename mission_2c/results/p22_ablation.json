@@ -1,0 +1,592 @@
+{
+  "configs": {
+    "v0_original": {
+      "expanded": {
+        "fpr": 0.21428571428571427,
+        "ci": [
+          0.11705668531051237,
+          0.3594013789804373
+        ],
+        "n_total": 42,
+        "by_style": {
+          "FORMAL": {
+            "n": 14,
+            "rejected": 5,
+            "fpr": 0.35714285714285715,
+            "ci": [
+              0.16344490737202735,
+              0.6123599531785959
+            ]
+          },
+          "CASUAL": {
+            "n": 14,
+            "rejected": 4,
+            "fpr": 0.2857142857142857,
+            "ci": [
+              0.11721187910109099,
+              0.5464954117248438
+            ]
+          },
+          "TERSE": {
+            "n": 14,
+            "rejected": 0,
+            "fpr": 0.0,
+            "ci": [
+              0.0,
+              0.21531701192718142
+            ]
+          }
+        },
+        "rejected": 9,
+        "decisions": [
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "FORMAL",
+            "admitted": false,
+            "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "CASUAL",
+            "admitted": false,
+            "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign +, monotone+ }"
+          },
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV101) := open"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "FORMAL",
+            "admitted": false,
+            "phi": "actuator(P101) := on; \u0394state(Q_in_T101) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "CASUAL",
+            "admitted": false,
+            "phi": "actuator(P101) := on; \u0394state(Q_out_T101) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P101) := on"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "FORMAL",
+            "admitted": false,
+            "phi": "actuator(P101) := off; \u0394state(Q_in_T101) { sign 0 }"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P101) := off"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P101) := off"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := closed"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "CASUAL",
+            "admitted": false,
+            "phi": "actuator(MV201) := closed; \u0394state(Q_in_T201) { sign 0 }; \u0394state(Q_out_T201) { sign 0 }"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV201) := closed"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "FORMAL",
+            "admitted": false,
+            "phi": "actuator(P201) := on; \u0394state(C_HCl) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := on"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone + }"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(FIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "CASUAL",
+            "admitted": false,
+            "phi": ""
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(FIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "FORMAL",
+            "admitted": false,
+            "phi": "sensor(AIT201) reads nominal; \u0394state(Cond_P2) { bounded[0.40, 1.50] }"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(AIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(AIT201) reads nominal"
+          }
+        ]
+      }
+    },
+    "v1_restrained": {
+      "expanded": {
+        "fpr": 0.023809523809523808,
+        "ci": [
+          0.00421529549910029,
+          0.12321481165248252
+        ],
+        "n_total": 42,
+        "by_style": {
+          "FORMAL": {
+            "n": 14,
+            "rejected": 0,
+            "fpr": 0.0,
+            "ci": [
+              0.0,
+              0.21531701192718142
+            ]
+          },
+          "CASUAL": {
+            "n": 14,
+            "rejected": 1,
+            "fpr": 0.07142857142857142,
+            "ci": [
+              0.012721886112291636,
+              0.3146926955395781
+            ]
+          },
+          "TERSE": {
+            "n": 14,
+            "rejected": 0,
+            "fpr": 0.0,
+            "ci": [
+              0.0,
+              0.21531701192718142
+            ]
+          }
+        },
+        "rejected": 1,
+        "decisions": [
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := open"
+          },
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := open"
+          },
+          {
+            "tool_name": "open_valve_MV101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV101) := open"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed"
+          },
+          {
+            "tool_name": "close_valve_MV101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV101) := closed"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P101) := on"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P101) := on"
+          },
+          {
+            "tool_name": "start_pump_P101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P101) := on"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P101) := off"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P101) := off"
+          },
+          {
+            "tool_name": "stop_pump_P101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P101) := off"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "open_valve_MV201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV201) := open"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := closed"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(MV201) := closed"
+          },
+          {
+            "tool_name": "close_valve_MV201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(MV201) := closed"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on"
+          },
+          {
+            "tool_name": "start_dosing_pump_P201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := on"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "stop_dosing_pump_P201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := off"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }"
+          },
+          {
+            "tool_name": "set_dosing_rate",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(LIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_level_T201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(LIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(FIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "CASUAL",
+            "admitted": false,
+            "phi": ""
+          },
+          {
+            "tool_name": "read_flow_FIT101",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(FIT101) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_flow_FIT201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(FIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "FORMAL",
+            "admitted": true,
+            "phi": "sensor(AIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "CASUAL",
+            "admitted": true,
+            "phi": "sensor(AIT201) reads nominal"
+          },
+          {
+            "tool_name": "read_chemical_AIT201",
+            "style": "TERSE",
+            "admitted": true,
+            "phi": "sensor(AIT201) reads nominal"
+          }
+        ]
+      }
+    }
+  }
+}

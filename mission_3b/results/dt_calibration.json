@@ -1,0 +1,145 @@
+{
+  "calibration_procedure": "epsilon_DT is the per-sample sensor floor on the level coordinate. Procedure: collect benign-baseline trajectories from the SWaT P1+P2 DT (mass-balance + linear chemistry) and compute |Delta LIT101| between consecutive ticks. The 99.5th percentile of the resulting residual distribution is taken as the per-sample epsilon_DT (one-sided tolerance). Quiescent windows (no actuator activity) bound the noise floor; transient windows show the upper envelope. The paper-canonical epsilon_DT = 0.10 %-full corresponds to the 99.5th percentile of the all-sample residual distribution rounded up to the nearest 0.05 %-full.",
+  "n_benign_reps": 10,
+  "all_sample_residuals": {
+    "n_samples": 18000,
+    "n_quiescent_samples": 10,
+    "mean": 0.15999999999999798,
+    "stdev": 0.12000333347223126,
+    "max": 0.4000000000000057,
+    "p50": 0.09999999999999432,
+    "p90": 0.4000000000000057,
+    "p95": 0.4000000000000057,
+    "p99": 0.4000000000000057,
+    "p99_5": 0.4000000000000057
+  },
+  "quiescent_residuals": {
+    "n": 10,
+    "mean": 0.4000000000000057,
+    "max": 0.4000000000000057,
+    "p99": 0.4000000000000057,
+    "p99_5": 0.4000000000000057
+  },
+  "histogram_bins_pct_full": [
+    0,
+    0.0001,
+    0.001,
+    0.01,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "histogram_counts": [
+    0,
+    0,
+    0,
+    0,
+    9600,
+    4800,
+    3600,
+    0
+  ],
+  "per_rep": [
+    {
+      "rep": "rep00",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep01",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep02",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep03",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep04",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep05",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep06",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep07",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep08",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    },
+    {
+      "rep": "rep09",
+      "n_samples": 1800,
+      "n_quiescent": 1,
+      "mean": 0.15999999999999798,
+      "p99": 0.4000000000000057
+    }
+  ],
+  "sensitivity_sweep_T1v": [
+    {
+      "epsilon_DT": 0.05,
+      "epsilon_L": 0.116,
+      "delta_star_v": 0.332,
+      "tau_star_v": 0.166,
+      "Z3_witness_above_threshold": true,
+      "Z3_factor_above": 15.06
+    },
+    {
+      "epsilon_DT": 0.1,
+      "epsilon_L": 0.116,
+      "delta_star_v": 0.432,
+      "tau_star_v": 0.216,
+      "Z3_witness_above_threshold": true,
+      "Z3_factor_above": 11.57
+    },
+    {
+      "epsilon_DT": 0.2,
+      "epsilon_L": 0.116,
+      "delta_star_v": 0.632,
+      "tau_star_v": 0.316,
+      "Z3_witness_above_threshold": true,
+      "Z3_factor_above": 7.91
+    }
+  ],
+  "paper_canonical_epsilon_DT": 0.1,
+  "paper_canonical_delta_star_v": 0.432,
+  "Z3_witness_observed_v_inf": 5.0
+}

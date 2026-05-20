@@ -1,0 +1,112 @@
+\section{Threat Model}
+\label{sec:threat}
+% =====================================================================
+
+\paragraph{System.}
+An LLM agent $A$ controls a CPS plant $P$ (water-treatment substrate
+SWaT P1+P2, with raw-water intake T101, chemical-dosing buffer T201,
+transfer valves $\{$MV101, MV201$\}$, raw-water pumps
+$\{$P101, P102$\}$, dosing pumps $\{$P201--P206$\}$, and analyser
+sensors $\{$LIT101, LIT201, FIT101, FIT201, AIT201--AIT203$\}$). The
+agent issues actions to $P$ via Model Context
+Protocol~\cite{mcp_spec} \emph{tool calls}: each tool exposes a
+natural-language description, an input schema, and an
+implementation that wraps a PLC-style command on $P$. The defender
+places a physics-grounded verifier $V$ between the MCP server and
+$A$'s tool catalog.
+
+\paragraph{Attacker.}
+The attacker controls the natural-language description of one or more
+MCP tools, the implementation behind those tools, or both, and can
+optionally pre-set the physical actuator state on $P$ before the
+agent's session begins. The attacker may additionally spoof sensor
+reads at the network layer (post-admission). The attacker cannot
+modify the verifier $V$, the digital twin $\mathit{DT}$, the lifter
+$L_{\text{verify}}$, or the formal matcher; nor can the attacker
+bypass the admission gate.
+
+\paragraph{Attack classes.}
+We organise attacks into three categories aligned with the empirical
+campaigns.
+\begin{enumerate}
+\item \textbf{Description-poisoning} (A1, A2, A3): the attacker writes
+      a description that mismatches the tool's implementation. A1 is
+      type-confusion (the description claims a tool drains while the
+      implementation fills); A2 is magnitude poisoning on a parametric
+      tool (the description names a unit/scale that the
+      implementation does not honour); A3 is sensor aliasing (the
+      description claims one sensor while the implementation returns
+      another).
+\item \textbf{Composition} (Z1, Z2, Z3): the attack manifests through
+      the joint behaviour of multiple individually-admitted tools.
+      Z1 is a single-tool transient overshoot exploiting steady-state
+      semantics in the lifted band; Z2 is overdose magnitude poisoning
+      (mirror of A2); Z3 is the canonical strict-composition witness
+      (described in detail in \S\ref{sec:t3-witnesses}).
+\item \textbf{Runtime} (W1, W2): the attack is invisible at admission
+      time and manifests after the agent's session begins. W1 is a
+      sub-noise-floor stealth drain that respects the description's
+      claimed state-zero invariant within per-sample fidelity but
+      accumulates a cumulative drift exceeding the matcher's
+      cumulative budget. W2 is post-admission sensor spoofing of
+      LIT101 while pumps drive the tank to overflow.
+\end{enumerate}
+
+\paragraph{Trusted computing base.}
+Table~\ref{tbl:tcb} summarises the trusted computing base. PG-DSL is
+only as good as DT fidelity, grammar coverage, and the lifter's
+bounded semantic error on $\mathcal{C}$.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Trusted computing base for PG-DSL. PG-DSL provides no
+defence if a trusted component is itself compromised.}
+\label{tbl:tcb}
+\begin{tabular}{@{}p{0.30\columnwidth}p{0.18\columnwidth}p{0.40\columnwidth}@{}}
+\toprule
+Component & Trusted? & Rationale \\
+\midrule
+MCP description & No & attacker-controlled \\
+Tool impl. & Partial & may be poisoned; DT observes \\
+Digital twin & Yes & verifier substrate, fidelity-bounded \\
+Lifter & Yes, fallible & bounded $\varepsilon_L$; T2 quantifies \\
+Formal matcher & Yes & deterministic check \\
+Runtime telemetry & Partial & W2 spoofs post-admission reads \\
+Runtime IDS & Separate & T3 composition partner \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Out of scope.}
+Network-level attacks against the verifier itself, hardware ageing,
+chemistry kinetics beyond linearised conductivity, and side-channel
+attacks on $L_{\text{verify}}$ (e.g., adversarial probes designed
+specifically against the lifter's training distribution) are out of
+scope for this paper. These are deferred to T3's runtime composition
+partner or to future work.
+
+\paragraph{Real-agent threat realisation.}
+A bounded real-agent campaign on the SWaT P1+P2 substrate validates
+the threat-model claim end-to-end: a \texttt{qwen3:14b} agent
+operating against a real-MCP server via the official Python MCP SDK
+falls to description-channel poisoning (A1, type-confusion overflow)
+in $10/10$ replications without defence; remains vulnerable to
+post-admission sensor spoofing (W2) in $9/10$ replications regardless
+of admission-time defence (W2 is a canonical $A_{\text{runtime}}$
+witness whose visibility surface is runtime telemetry rather than
+admission-time descriptions). With
+canonical PG-DSL admission applied, A1 ASR drops to the with-defence
+row of Table~\ref{tbl:real-agent-asr} --- the admission gate excludes
+the poisoned tool from the agent's catalog before the agent is ever
+exposed to the description --- while W2 ASR is unchanged, as
+predicted by the T3 partition (W2 is a canonical $A_{\text{runtime}}$
+witness). The campaign uses $N=10$ reps $\times$ $30$-step horizons
+$\times$ four conditions $\{A_1, A_2, W_2, A_2^{\text{eng}}\}$ at
+$10$~s simulated plant-tick per agent action; reps sweep across
+realistic operating-condition variation (see \S\ref{sec:eval-real-agent}),
+not stochastic LLM-policy independence. Full per-rep traces and
+aggregate Wilson~95\% CIs are in the artifact. Detailed numbers
+appear in \S\ref{sec:eval-real-agent}.
+
+% =====================================================================

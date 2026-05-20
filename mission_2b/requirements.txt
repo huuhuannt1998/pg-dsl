@@ -1,0 +1,14 @@
+# Mission 2B evaluation campaign — runtime requirements
+# (extends mission_2a + mission_1b dependencies)
+numpy==2.0.2
+matplotlib==3.9.2
+lark==1.3.1                 # PG-DSL grammar (Mission 2A)
+
+# Notebook reproduction
+jupyter==1.0.0
+ipykernel==6.29.5
+
+# When PI swaps in real Qwen on hardware:
+# mcp==0.9.1
+# httpx==0.27.0
+# pydantic==2.8.2

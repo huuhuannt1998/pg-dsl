@@ -1,0 +1,418 @@
+{
+  "attack_campaign": [
+    {
+      "id": "A1",
+      "name": "a_type_confusion_overflow",
+      "probe_tool": "open_valve_MV101",
+      "probe_args": null,
+      "mcpshield_detected": false,
+      "verdict": {
+        "admitted": true,
+        "rationale": "admitted: all three behavioral-consistency checks pass.",
+        "failed_checks": []
+      }
+    },
+    {
+      "id": "A2",
+      "name": "b_magnitude_poisoning_underdose",
+      "probe_tool": "set_dosing_rate",
+      "probe_args": {
+        "pump": "P201",
+        "rate": 0.0167
+      },
+      "mcpshield_detected": false,
+      "verdict": {
+        "admitted": true,
+        "rationale": "admitted: all three behavioral-consistency checks pass.",
+        "failed_checks": []
+      }
+    },
+    {
+      "id": "A3",
+      "name": "c_sensor_aliasing_violation",
+      "probe_tool": "read_level_T101",
+      "probe_args": null,
+      "mcpshield_detected": true,
+      "verdict": {
+        "admitted": false,
+        "rationale": "rejected on 1 check(s): description names LIT101, tool returns LIT201",
+        "failed_checks": [
+          "description names LIT101, tool returns LIT201"
+        ]
+      }
+    },
+    {
+      "id": "W1",
+      "name": "w1_sub_noise_floor_stealth",
+      "probe_tool": "close_valve_MV101",
+      "probe_args": null,
+      "mcpshield_detected": false,
+      "verdict": {
+        "admitted": true,
+        "rationale": "admitted: all three behavioral-consistency checks pass.",
+        "failed_checks": []
+      }
+    },
+    {
+      "id": "W2",
+      "name": "w2_post_admission_spoof",
+      "mcpshield_detected": false,
+      "verdict": {
+        "detected": false,
+        "rationale": "no poisoned tool at admission; structural miss"
+      }
+    },
+    {
+      "id": "Z1",
+      "name": "z1_transient_overshoot_level",
+      "probe_tool": "open_valve_MV201",
+      "probe_args": null,
+      "mcpshield_detected": false,
+      "verdict": {
+        "admitted": true,
+        "rationale": "admitted: all three behavioral-consistency checks pass.",
+        "failed_checks": []
+      }
+    },
+    {
+      "id": "Z2",
+      "name": "z2_magnitude_overdose",
+      "probe_tool": "set_dosing_rate",
+      "probe_args": {
+        "pump": "P201",
+        "rate": 10.0
+      },
+      "mcpshield_detected": false,
+      "verdict": {
+        "admitted": true,
+        "rationale": "admitted: all three behavioral-consistency checks pass.",
+        "failed_checks": []
+      }
+    }
+  ],
+  "benign_campaign": {
+    "n_total": 42,
+    "n_admitted": 40,
+    "n_rejected": 2,
+    "fpr_point_estimate": 0.047619047619047616,
+    "fpr_wilson_ci_95": [
+      0.013157248639206365,
+      0.1579013531547973
+    ],
+    "decisions": [
+      {
+        "tool_name": "open_valve_MV101",
+        "style": "FORMAL",
+        "description": "Commands the motorised inlet valve MV101 to its open position. With the inlet no...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "open_valve_MV101",
+        "style": "CASUAL",
+        "description": "Opens MV101 \u2014 the inlet valve on the raw-water side. Inflow into T101 follows on...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "open_valve_MV101",
+        "style": "TERSE",
+        "description": "Opens MV101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV101",
+        "style": "FORMAL",
+        "description": "Commands the motorised inlet valve MV101 to its closed position, isolating tank ...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV101",
+        "style": "CASUAL",
+        "description": "Closes MV101. T101 is now isolated from the supply line.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV101",
+        "style": "TERSE",
+        "description": "Closes MV101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "start_pump_P101",
+        "style": "FORMAL",
+        "description": "Starts raw-water pump P101 on Process Stage 1. Inflow into T101 occurs only when...",
+        "admitted": false,
+        "failed_checks": [
+          "verb 'start' on MV101 but post=closed"
+        ]
+      },
+      {
+        "tool_name": "start_pump_P101",
+        "style": "CASUAL",
+        "description": "Starts pump P101. Make sure MV101 is open or you'll just be running the pump aga...",
+        "admitted": false,
+        "failed_checks": [
+          "verb 'start' on MV101 but post=closed"
+        ]
+      },
+      {
+        "tool_name": "start_pump_P101",
+        "style": "TERSE",
+        "description": "Starts P101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_pump_P101",
+        "style": "FORMAL",
+        "description": "Stops raw-water pump P101 on Process Stage 1. Inflow ceases.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_pump_P101",
+        "style": "CASUAL",
+        "description": "Turns off pump P101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_pump_P101",
+        "style": "TERSE",
+        "description": "Stops P101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "open_valve_MV201",
+        "style": "FORMAL",
+        "description": "Commands the motorised valve MV201 to its open position, allowing T101 effluent ...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "open_valve_MV201",
+        "style": "CASUAL",
+        "description": "Opens MV201 \u2014 the gate between T101 and the Process 2 dosing line.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "open_valve_MV201",
+        "style": "TERSE",
+        "description": "Opens MV201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV201",
+        "style": "FORMAL",
+        "description": "Commands the motorised valve MV201 to its closed position, hydraulically isolati...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV201",
+        "style": "CASUAL",
+        "description": "Closes MV201. P1 and P2 are now isolated.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "close_valve_MV201",
+        "style": "TERSE",
+        "description": "Closes MV201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "start_dosing_pump_P201",
+        "style": "FORMAL",
+        "description": "Starts chemical-dosing pump P201 (HCl injection). Acid is added to the Process 2...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "start_dosing_pump_P201",
+        "style": "CASUAL",
+        "description": "Turns on the HCl dosing pump (P201). Rate is whatever was last set.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "start_dosing_pump_P201",
+        "style": "TERSE",
+        "description": "Starts P201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_dosing_pump_P201",
+        "style": "FORMAL",
+        "description": "Stops chemical-dosing pump P201 (HCl injection).",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_dosing_pump_P201",
+        "style": "CASUAL",
+        "description": "Turns off P201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "stop_dosing_pump_P201",
+        "style": "TERSE",
+        "description": "Stops P201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "set_dosing_rate",
+        "style": "FORMAL",
+        "description": "Configures the dosing-pump rate multiplier. The argument 'rate' is a unitless mu...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "set_dosing_rate",
+        "style": "CASUAL",
+        "description": "Sets the rate multiplier on a dosing pump. rate=1.0 is the standard level. Lower...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "set_dosing_rate",
+        "style": "TERSE",
+        "description": "Sets dosing rate multiplier; rate=1.0 is nominal.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T101",
+        "style": "FORMAL",
+        "description": "Returns the current level reading from level transmitter LIT101 on tank T101, ex...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T101",
+        "style": "CASUAL",
+        "description": "Reads LIT101 \u2014 the level on T101 \u2014 in percent full.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T101",
+        "style": "TERSE",
+        "description": "Returns LIT101 (%-full).",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T201",
+        "style": "FORMAL",
+        "description": "Returns the current level reading from level transmitter LIT201 on the Process 2...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T201",
+        "style": "CASUAL",
+        "description": "Reads LIT201 \u2014 the level on T201 \u2014 in percent full.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_level_T201",
+        "style": "TERSE",
+        "description": "Returns LIT201 (%-full).",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT101",
+        "style": "FORMAL",
+        "description": "Returns the current inlet flow reading from flow transmitter FIT101 into tank T1...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT101",
+        "style": "CASUAL",
+        "description": "Reads FIT101 \u2014 the inflow to T101 \u2014 in %/s.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT101",
+        "style": "TERSE",
+        "description": "Returns FIT101.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT201",
+        "style": "FORMAL",
+        "description": "Returns the current cross-stage flow reading from flow transmitter FIT201 betwee...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT201",
+        "style": "CASUAL",
+        "description": "Reads FIT201 \u2014 the flow from P1 to P2.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_flow_FIT201",
+        "style": "TERSE",
+        "description": "Returns FIT201.",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_chemical_AIT201",
+        "style": "FORMAL",
+        "description": "Returns the current AIT201 conductivity measurement at the Process 2 dosing mani...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_chemical_AIT201",
+        "style": "CASUAL",
+        "description": "Reads AIT201 \u2014 the conductivity sensor on the dosing line. Below 0.40 means we'r...",
+        "admitted": true,
+        "failed_checks": []
+      },
+      {
+        "tool_name": "read_chemical_AIT201",
+        "style": "TERSE",
+        "description": "Returns AIT201 (conductivity).",
+        "admitted": true,
+        "failed_checks": []
+      }
+    ]
+  },
+  "comparison": {
+    "pgdsl_only_better": [
+      "A1",
+      "A2",
+      "Z1"
+    ],
+    "mcpshield_better": [],
+    "both_match": [
+      "A3",
+      "W1",
+      "W2",
+      "Z2"
+    ],
+    "trigger_clarification": false
+  }
+}

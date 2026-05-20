@@ -1,0 +1,41 @@
+{
+  "raw_response": "```json\n{\n  \"operating_bands\": [\n    {\"sensor\": \"LIT101\", \"low\": 46.000, \"high\": 82.000},\n    {\"sensor\": \"LIT201\", \"low\": 60.000, \"high\": 100.000},\n    {\"sensor\": \"FIT101\", \"low\": 0.000, \"high\": 0.500},\n    {\"sensor\": \"FIT201\", \"low\": 0.000, \"high\": 0.400},\n    {\"sensor\": \"AIT201\", \"low\": 0.300, \"high\": 1.256}\n  ],\n  \"mass_balance\": [\n    {\"tank\": \"T101\", \"residual_threshold_per_step_pct_full\": 0.5000}\n  ]\n}\n```",
+  "parsed_response": {
+    "operating_bands": [
+      {
+        "sensor": "LIT101",
+        "low": 46.0,
+        "high": 82.0
+      },
+      {
+        "sensor": "LIT201",
+        "low": 60.0,
+        "high": 100.0
+      },
+      {
+        "sensor": "FIT101",
+        "low": 0.0,
+        "high": 0.5
+      },
+      {
+        "sensor": "FIT201",
+        "low": 0.0,
+        "high": 0.4
+      },
+      {
+        "sensor": "AIT201",
+        "low": 0.3,
+        "high": 1.256
+      }
+    ],
+    "mass_balance": [
+      {
+        "tank": "T101",
+        "residual_threshold_per_step_pct_full": 0.5
+      }
+    ]
+  },
+  "parse_error": null,
+  "n_invariants": 6,
+  "latency_s": 27.560166120529175
+}

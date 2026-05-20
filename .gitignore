@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# LaTeX build artifacts (keep .pdf, .bib, .tex)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+texput.log
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+*.iml
+
+# Local runtime artifacts that should not be in the repo
+ollama_ps_*.txt
+/tmp/
+
+# Large or transient campaign artifacts that take significant space;
+# the JSON outputs in mission_3b/results/ ARE checked in (they back
+# the paper's empirical claims).
+mission_2d/agent_traces/python_mcp_sdk/*.snapshots.jsonl
+mission_2d/agent_traces/python_mcp_sdk/*_def.snapshots.jsonl
+
+# Working files
+*.bak
+*.tmp
+.cache/
+
+# Out-of-scope subprojects not part of the PG-DSL artifact
+claw-code-local/             # deprecated local agent fork; PG-DSL uses
+                             # the official Python MCP SDK (mission_2d)
+overleaf-example/            # paper-template reference only
+
+# Internal review documents (not part of public release)
+pg_dsl_presubmission_review.md
+

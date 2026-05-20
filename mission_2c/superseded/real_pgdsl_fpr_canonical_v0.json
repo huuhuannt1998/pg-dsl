@@ -1,0 +1,218 @@
+{
+  "n_total": 14,
+  "n_rejected": 6,
+  "fpr_point_estimate": 0.42857142857142855,
+  "fpr_wilson_ci_95": [
+    0.21380509930400526,
+    0.6740973309713064
+  ],
+  "elapsed_s": 29.265387058258057,
+  "decisions": [
+    {
+      "tool_name": "open_valve_MV101",
+      "description_excerpt": "Opens the motorised inlet valve MV101 on Process 1, allowing raw water to flow f...",
+      "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 4.343350648880005
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "description_excerpt": "Closes the motorised inlet valve MV101 on Process 1, stopping inflow to tank T10...",
+      "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 2.797804117202759
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "description_excerpt": "Starts raw-water pump P101 on Process 1. Inflow into T101 occurs only when MV101...",
+      "phi": "actuator(P101) := on; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.614570140838623
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "description_excerpt": "Stops raw-water pump P101 on Process 1.",
+      "phi": "actuator(P101) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4823479652404785
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "description_excerpt": "Opens the motorised valve MV201 between T101 and Process 2, allowing T101 water ...",
+      "phi": "actuator(MV201) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.744659900665283
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "description_excerpt": "Closes MV201, isolating Process 1 from Process 2.",
+      "phi": "actuator(MV201) := closed; \u0394state(L_T101) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 2.5106360912323
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "description_excerpt": "Starts dosing pump P201 (HCl). Adds acid to the Process 2 line at the rate confi...",
+      "phi": "actuator(P201) := on; \u0394state(C_HCl) { sign +, monotone+ }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.837611675262451
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "description_excerpt": "Stops dosing pump P201 (HCl).",
+      "phi": "actuator(P201) := off; \u0394state(C_HCl) { sign -, monotone- }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.461582899093628
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "description_excerpt": "Sets the dosing-pump rate multiplier. The argument 'rate' is a unitless multipli...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.0704810619354248
+    },
+    {
+      "tool_name": "read_level_T101",
+      "description_excerpt": "Returns the current level of tank T101 (LIT101) in %-full of operating capacity.",
+      "phi": "sensor(LIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1854689121246338
+    },
+    {
+      "tool_name": "read_level_T201",
+      "description_excerpt": "Returns the current level of dosing buffer tank T201 (LIT201) in %-full of opera...",
+      "phi": "sensor(LIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1558210849761963
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "description_excerpt": "Returns the inlet flow rate FIT101 into T101, in %-full per second (i.e. integra...",
+      "phi": "sensor(FIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4291472434997559
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "description_excerpt": "Returns the flow rate FIT201 between Process 1 and Process 2.",
+      "phi": "sensor(FIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1616301536560059
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "description_excerpt": "Returns the AIT201 conductivity reading at the Process 2 dosing manifold, in arb...",
+      "phi": "sensor(AIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.469270944595337
+    }
+  ],
+  "rejections": [
+    {
+      "tool_name": "open_valve_MV101",
+      "description_excerpt": "Opens the motorised inlet valve MV101 on Process 1, allowing raw water to flow f...",
+      "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 4.343350648880005
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "description_excerpt": "Starts raw-water pump P101 on Process 1. Inflow into T101 occurs only when MV101...",
+      "phi": "actuator(P101) := on; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.614570140838623
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "description_excerpt": "Opens the motorised valve MV201 between T101 and Process 2, allowing T101 water ...",
+      "phi": "actuator(MV201) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.744659900665283
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "description_excerpt": "Starts dosing pump P201 (HCl). Adds acid to the Process 2 line at the rate confi...",
+      "phi": "actuator(P201) := on; \u0394state(C_HCl) { sign +, monotone+ }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.837611675262451
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "description_excerpt": "Stops dosing pump P201 (HCl).",
+      "phi": "actuator(P201) := off; \u0394state(C_HCl) { sign -, monotone- }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.461582899093628
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "description_excerpt": "Sets the dosing-pump rate multiplier. The argument 'rate' is a unitless multipli...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.0704810619354248
+    }
+  ]
+}

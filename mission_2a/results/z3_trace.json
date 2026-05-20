@@ -1,0 +1,1987 @@
+{
+  "name": "Z3_transient_overshoot_via_admitted_composition",
+  "calibration": {
+    "safe_band": [
+      25.0,
+      95.0
+    ],
+    "overflow_threshold": 99.5,
+    "INVARLLM_SAMPLE_FLOOR": 0.1,
+    "horizon_s": 30
+  },
+  "individual_admission": {
+    "per_tool": [
+      {
+        "tool": "open_valve_MV101",
+        "phi": "actuator(MV101) := open",
+        "admitted": true,
+        "rejection_reasons": []
+      },
+      {
+        "tool": "start_pump_P101",
+        "phi": "actuator(P101) := on",
+        "admitted": true,
+        "rejection_reasons": []
+      }
+    ],
+    "all_admitted": true
+  },
+  "initial_state": {
+    "LIT101": 90.0,
+    "LIT201": 60.0,
+    "MV101": "closed",
+    "P101": "off",
+    "P102": "off",
+    "MV201": "closed",
+    "AIT201": 0.3
+  },
+  "tool_sequence": [
+    "open_valve_MV101",
+    "start_pump_P101"
+  ],
+  "runtime_trajectory": {
+    "trajectory_LIT101": [
+      90.0,
+      90.5,
+      91.0,
+      91.5,
+      92.0,
+      92.5,
+      93.0,
+      93.5,
+      94.0,
+      94.5,
+      95.0,
+      95.5,
+      96.0,
+      96.5,
+      97.0,
+      97.5,
+      98.0,
+      98.5,
+      99.0,
+      99.5,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "trajectory_first_last": [
+      90.0,
+      100.0
+    ],
+    "max_LIT101": 100.0,
+    "min_LIT101": 90.0,
+    "band_exit_step_s": 11,
+    "overflow_step_s": 19,
+    "residuals_first_last": [
+      0.0,
+      0.5
+    ],
+    "max_residual": 0.5
+  },
+  "pgdsl_static_admission": {
+    "fires": false,
+    "explanation": "Each constituent tool's \u03c6 has only an `actuator(X) := value` clause (no \u0394state or bounded[] for L_T101). Per-tool DT runs from LOW/MID/HIGH show zero level effect because the other actuator is not set. Both constituent tools admit; the layer never simulates the composed runtime sequence."
+  },
+  "invarllm_runtime": {
+    "operating_band": [
+      25.0,
+      95.0
+    ],
+    "per_sample_floor": 0.1,
+    "band_fires": true,
+    "band_exit_step_s": 11,
+    "residual_fires": true,
+    "max_residual": 0.5,
+    "fires": true
+  },
+  "composition_aware_extension": {
+    "horizon_s": 30,
+    "n_pairs_tested": 168,
+    "flagged": [
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 100.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": 11,
+        "overflow_step_s": 19,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=11s; max LIT101 = 100.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 100.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": 11,
+        "overflow_step_s": 19,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=11s; max LIT101 = 100.00"
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 18.000000000000043,
+        "band_exit_step_s": 13,
+        "overflow_step_s": null,
+        "unsafe_reason": "trajectory exits [25.0,95.0] at t=13s; max LIT101 = 30.00"
+      }
+    ],
+    "safe": [
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 45.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 85.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 45.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 85.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_pump_P101",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "open_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "close_valve_MV201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "start_dosing_pump_P201",
+          "stop_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "stop_pump_P101"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 57.99999999999994,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "open_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 77.99999999999983,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "close_valve_MV201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "LOW",
+        "max_LIT101": 30.0,
+        "min_LIT101": 30.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "MID",
+        "max_LIT101": 70.0,
+        "min_LIT101": 70.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      },
+      {
+        "pair": [
+          "stop_dosing_pump_P201",
+          "start_dosing_pump_P201"
+        ],
+        "initial_state": "HIGH",
+        "max_LIT101": 90.0,
+        "min_LIT101": 90.0,
+        "band_exit_step_s": null,
+        "overflow_step_s": null
+      }
+    ],
+    "n_flagged": 15,
+    "n_safe": 153
+  },
+  "expected": {
+    "pgdsl_static_fires": false,
+    "invarllm_fires": true,
+    "extension_catches_z3": true
+  },
+  "z3_pair_flagged_by_extension": true,
+  "witness_passes": true,
+  "interpretation": "Z3 demonstrates that PG-DSL's bounded[]-gap is structural for actuator tools whose descriptions do not name a level band: each tool admits on its actuator transition alone, and the runtime composition can drive the level past safety predicates that no single-tool DT sample observed. The composition-aware extension (Z3b) closes the gap by replaying admitted-tool pairs in DT and flagging trajectories that exit a runtime safety band. Cost: k tools \u2192 k(k\u22121) ordered pair samples per initial state."
+}

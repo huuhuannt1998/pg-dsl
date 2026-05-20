@@ -1,0 +1,15 @@
+# Mission 2A PG-DSL admission-control pipeline — runtime requirements
+# (deterministic-stub L_verify; PI's hardware swaps in real Qwen3.6 separately)
+numpy==2.0.2
+matplotlib==3.9.2
+lark==1.3.1                 # used by L_verify and grammar.lark validation
+
+# Notebook reproduction
+jupyter==1.0.0
+ipykernel==6.29.5
+
+# When PI swaps in real Qwen + claw-code-local on hardware:
+# mcp==0.9.1                  # official Anthropic MCP Python SDK
+# httpx==0.27.0               # MCP transport
+# pydantic==2.8.2             # MCP schema
+# (and the codetwentyfive fork of claw-code-local; see README.md §4)

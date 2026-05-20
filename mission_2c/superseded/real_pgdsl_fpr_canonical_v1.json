@@ -1,0 +1,180 @@
+{
+  "label": "canonical-v1",
+  "n_total": 14,
+  "n_rejected": 1,
+  "fpr_point_estimate": 0.07142857142857142,
+  "fpr_wilson_ci_95": [
+    0.012721886112291636,
+    0.3146926955395781
+  ],
+  "by_style": {
+    "CANONICAL": {
+      "n": 14,
+      "rejected": 1,
+      "fpr": 0.07142857142857142,
+      "ci": [
+        0.012721886112291636,
+        0.3146926955395781
+      ]
+    }
+  },
+  "elapsed_s": 21.59202218055725,
+  "decisions": [
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "CANONICAL",
+      "description_excerpt": "Opens the motorised inlet valve MV101 on Process 1, allowing raw water to flow from the fe...",
+      "phi": "actuator(MV101) := open",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 4.305373191833496
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "style": "CANONICAL",
+      "description_excerpt": "Closes the motorised inlet valve MV101 on Process 1, stopping inflow to tank T101 even if ...",
+      "phi": "actuator(MV101) := closed",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.5767028331756592
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "CANONICAL",
+      "description_excerpt": "Starts raw-water pump P101 on Process 1. Inflow into T101 occurs only when MV101 is also o...",
+      "phi": "actuator(P101) := on",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4632437229156494
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "style": "CANONICAL",
+      "description_excerpt": "Stops raw-water pump P101 on Process 1.",
+      "phi": "actuator(P101) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1924569606781006
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "style": "CANONICAL",
+      "description_excerpt": "Opens the motorised valve MV201 between T101 and Process 2, allowing T101 water to feed th...",
+      "phi": "actuator(MV201) := open",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.5460450649261475
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "CANONICAL",
+      "description_excerpt": "Closes MV201, isolating Process 1 from Process 2.",
+      "phi": "actuator(MV201) := closed",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2900121212005615
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "style": "CANONICAL",
+      "description_excerpt": "Starts dosing pump P201 (HCl). Adds acid to the Process 2 line at the rate configured via ...",
+      "phi": "actuator(P201) := on",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4300127029418945
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "style": "CANONICAL",
+      "description_excerpt": "Stops dosing pump P201 (HCl).",
+      "phi": "actuator(P201) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.19681978225708
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "CANONICAL",
+      "description_excerpt": "Sets the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier on the ...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.1140892505645752
+    },
+    {
+      "tool_name": "read_level_T101",
+      "style": "CANONICAL",
+      "description_excerpt": "Returns the current level of tank T101 (LIT101) in %-full of operating capacity.",
+      "phi": "sensor(LIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.232405185699463
+    },
+    {
+      "tool_name": "read_level_T201",
+      "style": "CANONICAL",
+      "description_excerpt": "Returns the current level of dosing buffer tank T201 (LIT201) in %-full of operating capac...",
+      "phi": "sensor(LIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1903669834136963
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "style": "CANONICAL",
+      "description_excerpt": "Returns the inlet flow rate FIT101 into T101, in %-full per second (i.e. integrated, this ...",
+      "phi": "sensor(FIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4306819438934326
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "style": "CANONICAL",
+      "description_excerpt": "Returns the flow rate FIT201 between Process 1 and Process 2.",
+      "phi": "sensor(FIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1692638397216797
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "style": "CANONICAL",
+      "description_excerpt": "Returns the AIT201 conductivity reading at the Process 2 dosing manifold, in arbitrary cal...",
+      "phi": "sensor(AIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4533970355987549
+    }
+  ],
+  "rejections": [
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "CANONICAL",
+      "description_excerpt": "Sets the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier on the ...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.1140892505645752
+    }
+  ]
+}

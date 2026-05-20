@@ -1,0 +1,20 @@
+{
+  "PG-DSL_admission_per_tool_s": {
+    "min": 0.0004119155928492546,
+    "max": 0.0016510826535522938,
+    "mean": 0.0006027973722666502
+  },
+  "MCPShield_judge_per_tool_s": {
+    "min": 1.2707896530628204e-05,
+    "max": 0.00029533402994275093,
+    "mean": 4.263687878847122e-05
+  },
+  "INVARLLM_runtime_check_s": {
+    "min": 0.0009822919964790344,
+    "max": 0.0010324157774448395,
+    "mean": 0.001007949747145176
+  },
+  "n_tools": 14,
+  "PG-DSL_full_deployment_admission_s": 0.008439163211733103,
+  "MCPShield_full_deployment_admission_s": 0.0005969163030385971
+}

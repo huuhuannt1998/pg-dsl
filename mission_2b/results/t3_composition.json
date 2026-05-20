@@ -1,0 +1,264 @@
+{
+  "n_attacks": 7,
+  "results": [
+    {
+      "id": "A1",
+      "name": "a_type_confusion_overflow",
+      "predicted_lane": "intersection",
+      "observed_lane": "intersection",
+      "lane_matches_prediction": true,
+      "pgdsl": {
+        "detected": true,
+        "rejected_poisoned_tools": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "reason_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        }
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT101",
+            "reason": "LIT101[28]=83.800 outside [45.999999999999986, 81.99999999999922]",
+            "description": "LIT101 \u2208 [46.000, 82.000] \u00b1 1.800"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "pgdsl"
+      }
+    },
+    {
+      "id": "A2",
+      "name": "b_magnitude_poisoning_underdose",
+      "predicted_lane": "intersection",
+      "observed_lane": "pgdsl_only",
+      "lane_matches_prediction": false,
+      "pgdsl": {
+        "detected": true,
+        "rejected_poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "reason_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        }
+      },
+      "invarllm": {
+        "detected": false,
+        "violations": [],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "pgdsl"
+      }
+    },
+    {
+      "id": "A3",
+      "name": "c_sensor_aliasing_violation",
+      "predicted_lane": "intersection",
+      "observed_lane": "intersection",
+      "lane_matches_prediction": true,
+      "pgdsl": {
+        "detected": true,
+        "rejected_poisoned_tools": [
+          "read_level_T101"
+        ],
+        "reason_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        }
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT101",
+            "reason": "LIT101[88]=83.800 outside [45.999999999999986, 81.99999999999922]",
+            "description": "LIT101 \u2208 [46.000, 82.000] \u00b1 1.800"
+          },
+          {
+            "invariant": "band_LIT201",
+            "reason": "LIT201[0]=50.000 outside [60.0, 100.0]",
+            "description": "LIT201 \u2208 [60.000, 100.000] \u00b1 2.000"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "pgdsl"
+      }
+    },
+    {
+      "id": "W1",
+      "name": "w1_sub_noise_floor_stealth",
+      "predicted_lane": "pgdsl_only",
+      "observed_lane": "invarllm_only",
+      "lane_matches_prediction": false,
+      "pgdsl": {
+        "detected": false,
+        "rejected_poisoned_tools": [],
+        "reason_per_tool": {}
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT201",
+            "reason": "LIT201[7]=57.900 outside [60.0, 100.0]",
+            "description": "LIT201 \u2208 [60.000, 100.000] \u00b1 2.000"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "invarllm"
+      }
+    },
+    {
+      "id": "W2",
+      "name": "w2_post_admission_spoof",
+      "predicted_lane": "invarllm_only",
+      "observed_lane": "invarllm_only",
+      "lane_matches_prediction": true,
+      "pgdsl": {
+        "detected": false,
+        "reason": "no_poisoned_tool_at_admission_time"
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT201",
+            "reason": "LIT201[7]=57.900 outside [60.0, 100.0]",
+            "description": "LIT201 \u2208 [60.000, 100.000] \u00b1 2.000"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "invarllm"
+      }
+    },
+    {
+      "id": "Z1",
+      "name": "z1_transient_overshoot_level",
+      "predicted_lane": "invarllm_only",
+      "observed_lane": "intersection",
+      "lane_matches_prediction": false,
+      "pgdsl": {
+        "detected": true,
+        "rejected_poisoned_tools": [
+          "open_valve_MV201"
+        ],
+        "reason_per_tool": {
+          "open_valve_MV201": [
+            "out_of_grammar"
+          ]
+        }
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT101",
+            "reason": "LIT101[0]=85.000 outside [45.999999999999986, 81.99999999999922]",
+            "description": "LIT101 \u2208 [46.000, 82.000] \u00b1 1.800"
+          },
+          {
+            "invariant": "band_LIT201",
+            "reason": "LIT201[7]=57.900 outside [60.0, 100.0]",
+            "description": "LIT201 \u2208 [60.000, 100.000] \u00b1 2.000"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "pgdsl"
+      }
+    },
+    {
+      "id": "Z2",
+      "name": "z2_magnitude_overdose",
+      "predicted_lane": "intersection",
+      "observed_lane": "invarllm_only",
+      "lane_matches_prediction": false,
+      "pgdsl": {
+        "detected": false,
+        "rejected_poisoned_tools": [],
+        "reason_per_tool": {}
+      },
+      "invarllm": {
+        "detected": true,
+        "violations": [
+          {
+            "invariant": "band_LIT201",
+            "reason": "LIT201[7]=57.900 outside [60.0, 100.0]",
+            "description": "LIT201 \u2208 [60.000, 100.000] \u00b1 2.000"
+          },
+          {
+            "invariant": "band_AIT201",
+            "reason": "AIT201[3]=1.726 outside [0.3, 1.2559591539383244]",
+            "description": "AIT201 \u2208 [0.300, 1.256] \u00b1 0.050"
+          }
+        ],
+        "n_invariants_evaluated": 6
+      },
+      "composed": {
+        "detected": true,
+        "via": "invarllm"
+      }
+    }
+  ],
+  "lanes": {
+    "A_static": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1"
+    ],
+    "A_runtime": [
+      "A1",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2"
+    ],
+    "pgdsl_only": [
+      "A2"
+    ],
+    "invarllm_only": [
+      "W1",
+      "W2",
+      "Z2"
+    ],
+    "composed": [
+      "A1",
+      "A2",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2"
+    ]
+  },
+  "t3_strict_dominance": true
+}

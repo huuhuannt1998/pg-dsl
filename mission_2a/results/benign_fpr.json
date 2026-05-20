@@ -1,0 +1,796 @@
+{
+  "reps_per_tool": 10,
+  "by_tool": {},
+  "rep_admission_records": [
+    {
+      "rep": 0,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 2,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 3,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 4,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 5,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 6,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 7,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 8,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    },
+    {
+      "rep": 9,
+      "per_tool": [
+        {
+          "tool_name": "open_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_pump_P101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "open_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "close_valve_MV201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "start_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "stop_dosing_pump_P201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "set_dosing_rate",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_level_T201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT101",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        },
+        {
+          "tool_name": "read_chemical_AIT201",
+          "admitted": true,
+          "rejection_reasons": []
+        }
+      ]
+    }
+  ],
+  "n_total_decisions": 140,
+  "n_admit": 140,
+  "fpr_overall": 0.0,
+  "wilson_ci_95": [
+    0.0,
+    0.02670715564899167
+  ],
+  "delta_lift_m1a_estimate": 0.116,
+  "deviation_from_estimate": 0.116,
+  "deviation_trigger": 0.05,
+  "deviation_within_trigger": false,
+  "acceptance_pass": true,
+  "per_tool_admit_rate": {
+    "open_valve_MV101": 1.0,
+    "close_valve_MV101": 1.0,
+    "start_pump_P101": 1.0,
+    "stop_pump_P101": 1.0,
+    "open_valve_MV201": 1.0,
+    "close_valve_MV201": 1.0,
+    "start_dosing_pump_P201": 1.0,
+    "stop_dosing_pump_P201": 1.0,
+    "set_dosing_rate": 1.0,
+    "read_level_T101": 1.0,
+    "read_level_T201": 1.0,
+    "read_flow_FIT101": 1.0,
+    "read_flow_FIT201": 1.0,
+    "read_chemical_AIT201": 1.0
+  },
+  "rep_fprs": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

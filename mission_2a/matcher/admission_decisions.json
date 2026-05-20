@@ -1,0 +1,855 @@
+{
+  "eps_DT": 1.0,
+  "delta_star": 2.232,
+  "decisions": [
+    {
+      "tool_name": "open_valve_MV101",
+      "initial_state_name": "LOW",
+      "phi": "actuator(MV101) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := open",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "open_valve_MV101",
+      "initial_state_name": "MID",
+      "phi": "actuator(MV101) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := open",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "open_valve_MV101",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(MV101) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := open",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "initial_state_name": "LOW",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := closed",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "initial_state_name": "MID",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := closed",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV101) := closed",
+          "kind": "actuator",
+          "name": "MV101",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "initial_state_name": "LOW",
+      "phi": "actuator(P101) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := on",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "initial_state_name": "MID",
+      "phi": "actuator(P101) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := on",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(P101) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := on",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "initial_state_name": "LOW",
+      "phi": "actuator(P101) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := off",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "initial_state_name": "MID",
+      "phi": "actuator(P101) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := off",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(P101) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P101) := off",
+          "kind": "actuator",
+          "name": "P101",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "initial_state_name": "LOW",
+      "phi": "actuator(MV201) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := open",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "initial_state_name": "MID",
+      "phi": "actuator(MV201) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := open",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(MV201) := open",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := open",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "open",
+          "observed_value": "open",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "initial_state_name": "LOW",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := closed",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "initial_state_name": "MID",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := closed",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(MV201) := closed",
+          "kind": "actuator",
+          "name": "MV201",
+          "claimed_value": "closed",
+          "observed_value": "closed",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "initial_state_name": "LOW",
+      "phi": "actuator(P201) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := on",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "initial_state_name": "MID",
+      "phi": "actuator(P201) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := on",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(P201) := on",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := on",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "on",
+          "observed_value": "on",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "initial_state_name": "LOW",
+      "phi": "actuator(P201) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := off",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "initial_state_name": "MID",
+      "phi": "actuator(P201) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := off",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "initial_state_name": "HIGH",
+      "phi": "actuator(P201) := off",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "actuator(P201) := off",
+          "kind": "actuator",
+          "name": "P201",
+          "claimed_value": "off",
+          "observed_value": "off",
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "initial_state_name": "LOW",
+      "phi": "\u0394state(Cond_P2) { sign +, monotone+ }",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "\u0394state(Cond_P2) { sign +, monotone+ }",
+          "kind": "dstate",
+          "var": "Cond_P2",
+          "summary": {
+            "sign": "+",
+            "monotone": "+",
+            "min": 0.3,
+            "max": 1.297877573621302,
+            "first": 0.3,
+            "last": 1.297877573621302,
+            "delta": 0.9978775736213019
+          },
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "initial_state_name": "MID",
+      "phi": "\u0394state(Cond_P2) { sign +, monotone+ }",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "\u0394state(Cond_P2) { sign +, monotone+ }",
+          "kind": "dstate",
+          "var": "Cond_P2",
+          "summary": {
+            "sign": "+",
+            "monotone": "+",
+            "min": 0.3,
+            "max": 1.297877573621302,
+            "first": 0.3,
+            "last": 1.297877573621302,
+            "delta": 0.9978775736213019
+          },
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "initial_state_name": "HIGH",
+      "phi": "\u0394state(Cond_P2) { sign +, monotone+ }",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "\u0394state(Cond_P2) { sign +, monotone+ }",
+          "kind": "dstate",
+          "var": "Cond_P2",
+          "summary": {
+            "sign": "+",
+            "monotone": "+",
+            "min": 0.3,
+            "max": 1.297877573621302,
+            "first": 0.3,
+            "last": 1.297877573621302,
+            "delta": 0.9978775736213019
+          },
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T101",
+      "initial_state_name": "LOW",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT101) reads nominal",
+          "kind": "sensor",
+          "name": "LIT101",
+          "tool_returned_value": 30.0,
+          "oracle_value": 30.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T101",
+      "initial_state_name": "MID",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT101) reads nominal",
+          "kind": "sensor",
+          "name": "LIT101",
+          "tool_returned_value": 70.0,
+          "oracle_value": 70.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T101",
+      "initial_state_name": "HIGH",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT101) reads nominal",
+          "kind": "sensor",
+          "name": "LIT101",
+          "tool_returned_value": 90.0,
+          "oracle_value": 90.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T201",
+      "initial_state_name": "LOW",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT201) reads nominal",
+          "kind": "sensor",
+          "name": "LIT201",
+          "tool_returned_value": 30.0,
+          "oracle_value": 30.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T201",
+      "initial_state_name": "MID",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT201) reads nominal",
+          "kind": "sensor",
+          "name": "LIT201",
+          "tool_returned_value": 60.0,
+          "oracle_value": 60.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_level_T201",
+      "initial_state_name": "HIGH",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(LIT201) reads nominal",
+          "kind": "sensor",
+          "name": "LIT201",
+          "tool_returned_value": 90.0,
+          "oracle_value": 90.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "initial_state_name": "LOW",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT101) reads nominal",
+          "kind": "sensor",
+          "name": "FIT101",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "initial_state_name": "MID",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT101) reads nominal",
+          "kind": "sensor",
+          "name": "FIT101",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "initial_state_name": "HIGH",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT101) reads nominal",
+          "kind": "sensor",
+          "name": "FIT101",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "initial_state_name": "LOW",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT201) reads nominal",
+          "kind": "sensor",
+          "name": "FIT201",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "initial_state_name": "MID",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT201) reads nominal",
+          "kind": "sensor",
+          "name": "FIT201",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "initial_state_name": "HIGH",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(FIT201) reads nominal",
+          "kind": "sensor",
+          "name": "FIT201",
+          "tool_returned_value": 0.0,
+          "oracle_value": 0.0,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "initial_state_name": "LOW",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(AIT201) reads nominal",
+          "kind": "sensor",
+          "name": "AIT201",
+          "tool_returned_value": 0.3,
+          "oracle_value": 0.3,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "initial_state_name": "MID",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(AIT201) reads nominal",
+          "kind": "sensor",
+          "name": "AIT201",
+          "tool_returned_value": 0.3,
+          "oracle_value": 0.3,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "initial_state_name": "HIGH",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true,
+      "rejection_reasons": [],
+      "clause_results": [
+        {
+          "clause": "sensor(AIT201) reads nominal",
+          "kind": "sensor",
+          "name": "AIT201",
+          "tool_returned_value": 0.3,
+          "oracle_value": 0.3,
+          "gap": 0.0,
+          "eps_DT": 1.0,
+          "passed": true,
+          "reason": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

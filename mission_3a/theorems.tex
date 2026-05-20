@@ -1,0 +1,317 @@
+% theorems.tex --- PG-DSL theorem framework, Mission 3A T1 vectorization addendum.
+% Mission: mis_01KR49N65QSX03VYGC9SSSF325
+%
+% Status: T1_v formal statement is brain-produced (jrn_01KR4F6V8RD7YJJ55Z13JBMQXZ);
+% executor formalizes only. T2 statement unchanged from Mission 1A.
+% T3 statement unchanged; only witness-partition annotation updated per
+% dec_01KR49FTB2ND38DW36094G95ZM (Z3b option B canonical).
+%
+% This document COMPLEMENTS mission_1a/theorems.tex; it does not supersede it.
+% Mission 1A's T1 (n = 1, single-tank scalar form) is preserved verbatim and is
+% the consistency-check specialization of T1_v at n = 1.
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{cite}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\title{PG-DSL: T1 Vectorization for Composition-Aware Admission \\
+       \large{Theorem Framework (Mission 3A addendum)}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document extends the Mission 1A theorem framework (\texttt{mission\_1a/theorems.tex})
+with a vectorized form of T1, denoted T1${}_v$, accommodating the canonical PG-DSL
+admission layer's expanded admission domain introduced by Mission 3B (Z3b option B,
+\texttt{dec\_01KR49FTB2ND38DW36094G95ZM}). T1${}_v$ replaces the scalar physical-state
+distance $\delta$ with a per-coordinate vector $\delta_v$ on a state space
+$\Sigma \subseteq \mathbb{R}^{n}$ and a max-norm threshold $\|\delta_v\|_\infty$. The
+Mission 1A T1 is recovered as the $n = 1$ specialization. T2 (lifting soundness on a
+structured class) is unchanged. T3 (strict composition with runtime CPS-IDS) retains
+its strict-superset claim; only the witness partition shifts ($Z_3 \to A_{\text{static}}$,
+$W_1 + W_2 \to A_{\text{runtime}}$ per \texttt{dec\_01KR49FTB2ND38DW36094G95ZM}).
+A two-tank tractable model (\texttt{mission\_3a/tractable\_model\_v.md}) and verification
+script (\texttt{mission\_3a/t1\_v\_verify.py}) corroborate the bound numerically; the
+Z3 composition witness from Mission 3B sits provably in the detected region of T1${}_v$.
+\end{abstract}
+
+\section{Notation and Vectorization}
+\label{sec:notation}
+
+Let $\Sigma \subseteq \mathbb{R}^{n}$ denote the physical state space relevant to
+admission verification, with state coordinates indexed by
+$k \in \{1, \dots, n\}$. For the canonical SWaT P1+P2 substrate, state coordinates
+of interest at admission time are the level coordinates
+$(L_{T101}, L_{T201})$ ($n = 2$); the scalar Mission 1A model is the
+$n = 1$ projection.
+
+\paragraph{Admission target.}
+Under canonical PG-DSL (Mission 3B Option B,
+\texttt{dec\_01KR49FTB2ND38DW36094G95ZM}), the admission target $T$ ranges
+over either a single tool description $D_i$ or an ordered pair of tool
+descriptions $(D_i, D_j)$. The lifter $L_{\text{verify}}$ is unchanged
+(per-tool); the composition layer replays ordered pairs in the digital twin
+(DT) over a fixed horizon and an enumerated set of canonical initial states.
+
+\paragraph{Lifted vectorized claim.}
+The lifter produces, for each coordinate $k$, an admissible region
+$A_\varphi(k) \subseteq \mathbb{R}$ (or $\top$ if $\varphi_v$ does not name
+coordinate $k$). Composition admission additionally supplies an effective
+operating safe band $A_{\text{eff}}(k)$ from runtime safety knowledge; in
+practice $A_{\text{eff}}(k) = A_\varphi(k)$ when $\varphi_v$ names a band,
+else $A_{\text{eff}}(k)$ is the externally-provided safe band for coordinate
+$k$. For clarity, T1${}_v$ is stated against $A_{\text{eff}}(k)$.
+
+\paragraph{Per-coordinate discrepancy.}
+Define the per-coordinate trajectory discrepancy of the actual physical
+trajectory $\psi_v^{*}: [0, T_{\text{horizon}}] \to \Sigma$ from the
+admissible region as
+\[
+\delta_v[k] \;:=\;
+   \sup_{t \in [0,\, T_{\text{horizon}}]}
+   d_k\!\bigl( \psi_v^{*}(t)[k],\; A_{\text{eff}}(k)\bigr),
+\qquad
+d_k(x, [a,b]) := \max(0,\, x - b,\, a - x),
+\]
+with $d_k(x, \top) := 0$. Then
+$\delta_v = (\delta_v[1], \dots, \delta_v[n]) \in \mathbb{R}_{\geq 0}^{n}$.
+The vectorized magnitude reported to the matcher is the max-norm
+$\|\delta_v\|_\infty = \max_k \delta_v[k]$.
+
+\paragraph{Per-coordinate error bounds.}
+Let $\varepsilon_{L,v} \in \mathbb{R}_{\geq 0}^{n}$ denote the
+per-coordinate worst-case lifter semantic error on a structured class
+$\mathcal{C}$ (analogue of the scalar $\varepsilon_L$ from Mission 1A,
+indexed per coordinate). Let $\varepsilon_{DT,v} \in \mathbb{R}_{\geq 0}^{n}$
+denote the per-coordinate per-sample DT fidelity error. The per-coordinate
+matcher tolerance is $\varepsilon_v[k] := \varepsilon_{L,v}[k] + \varepsilon_{DT,v}[k]$.
+
+\section{T1${}_v$ --- Vectorized Detection Threshold}
+\label{sec:t1v}
+
+\begin{theorem}[T1${}_v$, Vectorized Detection Threshold]
+\label{thm:t1v}
+Let $L_{\text{verify}}$ have vectorized semantic error $\varepsilon_{L,v}$ on
+class $\mathcal{C}$ and let $\mathit{DT}$ have vectorized per-sample fidelity
+error $\varepsilon_{DT,v}$ (no Gaussian tail per coordinate). Set the
+vectorized matcher threshold $\tau^{*}_{v} := \|\varepsilon_{L,v} +
+\varepsilon_{DT,v}\|_\infty$. For any admission target $T$ (single tool or
+ordered tool pair) with lifted vectorized claim $\varphi_v$ and actual
+trajectory-projected physical effect $\psi_v^{*}$ whose vectorized
+discrepancy $\delta_v$ satisfies $\|\delta_v\|_\infty \geq \tau$ for some
+$\tau > 0$, PG-DSL's admission-time detection probability satisfies
+\[
+\Pr(\text{detect} \mid \|\delta_v\|_\infty \geq \tau)
+   \;\geq\;
+1 - F_v(\tau,\, \varepsilon_{L,v},\, \varepsilon_{DT,v}),
+\]
+where $F_v: \mathbb{R}_{\geq 0} \times \mathbb{R}_{\geq 0}^{n} \times
+\mathbb{R}_{\geq 0}^{n} \to [0, 1]$ is monotone non-increasing in $\tau$.
+Under bounded-error sensing,
+\[
+F_v(\tau,\,\varepsilon_{L,v},\,\varepsilon_{DT,v}) =
+\begin{cases}
+1 & \text{if } \tau < \delta^{*}_{v} \\
+0 & \text{if } \tau \geq \delta^{*}_{v}
+\end{cases},
+\qquad \delta^{*}_{v} = c_t \cdot \tau^{*}_{v} = 2\,\|\varepsilon_{L,v} + \varepsilon_{DT,v}\|_\infty,
+\]
+with $c_t = 2$. Below $\tau^{*}_{v}$ the matcher cannot fire deterministically;
+below $\delta^{*}_{v} = 2\,\tau^{*}_{v}$ adversarial bounded-error noise can
+drive the empirical max-norm under the threshold and detection is not
+guaranteed.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Per-coordinate triangle inequality, combined via max-norm.
+
+\textbf{Per-coordinate geometry.} Fix the description (or pair) $T$. For each
+coordinate $k$ where $\varphi_v$ supplies an admissible region $A_\varphi(k)$
+and the lifter's output yields predicted region $A_{\text{lifted}}(k)$ within
+$\varepsilon_{L,v}[k]$ of the ground-truth lifted intent (Hausdorff sense),
+the lifter's per-coordinate semantic error is bounded by
+$\varepsilon_{L,v}[k]$. The DT-measured trajectory $\psi_v(t)[k]$ lies within
+$\varepsilon_{DT,v}[k]$ of the actual plant trajectory $\psi_v^{*}(t)[k]$
+for all $t$.
+
+\textbf{Triangle inequality on coordinate $k$.} The DT-measured per-coordinate
+discrepancy $\hat{\delta}_v[k] := \sup_t d_k(\psi_v(t)[k], A_{\text{lifted}}(k))$
+satisfies
+\[
+   \delta_v[k] - \varepsilon_{L,v}[k] - \varepsilon_{DT,v}[k]
+\;\leq\;
+   \hat{\delta}_v[k]
+\;\leq\;
+   \delta_v[k] + \varepsilon_{L,v}[k] + \varepsilon_{DT,v}[k].
+\]
+
+\textbf{Matcher firing rule.} The matcher fires iff there exists a
+coordinate $k$ with $\hat{\delta}_v[k] > \varepsilon_v[k] =
+\varepsilon_{L,v}[k] + \varepsilon_{DT,v}[k]$, equivalently
+$\|\hat{\delta}_v\|_\infty > \tau^{*}_{v}$.
+
+\textbf{Detection guarantee.} If $\|\delta_v\|_\infty \geq \tau$ and the
+achieving coordinate $k^{*}$ has $\delta_v[k^{*}] = \|\delta_v\|_\infty
+\geq \tau$, the lower bracket gives
+$\hat{\delta}_v[k^{*}] \geq \tau - \varepsilon_v[k^{*}]$. Detection is
+guaranteed when $\tau - \varepsilon_v[k^{*}] > \varepsilon_v[k^{*}]$, i.e.,
+$\tau > 2\,\varepsilon_v[k^{*}]$. Taking the worst-case coordinate gives
+$\tau > 2\,\|\varepsilon_v\|_\infty = \delta^{*}_{v}$.
+
+\textbf{Impossibility region.} If $\|\delta_v\|_\infty < \tau^{*}_{v}$, then
+for every coordinate $k$, $\delta_v[k] < \varepsilon_v[k]$. The upper
+bracket gives $\hat{\delta}_v[k] \leq \delta_v[k] + \varepsilon_v[k] <
+2\,\varepsilon_v[k]$, but the matcher only requires
+$\hat{\delta}_v[k] > \varepsilon_v[k]$ to fire on coordinate $k$, so
+firing is possible on adversarial-friendly noise but not guaranteed for
+any. Between $\tau^{*}_{v}$ and $\delta^{*}_{v} = 2\,\tau^{*}_{v}$ the
+detection rate is empirically smooth (matcher fires for benign-side noise
+realizations and fails for adversarial-side ones).
+
+The bounded-error step form of $F_v$ follows: $F_v \equiv 1$ for
+$\tau < \delta^{*}_{v}$ and $F_v \equiv 0$ for $\tau \geq \delta^{*}_{v}$.
+\end{proof}
+
+\paragraph{Specialization to T1 (consistency check).}
+At $n = 1$, $\|\delta_v\|_\infty = \delta_v[1] = \delta$,
+$\tau^{*}_{v} = \varepsilon_{L,v}[1] + \varepsilon_{DT,v}[1] = \varepsilon_L
++ \varepsilon_{DT}$, and $\delta^{*}_{v} = 2\,(\varepsilon_L + \varepsilon_{DT})$.
+$F_v$ reduces to Mission 1A's scalar $F$. T1${}_v$ strictly generalizes T1.
+
+\paragraph{Concrete instantiation (PI-authorised, brain to validate).}
+On the two-tank tractable model (\texttt{mission\_3a/tractable\_model\_v.md}),
+we anchor $\varepsilon_{L,v} = (0.116, 0.116)\,\%$-full per coordinate
+(Req2LTL accuracy gap, both coordinates) and
+$\varepsilon_{DT,v} = (0.10, 0.10)\,\%$-full (Mission 3B per-sample sensor floor).
+Then
+\[
+\tau^{*}_{v} = \|\varepsilon_{L,v} + \varepsilon_{DT,v}\|_\infty
+            = 0.216\,\%\text{-full},
+\qquad
+\delta^{*}_{v} = 2\,\tau^{*}_{v} = 0.432\,\%\text{-full}.
+\]
+
+\section{Witness Construction --- Z3 in the Detected Region}
+\label{sec:z3-witness}
+
+The Z3 witness from Mission 3B
+(\texttt{mission\_2a/witnesses/run\_witness\_z3.py},
+\texttt{mission\_3b/attacks/z3\_simulator.py}) is a composition-only attack
+on the two-tank substrate.
+
+\paragraph{Setup.} Initial state $(L_{T101}, L_{T201}) = (90, \text{nominal})$,
+$V_{\text{couple}} = \text{closed}$, all P1 actuators idle. Admission target
+is the ordered pair $(\text{open\_valve\_MV101},\,\text{start\_pump\_P101})$.
+Each constituent admits per-tool: lifted $\varphi_v$ contains only single-actuator
+clauses $\text{actuator}(V_{\text{in1}}) := \text{open}$ and
+$\text{actuator}(P_1) := \text{on}$; per-tool DT replay from canonical MID
+initial state shows zero level effect (the prerequisite actuator is unset).
+
+\paragraph{Composition replay.} The Mission 3B canonical layer
+(\texttt{mission\_3b/admission\_layer/composition\_verifier.py}) replays
+the ordered pair from each of $\{\text{LOW},\,\text{MID},\,\text{HIGH}\}$.
+Under HIGH initial state $L_{T101} = 90$, with $V_{\text{couple}} = \text{closed}$,
+net inflow drives $L_{T101}$ at rate $1.0\,\%$-full/s; the trajectory
+exits the safe band $A_{\text{eff}}(L_{T101}) = [25, 95]$ at $t = 11\,\mathrm{s}$
+and reaches the OVERFLOW predicate $L_{T101} \geq 99.5$ at $t = 19\,\mathrm{s}$.
+
+\paragraph{Vectorized discrepancy.}
+\[
+\delta_v[L_{T101}] = \max_t d\bigl(L_{T101}(t),\, [25, 95]\bigr)
+                   = 99.5 - 95
+                   = 4.5\,\%\text{-full}, \quad
+\delta_v[L_{T201}] = 0
+\;\Rightarrow\;
+\|\delta_v\|_\infty = 4.5\,\%\text{-full}.
+\]
+
+\paragraph{Detection verdict under T1${}_v$.}
+$\|\delta_v\|_\infty = 4.5 \gg \delta^{*}_{v} = 0.432\,\%\text{-full}$
+($\sim 10.4\times$ above threshold). T1${}_v$ predicts
+$F_v(4.5,\,\varepsilon_{L,v},\,\varepsilon_{DT,v}) = 0$, i.e.,
+$\Pr(\text{detect}) \geq 1$ under any bounded-error noise realization.
+Mission 3B empirical: Z3 caught at admission via composition pair on HIGH
+initial state, consistent with T1${}_v$. \hfill$\square$
+
+\section{T2 --- Unchanged}
+
+The T2 statement (lifting soundness on class $\mathcal{C}$,
+\texttt{mission\_1a/theorems.tex} \S T2) is unaffected by the admission-domain
+expansion. T2 governs how single tool descriptions lift to formal claims;
+composition admission operates on already-lifted single-tool claims and does
+not change the lifting step. The Mission 1A bound
+$\delta_{\text{lift}} \leq \delta_{\text{cov}}(\mathcal{C}, L_{\text{verify}})
++ \delta_{\text{gram}}(\mathcal{C})$ remains the per-tool soundness statement.
+
+\section{T3 --- Strict Composition with Annotated Witness Partition}
+\label{sec:t3}
+
+The T3 statement (\texttt{mission\_1a/theorems.tex} \S T3) is unchanged: PG-DSL
+composed with a runtime CPS-IDS detects strictly more attacks than either
+alone, with $A_{\text{static}} \setminus A_{\text{runtime}} \neq \emptyset$
+and $A_{\text{runtime}} \setminus A_{\text{static}} \neq \emptyset$.
+
+\paragraph{Witness partition under canonical PG-DSL (post-Option B).}
+Per \texttt{dec\_01KR49FTB2ND38DW36094G95ZM} and Mission 3B's empirical
+T3 partition (\texttt{mission\_3b/results/t3\_partition\_canonical.json}):
+\begin{align*}
+A_{\text{static}} \setminus A_{\text{runtime}}
+   &= \{A_2\} \quad
+        \text{(magnitude poisoning --- caught by single-tool DT verifier;}\\[-2pt]
+   &\qquad\qquad \text{INVARLLM misses sub-noise-floor underdose)} \\
+A_{\text{runtime}} \setminus A_{\text{static}}
+   &= \{W_1,\, W_2\} \quad
+        \text{(stealth drain + post-admission spoofing ---}\\[-2pt]
+   &\qquad\qquad \text{outside ordered-pair admission scope)} \\
+A_{\text{static}} \cap A_{\text{runtime}}
+   &= \{A_1,\, A_3,\, Z_1,\, Z_2,\, Z_3\} \\
+A_{\text{static}} \cup A_{\text{runtime}}
+   &= \{A_1, A_2, A_3, W_1, W_2, Z_1, Z_2, Z_3\} \;=\; 8/8 \text{ canonical attack set}
+\end{align*}
+Both set differences are non-empty; the strict-superset claim of T3 is
+preserved. $Z_3$ joins the intersection (caught by both canonical admission
+and INVARLLM) rather than the runtime-only column it would occupy under
+the Mission 1A--2C single-tool-only admission. The Mission 3A tractable
+verification (\S\ref{sec:t1v}, \S\ref{sec:z3-witness}) confirms $Z_3$
+sits in the detected region of T1${}_v$.
+
+\section{Numerical Verification}
+
+\texttt{mission\_3a/t1\_v\_verify.py} samples composition attacks with
+parametrized $\|\delta_v\|_\infty$ on the two-tank tractable model
+(\texttt{mission\_3a/tractable\_model\_v.md}); for each magnitude bin it
+runs the lifter $\to$ DT $\to$ vectorized matcher pipeline, recording
+the empirical detection rate. \texttt{mission\_3a/results/detection\_rate\_plot\_v.png}
+overlays the empirical curve on the theoretical
+$1 - F_v(\tau,\,\varepsilon_{L,v},\,\varepsilon_{DT,v})$ step under
+bounded-error sensing. The empirical curve sits at or above the bound for
+all $\tau$, confirming non-vacuity. The Z3 witness lies far inside the
+detected region ($\|\delta_v\|_\infty = 4.5 \gg \delta^{*}_{v} = 0.432$).
+\texttt{mission\_3a/results/t1\_v\_witnesses.json} records concrete
+$(\tau,\,\varepsilon_{L,v},\,\varepsilon_{DT,v})$ instances for both the
+detected and undetectable regimes.
+
+\section{Cross-References}
+
+\begin{itemize}
+\item Brain T1${}_v$ statement source-of-truth: \texttt{jrn\_01KR4F6V8RD7YJJ55Z13JBMQXZ}
+\item Z3b option-B canonical decision: \texttt{dec\_01KR49FTB2ND38DW36094G95ZM}
+\item Mission 3B canonical pipeline: \texttt{mission\_3b/admission\_layer/}
+\item Mission 3B canonical results: \texttt{jrn\_01KR4BGR32R2XX6PK671WQER7B}
+\item Mission 1A T1 (consistency check at $n=1$): \texttt{mission\_1a/theorems.tex} \S T1
+\item Mission 1A tractable model: \texttt{mission\_1a/tractable\_model.md}
+\item Two-tank tractable model: \texttt{mission\_3a/tractable\_model\_v.md}
+\end{itemize}
+
+\end{document}

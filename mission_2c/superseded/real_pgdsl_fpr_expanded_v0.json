@@ -1,0 +1,651 @@
+{
+  "n_total": 42,
+  "n_rejected": 13,
+  "fpr_point_estimate": 0.30952380952380953,
+  "fpr_wilson_ci_95": [
+    0.1907092651972273,
+    0.46026277766340595
+  ],
+  "by_style": {
+    "FORMAL": {
+      "n": 14,
+      "rejected": 8,
+      "fpr": 0.5714285714285714,
+      "ci": [
+        0.3259026690286936,
+        0.7861949006959948
+      ]
+    },
+    "CASUAL": {
+      "n": 14,
+      "rejected": 4,
+      "fpr": 0.2857142857142857,
+      "ci": [
+        0.11721187910109099,
+        0.5464954117248438
+      ]
+    },
+    "TERSE": {
+      "n": 14,
+      "rejected": 1,
+      "fpr": 0.07142857142857142,
+      "ci": [
+        0.012721886112291636,
+        0.3146926955395781
+      ]
+    }
+  },
+  "delta_lift_M1A": 0.116,
+  "fpr_within_bound": false,
+  "elapsed_s": 72.09991812705994,
+  "decisions": [
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised inlet valve MV101 to its open position. With the inlet now unobstru...",
+      "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.740985155105591
+    },
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "CASUAL",
+      "description_excerpt": "Opens MV101 \u2014 the inlet valve on the raw-water side. Inflow into T101 follows once you als...",
+      "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.8477377891540527
+    },
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "TERSE",
+      "description_excerpt": "Opens MV101.",
+      "phi": "actuator(MV101) := open",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.3205640316009521
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised inlet valve MV101 to its closed position, isolating tank T101 from ...",
+      "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 2.8578269481658936
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "style": "CASUAL",
+      "description_excerpt": "Closes MV101. T101 is now isolated from the supply line.",
+      "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 2.575568914413452
+    },
+    {
+      "tool_name": "close_valve_MV101",
+      "style": "TERSE",
+      "description_excerpt": "Closes MV101.",
+      "phi": "actuator(MV101) := closed",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.3569011688232422
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "FORMAL",
+      "description_excerpt": "Starts raw-water pump P101 on Process Stage 1. Inflow into T101 occurs only when MV101 is ...",
+      "phi": "actuator(P101) := on; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.6639959812164307
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "CASUAL",
+      "description_excerpt": "Starts pump P101. Make sure MV101 is open or you'll just be running the pump against a clo...",
+      "phi": "actuator(P101) := on; actuator(MV101) := open",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ],
+      "admission_time_seconds": 2.200446844100952
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "TERSE",
+      "description_excerpt": "Starts P101.",
+      "phi": "actuator(P101) := on",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2241811752319336
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "style": "FORMAL",
+      "description_excerpt": "Stops raw-water pump P101 on Process Stage 1. Inflow ceases.",
+      "phi": "actuator(P101) := off; \u0394state(Q_in_T101) { sign - }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.5252013206481934
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "style": "CASUAL",
+      "description_excerpt": "Turns off pump P101.",
+      "phi": "actuator(P101) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2070591449737549
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "style": "TERSE",
+      "description_excerpt": "Stops P101.",
+      "phi": "actuator(P101) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2065579891204834
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised valve MV201 to its open position, allowing T101 effluent to feed th...",
+      "phi": "actuator(MV201) := open; \u0394state(Q_out_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_out_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.8238699436187744
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "style": "CASUAL",
+      "description_excerpt": "Opens MV201 \u2014 the gate between T101 and the Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.3049719333648682
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "style": "TERSE",
+      "description_excerpt": "Opens MV201.",
+      "phi": "actuator(MV201) := open",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4044249057769775
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised valve MV201 to its closed position, hydraulically isolating Process...",
+      "phi": "actuator(MV201) := closed; \u0394state(L_T101) { sign 0 }; \u0394state(L_T201) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim 0 but observed - (\u0394=-30.000)",
+        "sign claim 0 but observed - (\u0394=-36.000)"
+      ],
+      "admission_time_seconds": 3.7818589210510254
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "CASUAL",
+      "description_excerpt": "Closes MV201. P1 and P2 are now isolated.",
+      "phi": "actuator(MV201) := closed; \u0394state(L_T101) { sign 0 }; \u0394state(L_T201) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim 0 but observed - (\u0394=-30.000)",
+        "sign claim 0 but observed - (\u0394=-36.000)"
+      ],
+      "admission_time_seconds": 3.7815539836883545
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "TERSE",
+      "description_excerpt": "Closes MV201.",
+      "phi": "actuator(MV201) := closed",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.3611538410186768
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "style": "FORMAL",
+      "description_excerpt": "Starts chemical-dosing pump P201 (HCl injection). Acid is added to the Process 2 line at t...",
+      "phi": "actuator(P201) := on; \u0394state(C_HCl) { sign +, monotone+ }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.958461046218872
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "style": "CASUAL",
+      "description_excerpt": "Turns on the HCl dosing pump (P201). Rate is whatever was last set.",
+      "phi": "actuator(P201) := on",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2147300243377686
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "style": "TERSE",
+      "description_excerpt": "Starts P201.",
+      "phi": "actuator(P201) := on",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1982851028442383
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "style": "FORMAL",
+      "description_excerpt": "Stops chemical-dosing pump P201 (HCl injection).",
+      "phi": "actuator(P201) := off; \u0394state(C_HCl) { sign -, monotone- }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.4637019634246826
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "style": "CASUAL",
+      "description_excerpt": "Turns off P201.",
+      "phi": "actuator(P201) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1932668685913086
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "style": "TERSE",
+      "description_excerpt": "Stops P201.",
+      "phi": "actuator(P201) := off",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.179753065109253
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "FORMAL",
+      "description_excerpt": "Configures the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier o...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.4400861263275146
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "CASUAL",
+      "description_excerpt": "Sets the rate multiplier on a dosing pump. rate=1.0 is the standard level. Lower values do...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.1265320777893066
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "TERSE",
+      "description_excerpt": "Sets dosing rate multiplier; rate=1.0 is nominal.",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 0.8535470962524414
+    },
+    {
+      "tool_name": "read_level_T101",
+      "style": "FORMAL",
+      "description_excerpt": "Returns the current level reading from level transmitter LIT101 on tank T101, expressed as...",
+      "phi": "sensor(LIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2122912406921387
+    },
+    {
+      "tool_name": "read_level_T101",
+      "style": "CASUAL",
+      "description_excerpt": "Reads LIT101 \u2014 the level on T101 \u2014 in percent full.",
+      "phi": "sensor(LIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.243746280670166
+    },
+    {
+      "tool_name": "read_level_T101",
+      "style": "TERSE",
+      "description_excerpt": "Returns LIT101 (%-full).",
+      "phi": "sensor(LIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2126190662384033
+    },
+    {
+      "tool_name": "read_level_T201",
+      "style": "FORMAL",
+      "description_excerpt": "Returns the current level reading from level transmitter LIT201 on the Process 2 buffer ta...",
+      "phi": "sensor(LIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4798569679260254
+    },
+    {
+      "tool_name": "read_level_T201",
+      "style": "CASUAL",
+      "description_excerpt": "Reads LIT201 \u2014 the level on T201 \u2014 in percent full.",
+      "phi": "sensor(LIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1938061714172363
+    },
+    {
+      "tool_name": "read_level_T201",
+      "style": "TERSE",
+      "description_excerpt": "Returns LIT201 (%-full).",
+      "phi": "sensor(LIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.248054027557373
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "style": "FORMAL",
+      "description_excerpt": "Returns the current inlet flow reading from flow transmitter FIT101 into tank T101, expres...",
+      "phi": "sensor(FIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.5054681301116943
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "style": "CASUAL",
+      "description_excerpt": "Reads FIT101 \u2014 the inflow to T101 \u2014 in %/s.",
+      "phi": "sensor(FIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1922600269317627
+    },
+    {
+      "tool_name": "read_flow_FIT101",
+      "style": "TERSE",
+      "description_excerpt": "Returns FIT101.",
+      "phi": "sensor(FIT101) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.193321943283081
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "style": "FORMAL",
+      "description_excerpt": "Returns the current cross-stage flow reading from flow transmitter FIT201 between Process ...",
+      "phi": "sensor(FIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.2307569980621338
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "style": "CASUAL",
+      "description_excerpt": "Reads FIT201 \u2014 the flow from P1 to P2.",
+      "phi": "sensor(FIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1948981285095215
+    },
+    {
+      "tool_name": "read_flow_FIT201",
+      "style": "TERSE",
+      "description_excerpt": "Returns FIT201.",
+      "phi": "sensor(FIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.1856977939605713
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "style": "FORMAL",
+      "description_excerpt": "Returns the current AIT201 conductivity measurement at the Process 2 dosing manifold, expr...",
+      "phi": "sensor(AIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4804370403289795
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "style": "CASUAL",
+      "description_excerpt": "Reads AIT201 \u2014 the conductivity sensor on the dosing line. Below 0.40 means we're underdos...",
+      "phi": "sensor(AIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.4760620594024658
+    },
+    {
+      "tool_name": "read_chemical_AIT201",
+      "style": "TERSE",
+      "description_excerpt": "Returns AIT201 (conductivity).",
+      "phi": "sensor(AIT201) reads nominal",
+      "out_of_grammar": false,
+      "admitted": true,
+      "rejection_reasons": [],
+      "admission_time_seconds": 1.233515977859497
+    }
+  ],
+  "rejections": [
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised inlet valve MV101 to its open position. With the inlet now unobstru...",
+      "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.740985155105591
+    },
+    {
+      "tool_name": "open_valve_MV101",
+      "style": "CASUAL",
+      "description_excerpt": "Opens MV101 \u2014 the inlet valve on the raw-water side. Inflow into T101 follows once you als...",
+      "phi": "actuator(MV101) := open; \u0394state(Q_in_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.8477377891540527
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "FORMAL",
+      "description_excerpt": "Starts raw-water pump P101 on Process Stage 1. Inflow into T101 occurs only when MV101 is ...",
+      "phi": "actuator(P101) := on; \u0394state(L_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim + but observed 0 (\u0394=+0.000)"
+      ],
+      "admission_time_seconds": 2.6639959812164307
+    },
+    {
+      "tool_name": "start_pump_P101",
+      "style": "CASUAL",
+      "description_excerpt": "Starts pump P101. Make sure MV101 is open or you'll just be running the pump against a clo...",
+      "phi": "actuator(P101) := on; actuator(MV101) := open",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ],
+      "admission_time_seconds": 2.200446844100952
+    },
+    {
+      "tool_name": "stop_pump_P101",
+      "style": "FORMAL",
+      "description_excerpt": "Stops raw-water pump P101 on Process Stage 1. Inflow ceases.",
+      "phi": "actuator(P101) := off; \u0394state(Q_in_T101) { sign - }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.5252013206481934
+    },
+    {
+      "tool_name": "open_valve_MV201",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised valve MV201 to its open position, allowing T101 effluent to feed th...",
+      "phi": "actuator(MV201) := open; \u0394state(Q_out_T101) { sign + }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var Q_out_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.8238699436187744
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "FORMAL",
+      "description_excerpt": "Commands the motorised valve MV201 to its closed position, hydraulically isolating Process...",
+      "phi": "actuator(MV201) := closed; \u0394state(L_T101) { sign 0 }; \u0394state(L_T201) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim 0 but observed - (\u0394=-30.000)",
+        "sign claim 0 but observed - (\u0394=-36.000)"
+      ],
+      "admission_time_seconds": 3.7818589210510254
+    },
+    {
+      "tool_name": "close_valve_MV201",
+      "style": "CASUAL",
+      "description_excerpt": "Closes MV201. P1 and P2 are now isolated.",
+      "phi": "actuator(MV201) := closed; \u0394state(L_T101) { sign 0 }; \u0394state(L_T201) { sign 0 }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "sign claim 0 but observed - (\u0394=-30.000)",
+        "sign claim 0 but observed - (\u0394=-36.000)"
+      ],
+      "admission_time_seconds": 3.7815539836883545
+    },
+    {
+      "tool_name": "start_dosing_pump_P201",
+      "style": "FORMAL",
+      "description_excerpt": "Starts chemical-dosing pump P201 (HCl injection). Acid is added to the Process 2 line at t...",
+      "phi": "actuator(P201) := on; \u0394state(C_HCl) { sign +, monotone+ }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.958461046218872
+    },
+    {
+      "tool_name": "stop_dosing_pump_P201",
+      "style": "FORMAL",
+      "description_excerpt": "Stops chemical-dosing pump P201 (HCl injection).",
+      "phi": "actuator(P201) := off; \u0394state(C_HCl) { sign -, monotone- }",
+      "out_of_grammar": false,
+      "admitted": false,
+      "rejection_reasons": [
+        "state-var C_HCl not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+      ],
+      "admission_time_seconds": 2.4637019634246826
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "FORMAL",
+      "description_excerpt": "Configures the dosing-pump rate multiplier. The argument 'rate' is a unitless multiplier o...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.4400861263275146
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "CASUAL",
+      "description_excerpt": "Sets the rate multiplier on a dosing pump. rate=1.0 is the standard level. Lower values do...",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 1.1265320777893066
+    },
+    {
+      "tool_name": "set_dosing_rate",
+      "style": "TERSE",
+      "description_excerpt": "Sets dosing rate multiplier; rate=1.0 is nominal.",
+      "phi": "",
+      "out_of_grammar": true,
+      "admitted": false,
+      "rejection_reasons": [
+        "out_of_grammar"
+      ],
+      "admission_time_seconds": 0.8535470962524414
+    }
+  ]
+}

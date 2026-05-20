@@ -1,0 +1,661 @@
+{
+  "reps_per_attack": 10,
+  "by_attack": {
+    "a_type_confusion_overflow": [
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 0,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 1,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 2,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 3,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 4,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 5,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 6,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 7,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 8,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      },
+      {
+        "attack": "a_type_confusion_overflow",
+        "rep": 9,
+        "poisoned_tools": [
+          "close_valve_MV101",
+          "open_valve_MV101"
+        ],
+        "poisoned_rejected": [
+          "open_valve_MV101",
+          "close_valve_MV101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "open_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ],
+          "close_valve_MV101": [
+            "sign claim - but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 12,
+        "tools_total": 14
+      }
+    ],
+    "b_magnitude_poisoning_underdose": [
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 0,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 1,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 2,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 3,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 4,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 5,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 6,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 7,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 8,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "b_magnitude_poisoning_underdose",
+        "rep": 9,
+        "poisoned_tools": [
+          "set_dosing_rate"
+        ],
+        "poisoned_rejected": [
+          "set_dosing_rate"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "set_dosing_rate": [
+            "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      }
+    ],
+    "c_sensor_aliasing_violation": [
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 0,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 1,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 2,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 3,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 4,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 5,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 6,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 7,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 8,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      },
+      {
+        "attack": "c_sensor_aliasing_violation",
+        "rep": 9,
+        "poisoned_tools": [
+          "read_level_T101"
+        ],
+        "poisoned_rejected": [
+          "read_level_T101"
+        ],
+        "poisoned_admitted_INCORRECTLY": [],
+        "benign_collateral_rejections": [],
+        "rejection_reasons_per_tool": {
+          "read_level_T101": [
+            "sensor mismatch: claim names LIT101, tool returns LIT201"
+          ]
+        },
+        "defense_succeeds": true,
+        "tools_admitted": 13,
+        "tools_total": 14
+      }
+    ]
+  }
+}

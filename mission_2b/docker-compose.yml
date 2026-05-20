@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  evaluation:
+    build:
+      context: ..
+      dockerfile: mission_2b/Dockerfile
+    image: pgdsl:mission_2b
+    container_name: pgdsl-mission2b
+    volumes:
+      - ./results:/pgdsl/mission_2b/results
+      - ./evaluation/tables:/pgdsl/mission_2b/evaluation/tables
+      - ./evaluation/figures:/pgdsl/mission_2b/evaluation/figures
+    command: ["bash", "-c", "cd /pgdsl/mission_2b && \
+              python evaluation/run_pgdsl_fpr_expanded.py && \
+              python evaluation/run_t3_composition.py && \
+              python evaluation/run_mcpshield_eval.py && \
+              python evaluation/run_lverify_adversarial.py && \
+              python evaluation/build_tables_and_figures.py"]
+
+  notebook:
+    build:
+      context: ..
+      dockerfile: mission_2b/Dockerfile
+    image: pgdsl:mission_2b
+    container_name: pgdsl-notebook-2b
+    volumes:
+      - ./:/pgdsl/mission_2b
+    ports:
+      - "8890:8888"
+    command: >
+      jupyter notebook
+        --ip=0.0.0.0
+        --port=8888
+        --no-browser
+        --allow-root
+        --NotebookApp.token=''
+        --NotebookApp.password=''
+        --notebook-dir=/pgdsl/mission_2b

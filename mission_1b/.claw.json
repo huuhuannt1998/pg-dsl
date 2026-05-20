@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "defaultMode": "dontAsk"
+  },
+  "mcpServers": {
+    "swat": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["-m", "mcp_server"],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

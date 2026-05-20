@@ -1,0 +1,33 @@
+# Mission 1B testbed orchestration.
+# Usage:
+#   docker-compose up testbed       # run the ASR campaign once
+#   docker-compose run testbed bash # interactive shell for ad-hoc runs
+#   docker-compose run notebook     # Jupyter on http://localhost:8888
+
+version: "3.8"
+
+services:
+  testbed:
+    build: .
+    image: pgdsl-testbed:mission_1b
+    container_name: pgdsl-testbed
+    volumes:
+      - ./results:/testbed/results
+    command: ["python", "experiments/run_asr.py", "--reps", "10"]
+
+  notebook:
+    build: .
+    image: pgdsl-testbed:mission_1b
+    container_name: pgdsl-notebook
+    volumes:
+      - ./:/testbed
+    ports:
+      - "8888:8888"
+    command: >
+      jupyter notebook
+        --ip=0.0.0.0
+        --port=8888
+        --no-browser
+        --allow-root
+        --NotebookApp.token=''
+        --NotebookApp.password=''

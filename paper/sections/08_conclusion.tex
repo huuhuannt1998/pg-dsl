@@ -1,0 +1,26 @@
+\section{Conclusion}
+\label{sec:conc}
+% =====================================================================
+
+We presented PG-DSL, a physics-grounded admission-time defence
+against description-channel poisoning of LLM-controlled industrial
+CPS. PG-DSL avoids agent-verification undecidability
+\cite{trust_auth_sok} and LLM-judge manipulability
+\cite{gaming_judge} by verifying a narrower object: the bounded
+tool implementation under a digital-twin replay. We formalized three
+conditional properties (T1${}_v$, T2, T3) under bounded DT fidelity
+and a restricted CPS-description grammar, and evaluated on a SWaT
+P1+P2 substrate: $0/42$ benign per-tool admission checks
+(Wilson 95\%~CI~$[0, 8.38]\%$), $0.44\%$ per-style FPR on a
+$227$-paraphrase out-of-family corpus (CI~$[0.08, 2.45]\%$), $6/8$
+canonical attacks blocked at admission, $8/8$ composed coverage with
+INVARLLM. An MSB-adapted cross-benchmark Pareto-dominates MCPShield;
+cross-model T3 validation across two LLM families preserves the
+locked witness partition; an $N=10$ real-agent operational-condition
+sweep blocks A1 end-to-end while confirming W2 outside admission
+scope. Future work: sensor-identity admission hardening and
+ensemble-lifter approaches for SA, multi-stage extension to SWaT
+P3--P6, formal verification of the lifter core, and additional CPS
+substrates. The artifact and provenance map are released alongside
+the paper.
+

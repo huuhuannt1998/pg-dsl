@@ -1,0 +1,41 @@
+# Mission 2A PG-DSL admission-control orchestration.
+# Layered on top of Mission 1B's testbed (which the Dockerfile pulls in).
+#
+# Usage:
+#   docker-compose up pgdsl              # full defense + benign campaigns
+#   docker-compose run pgdsl bash        # interactive shell
+#   docker-compose run notebook          # Jupyter on http://localhost:8889
+version: "3.8"
+
+services:
+  pgdsl:
+    build:
+      context: ..
+      dockerfile: mission_2a/Dockerfile
+    image: pgdsl:mission_2a
+    container_name: pgdsl-mission2a
+    volumes:
+      - ./results:/pgdsl/mission_2a/results
+    command: ["bash", "-c", "cd /pgdsl/mission_2a && \
+              python experiments/run_defense_asr.py && \
+              python experiments/run_benign_fpr.py"]
+
+  notebook:
+    build:
+      context: ..
+      dockerfile: mission_2a/Dockerfile
+    image: pgdsl:mission_2a
+    container_name: pgdsl-notebook-2a
+    volumes:
+      - ./:/pgdsl/mission_2a
+    ports:
+      - "8889:8888"
+    command: >
+      jupyter notebook
+        --ip=0.0.0.0
+        --port=8888
+        --no-browser
+        --allow-root
+        --NotebookApp.token=''
+        --NotebookApp.password=''
+        --notebook-dir=/pgdsl/mission_2a
