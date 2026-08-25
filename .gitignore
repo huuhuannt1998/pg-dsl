@@ -47,9 +47,10 @@ mission_2d/agent_traces/python_mcp_sdk/*_def.snapshots.jsonl
 .cache/
 
 # Out-of-scope subprojects not part of the PG-DSL artifact
-claw-code-local/             # deprecated local agent fork; PG-DSL uses
-                             # the official Python MCP SDK (mission_2d)
-overleaf-example/            # paper-template reference only
+# deprecated local agent fork; PG-DSL uses the official Python MCP SDK (mission_2d)
+claw-code-local/
+# paper-template reference only
+overleaf-example/
 
 # Internal review documents (not part of public release)
 pg_dsl_presubmission_review.md
@@ -57,3 +58,13 @@ pg_dsl_presubmission_review.md
 # Paper LaTeX source kept separate from the public artifact
 paper/
 
+# Manuscript working folders, review tooling, and non-technical write-ups.
+# Kept local: these are drafting/reporting artifacts, not part of the
+# reproducible PG-DSL artifact.
+(ACSAC 2026) PG-DSL_ Physics-Grounded Description Lifting for Admission-Time Defence of LLM-Controlled Industrial Cyber-Physical Systems/
+(ACSAC 2026) PG-DSL_ Physics-Grounded Description Lifting for Admission-Time Defence of LLM-Controlled Industrial Cyber-Physical Systems.zip
+(ACSAC 2026) PG-DSL_ ver2/
+ai-cyber-paper-reviewer/
+manuscript_revision_prompt_template.md
+PG-DSL_plain_english_report.md
+PG-DSL_advisor_questions_plain_english.md
