@@ -1,0 +1,87 @@
+{
+  "preregistered": "N3.1-N3.4",
+  "n3_1_all_H1": true,
+  "actuator_swap_postState": 4,
+  "actuator_swap_cmdlog": 8,
+  "benign_fp": [],
+  "by_class_baseline_vs_cmdlog": {
+    "M2_actuator_invert": {
+      "baseline": 8,
+      "cmdlog": 8,
+      "n": 8
+    },
+    "M6_state_conditional": {
+      "baseline": 0,
+      "cmdlog": 0,
+      "n": 16
+    },
+    "M7_time_delayed": {
+      "baseline": 0,
+      "cmdlog": 0,
+      "n": 16
+    },
+    "M8_extra_side_effect": {
+      "baseline": 0,
+      "cmdlog": 0,
+      "n": 22
+    },
+    "M3_magnitude_scale": {
+      "baseline": 4,
+      "cmdlog": 4,
+      "n": 4
+    },
+    "M4_sensor_swap_honest_label": {
+      "baseline": 30,
+      "cmdlog": 30,
+      "n": 30
+    },
+    "M5_sensor_swap_lying_label": {
+      "baseline": 24,
+      "cmdlog": 24,
+      "n": 30
+    }
+  },
+  "new_total": 74,
+  "rows": [
+    {
+      "tool": "open_valve_MV101",
+      "phi": "actuator(MV101) := open",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "phi": "actuator(MV101) := closed",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "phi": "actuator(MV201) := open",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "phi": "actuator(MV201) := closed",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "phi": "actuator(P101) := on",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "phi": "actuator(P101) := off",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "phi": "actuator(P201) := on",
+      "detected_cmdlog": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "phi": "actuator(P201) := off",
+      "detected_cmdlog": true
+    }
+  ]
+}

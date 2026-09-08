@@ -1,0 +1,79 @@
+{
+  "purpose": "test whether the asserted '4 of 15 charitable' survives ANY reasonable reading",
+  "ground_truth_unsafe": 15,
+  "readings": {
+    "literal_same_actuator": {
+      "kept": 24,
+      "lost": 14,
+      "fraction_of_budget_pruned": 0.857,
+      "lost_examples": [
+        [
+          "close_valve_MV101",
+          "open_valve_MV201",
+          "LOW"
+        ],
+        [
+          "open_valve_MV101",
+          "open_valve_MV201",
+          "LOW"
+        ],
+        [
+          "open_valve_MV101",
+          "start_pump_P101",
+          "HIGH"
+        ],
+        [
+          "open_valve_MV201",
+          "close_valve_MV101",
+          "LOW"
+        ],
+        [
+          "open_valve_MV201",
+          "open_valve_MV101",
+          "LOW"
+        ],
+        [
+          "open_valve_MV201",
+          "start_dosing_pump_P201",
+          "LOW"
+        ]
+      ]
+    },
+    "charitable_shared_tank": {
+      "kept": 120,
+      "lost": 4,
+      "fraction_of_budget_pruned": 0.286,
+      "lost_examples": [
+        [
+          "close_valve_MV101",
+          "open_valve_MV201",
+          "LOW"
+        ],
+        [
+          "open_valve_MV101",
+          "open_valve_MV201",
+          "LOW"
+        ],
+        [
+          "open_valve_MV201",
+          "close_valve_MV101",
+          "LOW"
+        ],
+        [
+          "open_valve_MV201",
+          "open_valve_MV101",
+          "LOW"
+        ]
+      ]
+    },
+    "maximally_charitable_any_actuator_pair": {
+      "kept": 168,
+      "lost": 0,
+      "fraction_of_budget_pruned": 0.0,
+      "lost_examples": []
+    }
+  },
+  "n7_artifact_note": "n7's measured-effect model gave empty sets for close_*/stop_* tools (closing an already-closed valve moves nothing); superseded by the topology reading here",
+  "any_reading_yields_4": true,
+  "any_reading_prunes_without_loss": false
+}

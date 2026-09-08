@@ -1,0 +1,153 @@
+{
+  "granularity": "42 per-tool-per-state cells from the shipped pipeline",
+  "supersedes": "n1_perturbed_twin.json benign_flips (14-tool granularity, proxy verdict fn)",
+  "n_twins": 18,
+  "total_benign_verdicts": 756,
+  "induced_flips": 0,
+  "rows": [
+    {
+      "twin": "nominal",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "flow0.8",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "flow0.9",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "flow1.1",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "flow1.2",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "lat1s",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "lat2s",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "lat5s",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "lat10s",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "chem0.8",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "chem0.9",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "chem1.1",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "chem1.2",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "drift0.005",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "drift0.01",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "drift0.02",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "corner_slow",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    },
+    {
+      "twin": "corner_fast",
+      "n_cells": 42,
+      "rejected_cells": 0,
+      "rejected": [],
+      "flips_vs_nominal": 0,
+      "flipped": []
+    }
+  ]
+}

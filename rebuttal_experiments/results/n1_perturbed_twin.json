@@ -1,0 +1,150 @@
+{
+  "preregistered": "N1.1-N1.6",
+  "gate_passed": true,
+  "twins": [
+    {
+      "twin": "nominal",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.0
+    },
+    {
+      "twin": "flow0.8",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 9.6
+    },
+    {
+      "twin": "flow0.9",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 4.8
+    },
+    {
+      "twin": "flow1.1",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 4.8
+    },
+    {
+      "twin": "flow1.2",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 9.6
+    },
+    {
+      "twin": "lat1s",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.4
+    },
+    {
+      "twin": "lat2s",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.8
+    },
+    {
+      "twin": "lat5s",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 2.0
+    },
+    {
+      "twin": "lat10s",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 4.0
+    },
+    {
+      "twin": "chem0.8",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.0
+    },
+    {
+      "twin": "chem0.9",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.0
+    },
+    {
+      "twin": "chem1.1",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.0
+    },
+    {
+      "twin": "chem1.2",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.0
+    },
+    {
+      "twin": "drift0.005",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 0.6
+    },
+    {
+      "twin": "drift0.01",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 1.2
+    },
+    {
+      "twin": "drift0.02",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 2.4
+    },
+    {
+      "twin": "corner_slow",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 12.8
+    },
+    {
+      "twin": "corner_fast",
+      "benign_flips": 1,
+      "flipped": [
+        "set_dosing_rate"
+      ],
+      "eps_DT_emp": 4.8
+    }
+  ]
+}

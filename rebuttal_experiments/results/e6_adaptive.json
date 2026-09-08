@@ -1,0 +1,33 @@
+{
+  "preregistered": "PREREGISTRATION.md (commit baa92d3)",
+  "phis": {
+    "open_valve_MV101": "actuator(MV101) := open",
+    "close_valve_MV101": "actuator(MV101) := closed",
+    "start_pump_P101": "actuator(P101) := on",
+    "stop_pump_P101": "actuator(P101) := off",
+    "open_valve_MV201": "actuator(MV201) := open",
+    "close_valve_MV201": "actuator(MV201) := closed",
+    "start_dosing_pump_P201": "actuator(P201) := on",
+    "stop_dosing_pump_P201": "actuator(P201) := off",
+    "set_dosing_rate": "\u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+    "read_level_T101": "sensor(LIT101) reads nominal",
+    "read_level_T201": "sensor(LIT201) reads nominal",
+    "read_flow_FIT101": "sensor(FIT101) reads nominal",
+    "read_flow_FIT201": "sensor(FIT201) reads nominal",
+    "read_chemical_AIT201": "sensor(AIT201) reads nominal"
+  },
+  "n_with_dstate": 1,
+  "tools_with_dstate": [
+    "set_dosing_rate"
+  ],
+  "unsafe_pairs": 15,
+  "triples_missed_by_pairwise": [],
+  "n_triples_missed": 0,
+  "grammar_evasive": {
+    "phi": "",
+    "admitted": false,
+    "reasons": [
+      "out_of_grammar"
+    ]
+  }
+}

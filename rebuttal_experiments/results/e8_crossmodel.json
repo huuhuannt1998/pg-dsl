@@ -1,0 +1,575 @@
+{
+  "preregistered": "scoring rule fixed pre-run; all models reported including failures",
+  "models": [
+    {
+      "model": "qwen3:14b",
+      "resolved_model": "qwen3:14b",
+      "n": 14,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "entity_correct": 14,
+      "seconds": 54.6,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "sensor(FIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    },
+    {
+      "model": "llama3.1:8b",
+      "resolved_model": "llama3.1:8b",
+      "n": 14,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "entity_correct": 14,
+      "seconds": 26.0,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) {sign +}",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "sensor(FIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    },
+    {
+      "model": "gemma2:9b",
+      "resolved_model": "gemma2:9b",
+      "n": 14,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "entity_correct": 14,
+      "seconds": 81.1,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "sensor(FIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    },
+    {
+      "model": "mistral-nemo:12b",
+      "resolved_model": "mistral-nemo:12b",
+      "n": 14,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "entity_correct": 14,
+      "seconds": 38.5,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "sensor(FIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    },
+    {
+      "model": "granite3.1-dense:8b",
+      "resolved_model": "granite3.1-dense:8b",
+      "n": 14,
+      "out_of_grammar": 1,
+      "wrong_entity": 0,
+      "entity_correct": 13,
+      "seconds": 31.9,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on; actuator(MV101) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "",
+          "oog": true,
+          "entity_ok": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    },
+    {
+      "model": "phi4-mini:latest",
+      "resolved_model": "phi4-mini:latest",
+      "n": 14,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "entity_correct": 14,
+      "seconds": 20.1,
+      "rows": [
+        {
+          "tool": "open_valve_MV101",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign + }; \u0394state(Q_in_T101) { sign + }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) { sign + }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "phi": "actuator(P101) := off; \u0394state(Q_out_T201) { sign -, monotone- }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "phi": "actuator(MV201) := open; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "phi": "actuator(MV201) := closed; \u0394state(L_T301) { sign + }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "phi": "actuator(P201) := off; \u0394state(Cond_P2) { sign 0 }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T101",
+          "phi": "sensor(LIT101) reads nominal; \u0394state(L_T101) { sign 0 }",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_level_T201",
+          "phi": "sensor(LIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "phi": "sensor(FIT101) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "phi": "sensor(FIT201) reads nominal;",
+          "oog": false,
+          "entity_ok": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "phi": "sensor(AIT201) reads nominal",
+          "oog": false,
+          "entity_ok": true
+        }
+      ]
+    }
+  ]
+}

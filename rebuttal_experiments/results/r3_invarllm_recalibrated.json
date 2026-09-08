@@ -1,0 +1,298 @@
+{
+  "preregistered": "PREREGISTRATION_R.md E3",
+  "mining_set": "10 benign reps + 42 honest admission traces (14 tools x LOW/MID/HIGH, 120 s)",
+  "heldout_set": "240 honest traces: 8 actuator tools x 30 LHS states (never mined)",
+  "invariants_old": [
+    {
+      "name": "band_LIT101",
+      "sensor": "LIT101",
+      "low": 46.0,
+      "high": 82.0,
+      "slack": 1.8
+    },
+    {
+      "name": "band_LIT201",
+      "sensor": "LIT201",
+      "low": 60.0,
+      "high": 100.0,
+      "slack": 2.0
+    },
+    {
+      "name": "band_FIT101",
+      "sensor": "FIT101",
+      "low": 0.0,
+      "high": 0.5,
+      "slack": 0.05
+    },
+    {
+      "name": "band_FIT201",
+      "sensor": "FIT201",
+      "low": 0.0,
+      "high": 0.4,
+      "slack": 0.05
+    },
+    {
+      "name": "band_AIT201",
+      "sensor": "AIT201",
+      "low": 0.3,
+      "high": 1.256,
+      "slack": 0.05
+    },
+    {
+      "name": "mb_T101",
+      "tank_level_sensor": "LIT101",
+      "q_in_per_unit": 0.5,
+      "q_out": 0.4,
+      "actuator_in_pump": "P101",
+      "actuator_in_valve": "MV101",
+      "actuator_out_valve": "MV201",
+      "residual_threshold": 0.75
+    }
+  ],
+  "invariants_new": [
+    {
+      "name": "band_LIT101",
+      "sensor": "LIT101",
+      "low": 0.0,
+      "high": 90.0,
+      "slack": 4.5
+    },
+    {
+      "name": "band_LIT201",
+      "sensor": "LIT201",
+      "low": 0.0,
+      "high": 100.0,
+      "slack": 5.0
+    },
+    {
+      "name": "band_FIT101",
+      "sensor": "FIT101",
+      "low": 0.0,
+      "high": 0.5,
+      "slack": 0.05
+    },
+    {
+      "name": "band_FIT201",
+      "sensor": "FIT201",
+      "low": 0.0,
+      "high": 0.4,
+      "slack": 0.05
+    },
+    {
+      "name": "band_AIT201",
+      "sensor": "AIT201",
+      "low": 0.3,
+      "high": 1.298,
+      "slack": 0.05
+    },
+    {
+      "name": "mb_T101",
+      "tank_level_sensor": "LIT101",
+      "q_in_per_unit": 0.5,
+      "q_out": 0.4,
+      "actuator_in_pump": "P101",
+      "actuator_in_valve": "MV101",
+      "actuator_out_valve": "MV201",
+      "residual_threshold": 0.75
+    }
+  ],
+  "honest_fpr": {
+    "old_invarllm_heldout_240": {
+      "fired": 233,
+      "n": 240,
+      "by_invariant": {
+        "band_LIT101": 121,
+        "band_LIT201": 218
+      },
+      "mass_balance": 0
+    },
+    "new_in_sample_42": {
+      "fired": 0,
+      "n": 42,
+      "by_invariant": {},
+      "mass_balance": 0
+    },
+    "new_heldout_240": {
+      "fired": 0,
+      "n": 240,
+      "by_invariant": {},
+      "mass_balance": 0
+    }
+  },
+  "attacks": {
+    "A1": {
+      "pgdsl": true,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": true,
+      "new_violations": [
+        {
+          "invariant": "band_LIT101",
+          "reason": "LIT101[136]=94.600 outside [0.0, 90.0]"
+        }
+      ]
+    },
+    "A2": {
+      "pgdsl": true,
+      "runtime_old_reproduced": false,
+      "runtime_old_logged": false,
+      "runtime_new": false,
+      "new_violations": []
+    },
+    "A3": {
+      "pgdsl": true,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": true,
+      "new_violations": [
+        {
+          "invariant": "band_LIT101",
+          "reason": "LIT101[196]=94.600 outside [0.0, 90.0]"
+        }
+      ]
+    },
+    "W1": {
+      "pgdsl": false,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": false,
+      "new_violations": []
+    },
+    "W2": {
+      "pgdsl": false,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": false,
+      "new_violations": []
+    },
+    "Z1": {
+      "pgdsl": true,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": true,
+      "new_violations": [
+        {
+          "invariant": "band_LIT101",
+          "reason": "LIT101[9]=94.900 outside [0.0, 90.0]"
+        }
+      ]
+    },
+    "Z2": {
+      "pgdsl": true,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": true,
+      "new_violations": [
+        {
+          "invariant": "band_AIT201",
+          "reason": "AIT201[3]=1.726 outside [0.3, 1.297877573621302]"
+        }
+      ]
+    },
+    "Z3": {
+      "pgdsl": true,
+      "runtime_old_reproduced": true,
+      "runtime_old_logged": true,
+      "runtime_new": true,
+      "new_violations": [
+        {
+          "invariant": "band_LIT101",
+          "reason": "LIT101[10]=95.000 outside [0.0, 90.0]"
+        }
+      ]
+    }
+  },
+  "lanes_new": {
+    "A_static": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "A_runtime_new": [
+      "A1",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "static_only": [
+      "A2"
+    ],
+    "runtime_only": [],
+    "intersection": [
+      "A1",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "missed_by_both": [
+      "W1",
+      "W2"
+    ],
+    "composed": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "t3_strict": false
+  },
+  "lanes_old": {
+    "A_canonical": [
+      "A1",
+      "A2",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "A_runtime": [
+      "A1",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "intersection": [
+      "A1",
+      "A3",
+      "Z1",
+      "Z2",
+      "Z3"
+    ],
+    "canonical_only": [
+      "A2"
+    ],
+    "invarllm_only": [
+      "W1",
+      "W2"
+    ],
+    "missed": [],
+    "composed": [
+      "A1",
+      "A2",
+      "A3",
+      "W1",
+      "W2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ]
+  },
+  "predictions": {
+    "P7_heldout_le_12": true,
+    "P8_no_mb_on_honest": true,
+    "P9_A1_W2_Z3_det": false,
+    "P10_A2_miss": true,
+    "P11_W1_miss": true,
+    "P12_A3_Z1_miss_Z2_det": false
+  }
+}

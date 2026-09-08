@@ -1,0 +1,205 @@
+{
+  "SUPERSEDED_BY": "n6b_combined_benign227.json",
+  "WHY_WRONG": "This run replayed tools via server.call_tool() directly, which skips the start_dosing_pump_P201 pre-condition that dt_verifier.verify_tool performs before set_dosing_rate. Without it the command log is empty, so all 18 set_dosing_rate paraphrases falsely appeared to violate command-log matching. Reported 19/227; the correct figure on the admission layer's own replay path is 1/227, with the rules adding 0.",
+  "DO_NOT_CITE": true,
+  "question": "advisor Q3: combined benign cost on 227 under cached qwen3 lifts",
+  "lifter": "cached qwen3:14b lifts from per_style_canonical_extended_qwen3.json (replay-only)",
+  "joined": 227,
+  "shipped": 1,
+  "cwa_alone": 0,
+  "cmdlog_alone": 19,
+  "union": 19,
+  "added_by_rules": 18,
+  "rows": [
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "seed_M2B",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "seed_M2B",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "seed_M2B",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_3",
+      "phi": "actuator(P101) := on; actuator(MV101) := open",
+      "shipped": true,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "mistral7b_paraphrase_0",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "mistral7b_paraphrase_1",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "mistral7b_paraphrase_2",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "mistral7b_paraphrase_3",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "FORMAL",
+      "source": "mistral7b_paraphrase_4",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_0",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_1",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_2",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_3",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "CASUAL",
+      "source": "mistral7b_paraphrase_4",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {monotone+, sign +}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "mistral7b_paraphrase_0",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "mistral7b_paraphrase_1",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "mistral7b_paraphrase_2",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "mistral7b_paraphrase_3",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "TERSE",
+      "source": "mistral7b_paraphrase_4",
+      "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+      "shipped": false,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    }
+  ]
+}

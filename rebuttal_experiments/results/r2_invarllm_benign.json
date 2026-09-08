@@ -1,0 +1,4700 @@
+{
+  "preregistered": "PREREGISTRATION_R.md E2",
+  "invariants": [
+    {
+      "name": "band_LIT101",
+      "fields": {
+        "sensor": "LIT101",
+        "low": 45.999999999999986,
+        "high": 81.99999999999922,
+        "slack": 1.7999999999999616
+      }
+    },
+    {
+      "name": "band_LIT201",
+      "fields": {
+        "sensor": "LIT201",
+        "low": 60.0,
+        "high": 100.0,
+        "slack": 2.0
+      }
+    },
+    {
+      "name": "band_FIT101",
+      "fields": {
+        "sensor": "FIT101",
+        "low": 0.0,
+        "high": 0.5,
+        "slack": 0.05
+      }
+    },
+    {
+      "name": "band_FIT201",
+      "fields": {
+        "sensor": "FIT201",
+        "low": 0.0,
+        "high": 0.4,
+        "slack": 0.05
+      }
+    },
+    {
+      "name": "band_AIT201",
+      "fields": {
+        "sensor": "AIT201",
+        "low": 0.3,
+        "high": 1.2559591539383244,
+        "slack": 0.05
+      }
+    },
+    {
+      "name": "mb_T101",
+      "fields": {
+        "tank_level_sensor": "LIT101",
+        "q_in_per_unit": 0.5,
+        "q_out": 0.4,
+        "actuator_in_pump": "P101",
+        "actuator_in_valve": "MV101",
+        "actuator_out_valve": "MV201",
+        "residual_threshold": 0.7500000000000084
+      }
+    }
+  ],
+  "n_benign_reps_fit": 10,
+  "horizon_steps": 120,
+  "canonical_42": {
+    "n": 42,
+    "fired": 42,
+    "by_invariant": {
+      "band_LIT101": 29,
+      "band_LIT201": 40
+    },
+    "violations_at_t0": 42,
+    "mass_balance_violations": 0,
+    "by_state": {
+      "LOW": 14,
+      "MID": 14,
+      "HIGH": 14
+    }
+  },
+  "lhs_240": {
+    "n": 240,
+    "fired": 233,
+    "by_invariant": {
+      "band_LIT101": 121,
+      "band_LIT201": 218
+    },
+    "violations_at_t0": 224,
+    "mass_balance_violations": 0,
+    "by_state": {
+      "LHS00": 8,
+      "LHS01": 8,
+      "LHS02": 8,
+      "LHS03": 8,
+      "LHS04": 8,
+      "LHS05": 8,
+      "LHS06": 8,
+      "LHS07": 8,
+      "LHS08": 8,
+      "LHS09": 8,
+      "LHS10": 8,
+      "LHS11": 8,
+      "LHS12": 8,
+      "LHS13": 8,
+      "LHS14": 8,
+      "LHS15": 8,
+      "LHS16": 8,
+      "LHS17": 8,
+      "LHS18": 8,
+      "LHS19": 8,
+      "LHS20": 8,
+      "LHS21": 8,
+      "LHS22": 8,
+      "LHS24": 8,
+      "LHS25": 8,
+      "LHS26": 8,
+      "LHS27": 8,
+      "LHS28": 8,
+      "LHS29": 8,
+      "LHS23": 1
+    }
+  },
+  "rows_42": [
+    {
+      "tool": "open_valve_MV101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 65,
+          "reason": "LIT101[65]=44.000 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "LOW",
+      "LIT101_0": 30.0,
+      "LIT201_0": 30.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=30.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=30.000 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "MID",
+      "LIT101_0": 70.0,
+      "LIT201_0": 60.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 7,
+          "reason": "LIT201[7]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "HIGH",
+      "LIT101_0": 90.0,
+      "LIT201_0": 90.0,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=90.000 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 107,
+          "reason": "LIT201[107]=57.900 outside [60.0, 100.0]"
+        }
+      ]
+    }
+  ],
+  "rows_240": [
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 4,
+          "reason": "LIT101[4]=44.081 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 9,
+          "reason": "LIT101[9]=44.159 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 13,
+          "reason": "LIT101[13]=44.180 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 17,
+          "reason": "LIT101[17]=44.199 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 24,
+          "reason": "LIT101[24]=43.840 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 34,
+          "reason": "LIT101[34]=43.821 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 35,
+          "reason": "LIT101[35]=44.011 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 40,
+          "reason": "LIT101[40]=44.030 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 51,
+          "reason": "LIT101[51]=43.882 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 53,
+          "reason": "LIT101[53]=44.168 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 62,
+          "reason": "LIT101[62]=43.965 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 65,
+          "reason": "LIT101[65]=44.182 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 73,
+          "reason": "LIT101[73]=44.099 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 78,
+          "reason": "LIT101[78]=43.804 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 85,
+          "reason": "LIT101[85]=43.802 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 89,
+          "reason": "LIT101[89]=43.994 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 97,
+          "reason": "LIT101[97]=43.953 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS00",
+      "LIT101_0": 27.235,
+      "LIT201_0": 22.891,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=27.235 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=22.891 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS01",
+      "LIT101_0": 28.327,
+      "LIT201_0": 74.976,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=28.327 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 57,
+          "reason": "LIT201[57]=57.876 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS02",
+      "LIT101_0": 31.062,
+      "LIT201_0": 29.96,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=31.062 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=29.960 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS03",
+      "LIT101_0": 33.529,
+      "LIT201_0": 20.893,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=33.529 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=20.893 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS04",
+      "LIT101_0": 34.773,
+      "LIT201_0": 61.22,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=34.773 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 11,
+          "reason": "LIT201[11]=57.920 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS05",
+      "LIT101_0": 38.881,
+      "LIT201_0": 63.258,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=38.881 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 18,
+          "reason": "LIT201[18]=57.858 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS06",
+      "LIT101_0": 41.197,
+      "LIT201_0": 85.759,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=41.197 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 93,
+          "reason": "LIT201[93]=57.859 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS07",
+      "LIT101_0": 42.525,
+      "LIT201_0": 31.886,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=42.525 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=31.886 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS08",
+      "LIT101_0": 45.681,
+      "LIT201_0": 59.139,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 4,
+          "reason": "LIT201[4]=57.939 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS09",
+      "LIT101_0": 47.759,
+      "LIT201_0": 39.537,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=39.537 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS10",
+      "LIT101_0": 49.38,
+      "LIT201_0": 92.388,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 115,
+          "reason": "LIT201[115]=57.888 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS11",
+      "LIT101_0": 50.999,
+      "LIT201_0": 46.536,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=46.536 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS12",
+      "LIT101_0": 53.44,
+      "LIT201_0": 26.955,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=26.955 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS13",
+      "LIT101_0": 57.421,
+      "LIT201_0": 42.711,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.711 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS14",
+      "LIT101_0": 58.011,
+      "LIT201_0": 70.969,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 44,
+          "reason": "LIT201[44]=57.769 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS15",
+      "LIT101_0": 60.03,
+      "LIT201_0": 35.94,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=35.940 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS16",
+      "LIT101_0": 64.282,
+      "LIT201_0": 75.12,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 58,
+          "reason": "LIT201[58]=57.720 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS17",
+      "LIT101_0": 65.368,
+      "LIT201_0": 32.904,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=32.904 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS18",
+      "LIT101_0": 68.765,
+      "LIT201_0": 56.04,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=56.040 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS19",
+      "LIT101_0": 70.182,
+      "LIT201_0": 84.441,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 89,
+          "reason": "LIT201[89]=57.741 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS20",
+      "LIT101_0": 73.299,
+      "LIT201_0": 52.348,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=52.348 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS21",
+      "LIT101_0": 75.004,
+      "LIT201_0": 42.239,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=42.239 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS22",
+      "LIT101_0": 77.802,
+      "LIT201_0": 68.663,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 36,
+          "reason": "LIT201[36]=57.863 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS23",
+      "LIT101_0": 79.594,
+      "LIT201_0": 94.287,
+      "fired": false,
+      "violations": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS24",
+      "LIT101_0": 82.753,
+      "LIT201_0": 54.861,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=54.861 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS25",
+      "LIT101_0": 83.911,
+      "LIT201_0": 87.531,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=83.911 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 99,
+          "reason": "LIT201[99]=57.831 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS26",
+      "LIT101_0": 87.47,
+      "LIT201_0": 67.44,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=87.470 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 32,
+          "reason": "LIT201[32]=57.840 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS27",
+      "LIT101_0": 88.339,
+      "LIT201_0": 77.542,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=88.339 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 66,
+          "reason": "LIT201[66]=57.742 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS28",
+      "LIT101_0": 91.071,
+      "LIT201_0": 81.701,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=91.071 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 80,
+          "reason": "LIT201[80]=57.701 outside [60.0, 100.0]"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LHS29",
+      "LIT101_0": 93.694,
+      "LIT201_0": 47.943,
+      "fired": true,
+      "violations": [
+        {
+          "invariant": "band_LIT101",
+          "step": 0,
+          "reason": "LIT101[0]=93.694 outside [45.999999999999986, 81.99999999999922]"
+        },
+        {
+          "invariant": "band_LIT201",
+          "step": 0,
+          "reason": "LIT201[0]=47.943 outside [60.0, 100.0]"
+        }
+      ]
+    }
+  ],
+  "predictions": {
+    "P5_ge1_all_band_t0_LOW_no_massbalance": true,
+    "P5_strict_only_LOW_at_t0": false
+  }
+}

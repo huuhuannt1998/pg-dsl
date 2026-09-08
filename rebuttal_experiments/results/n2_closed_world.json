@@ -1,0 +1,57 @@
+{
+  "preregistered": "N2.1-N2.5",
+  "benign_fp_42": [],
+  "benign_fp_227": 0,
+  "by_class": {
+    "M1_actuator_swap": {
+      "baseline": 4,
+      "cwa": 4,
+      "n": 8
+    },
+    "M2_actuator_invert": {
+      "baseline": 8,
+      "cwa": 8,
+      "n": 8
+    },
+    "M6_state_conditional": {
+      "baseline": 0,
+      "cwa": 0,
+      "n": 16
+    },
+    "M7_time_delayed": {
+      "baseline": 0,
+      "cwa": 0,
+      "n": 16
+    },
+    "M8_extra_side_effect": {
+      "baseline": 0,
+      "cwa": 20,
+      "n": 22
+    },
+    "M3_magnitude_scale": {
+      "baseline": 4,
+      "cwa": 4,
+      "n": 4
+    },
+    "M4_sensor_swap_honest_label": {
+      "baseline": 30,
+      "cwa": 30,
+      "n": 30
+    },
+    "M5_sensor_swap_lying_label": {
+      "baseline": 24,
+      "cwa": 24,
+      "n": 30
+    }
+  },
+  "total_baseline": 70,
+  "total_cwa": 90,
+  "total_cwa_plus_cmdlog": 94,
+  "residual": {
+    "M1_actuator_swap": 4,
+    "M6_state_conditional": 16,
+    "M7_time_delayed": 16,
+    "M8_extra_side_effect": 2,
+    "M5_sensor_swap_lying_label": 6
+  }
+}

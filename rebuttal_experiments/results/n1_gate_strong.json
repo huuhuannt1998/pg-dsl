@@ -1,0 +1,311 @@
+{
+  "coverage": {
+    "tools": 14,
+    "states": 3,
+    "sensors": 7,
+    "steps": 120,
+    "trajectories": 42,
+    "scalar_comparisons": 35280
+  },
+  "byte_identical": 42,
+  "divergences": 0,
+  "passed": true,
+  "trajectory_set_digest": "168341e53f21e089ceae5dc499c1f6e9fe53265e399bf86c9fd4ccd2b7ed4cad",
+  "supersedes": "n1_gate.json (3 tools, LIT101 only - could not reach the chemistry branch)",
+  "rows": [
+    {
+      "tool": "open_valve_MV101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "open_valve_MV101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "close_valve_MV101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "start_pump_P101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "stop_pump_P101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "0c72a2801c657a21",
+      "sha_frozen": "0c72a2801c657a21"
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "85a7ce544a3a1dac",
+      "sha_frozen": "85a7ce544a3a1dac"
+    },
+    {
+      "tool": "open_valve_MV201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "fa1aab81fb7d0802",
+      "sha_frozen": "fa1aab81fb7d0802"
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "close_valve_MV201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "949c979825dd5c18",
+      "sha_frozen": "949c979825dd5c18"
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "80772833cffb18ea",
+      "sha_frozen": "80772833cffb18ea"
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "3972786b155771a8",
+      "sha_frozen": "3972786b155771a8"
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "set_dosing_rate",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "read_level_T101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "read_level_T201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "LOW",
+      "byte_identical": true,
+      "sha_nominal": "9b1a2ddba3fc08a4",
+      "sha_frozen": "9b1a2ddba3fc08a4"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "MID",
+      "byte_identical": true,
+      "sha_nominal": "c379b39e9449c590",
+      "sha_frozen": "c379b39e9449c590"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "state": "HIGH",
+      "byte_identical": true,
+      "sha_nominal": "4481bfcf43907072",
+      "sha_frozen": "4481bfcf43907072"
+    }
+  ]
+}

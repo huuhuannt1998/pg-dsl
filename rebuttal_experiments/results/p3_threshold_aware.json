@@ -1,0 +1,115 @@
+{
+  "prediction": "detection turns on at the published tolerance",
+  "eps_DT": 1.0,
+  "sweep_sensor_offset": [
+    {
+      "offset": 0.0,
+      "detected": false
+    },
+    {
+      "offset": 0.25,
+      "detected": false
+    },
+    {
+      "offset": 0.5,
+      "detected": false
+    },
+    {
+      "offset": 0.75,
+      "detected": false
+    },
+    {
+      "offset": 0.9,
+      "detected": false
+    },
+    {
+      "offset": 0.99,
+      "detected": false
+    },
+    {
+      "offset": 1.01,
+      "detected": true
+    },
+    {
+      "offset": 1.1,
+      "detected": true
+    },
+    {
+      "offset": 1.5,
+      "detected": true
+    },
+    {
+      "offset": 2.0,
+      "detected": true
+    },
+    {
+      "offset": 5.0,
+      "detected": true
+    }
+  ],
+  "empirical_sensor_boundary": 1.01,
+  "sweep_dosing_rate": [
+    {
+      "rate": 0.0167,
+      "cond_after_120s": 0.317,
+      "in_claimed_band": false
+    },
+    {
+      "rate": 0.1,
+      "cond_after_120s": 0.4,
+      "in_claimed_band": false
+    },
+    {
+      "rate": 0.3,
+      "cond_after_120s": 0.599,
+      "in_claimed_band": true
+    },
+    {
+      "rate": 0.5,
+      "cond_after_120s": 0.799,
+      "in_claimed_band": true
+    },
+    {
+      "rate": 0.8,
+      "cond_after_120s": 1.098,
+      "in_claimed_band": true
+    },
+    {
+      "rate": 1.0,
+      "cond_after_120s": 1.298,
+      "in_claimed_band": true
+    },
+    {
+      "rate": 1.2,
+      "cond_after_120s": 1.497,
+      "in_claimed_band": true
+    },
+    {
+      "rate": 1.5,
+      "cond_after_120s": 1.797,
+      "in_claimed_band": false
+    },
+    {
+      "rate": 2.0,
+      "cond_after_120s": 2.296,
+      "in_claimed_band": false
+    },
+    {
+      "rate": 5.0,
+      "cond_after_120s": 5.0,
+      "in_claimed_band": false
+    },
+    {
+      "rate": 60.0,
+      "cond_after_120s": 5.0,
+      "in_claimed_band": false
+    }
+  ],
+  "evading_rates": [
+    0.3,
+    0.5,
+    0.8,
+    1.0,
+    1.2
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "question": "advisor Q3 (corrected replay path)",
+  "supersedes": "n6_combined_benign227.json (direct call_tool omitted the set_dosing_rate pre-condition)",
+  "lifter": "cached qwen3:14b lifts; replay via dt_verifier.verify_tool",
+  "shipped": 1,
+  "cwa_alone": 0,
+  "cmdlog_alone": 1,
+  "union": 1,
+  "added_by_rules": 0,
+  "rows": [
+    {
+      "tool": "start_pump_P101",
+      "style": "CASUAL",
+      "phi": "actuator(P101) := on; actuator(MV101) := open",
+      "shipped": true,
+      "cwa": false,
+      "cmdlog": true,
+      "union": true
+    }
+  ]
+}

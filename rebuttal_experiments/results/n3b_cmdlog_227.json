@@ -1,0 +1,66 @@
+{
+  "supersedes": "n2b_gapclose.cmdlog_benign_fp_227 (VACUOUS: over-escaped regex matched nothing)",
+  "regex_sanity_checked": true,
+  "results": {
+    "literal": {
+      "rejections": 29,
+      "n": 227,
+      "tools": [
+        "open_valve_MV101",
+        "open_valve_MV201",
+        "set_dosing_rate",
+        "start_pump_P101",
+        "stop_dosing_pump_P201",
+        "stop_pump_P101"
+      ],
+      "examples": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := on"
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := on"
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := on"
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := on"
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := on"
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := on"
+        }
+      ],
+      "canonical_14": 0
+    },
+    "normalised": {
+      "rejections": 1,
+      "n": 227,
+      "tools": [
+        "set_dosing_rate"
+      ],
+      "examples": [
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign + }"
+        }
+      ],
+      "canonical_14": 0
+    }
+  }
+}

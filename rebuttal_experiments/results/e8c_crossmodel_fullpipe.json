@@ -1,0 +1,215 @@
+{
+  "scoring": "rejection by canonical per-tool admission; same quantity as paper Table 7 FPR",
+  "supersedes": "e8b (component-identity only, not comparable to Table 7)",
+  "corpus": "42-entry seed paraphrase corpus",
+  "models": [
+    {
+      "model": "qwen3:14b",
+      "n": 42,
+      "rejected": 0,
+      "fpr": 0.0,
+      "inferred_dstate_lifts": 0,
+      "seconds": 93.1,
+      "rejections": []
+    },
+    {
+      "model": "llama3.1:8b",
+      "n": 42,
+      "rejected": 4,
+      "fpr": 0.09523809523809523,
+      "inferred_dstate_lifts": 8,
+      "seconds": 53.0,
+      "rejections": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) {sign +}",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) {sign +}",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open; \u0394state(Cond_P2) {sign +}",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000)"
+          ]
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads low",
+          "reasons": [
+            "non-numeric value comparison failed"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gemma2:9b",
+      "n": 42,
+      "rejected": 1,
+      "fpr": 0.023809523809523808,
+      "inferred_dstate_lifts": 3,
+      "seconds": 195.6,
+      "rejections": [
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000); monotone claim + but observed 0; bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3000 (\u03b5_Cond_P2=0.05)"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "mistral-nemo:12b",
+      "n": 42,
+      "rejected": 2,
+      "fpr": 0.047619047619047616,
+      "inferred_dstate_lifts": 0,
+      "seconds": 81.0,
+      "rejections": [
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "",
+          "reasons": [
+            "out_of_grammar"
+          ]
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "",
+          "reasons": [
+            "out_of_grammar"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "granite3.1-dense:8b",
+      "n": 42,
+      "rejected": 3,
+      "fpr": 0.07142857142857142,
+      "inferred_dstate_lifts": 3,
+      "seconds": 65.0,
+      "rejections": [
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; actuator(MV101) := open",
+          "reasons": [
+            "actuator MV101 expected=open observed=closed"
+          ]
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on; actuator(MV101) := open",
+          "reasons": [
+            "actuator MV101 expected=open observed=closed"
+          ]
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal; \u0394state(L_T201) { sign 0 }",
+          "reasons": [
+            "sign claim 0 but observed - (\u0394=-30.000)",
+            "sign claim 0 but observed - (\u0394=-36.000)"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "phi4-mini:latest",
+      "n": 42,
+      "rejected": 18,
+      "fpr": 0.42857142857142855,
+      "inferred_dstate_lifts": 24,
+      "seconds": 47.5,
+      "rejections": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign + }; \u0394state(Q_in_T101) { sign + }",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000)",
+            "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+          ]
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000); monotone claim + but observed 0; bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 30.0000 (\u03b5_L_T101=1.0)",
+            "sign claim + but observed 0 (\u0394=+0.000); monotone claim + but observed 0; bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 70.0000 (\u03b5_L_T101=1.0)"
+          ]
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T201) { sign 0 }",
+          "reasons": [
+            "sign claim 0 but observed - (\u0394=-30.000)",
+            "sign claim 0 but observed - (\u0394=-36.000)"
+          ]
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "reasons": [
+            "sign claim + but observed 0 (\u0394=+0.000); monotone claim + but observed 0; bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 30.0000 (\u03b5_L_T101=1.0)",
+            "sign claim + but observed 0 (\u0394=+0.000); monotone claim + but observed 0; bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 70.0000 (\u03b5_L_T101=1.0)"
+          ]
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "",
+          "reasons": [
+            "out_of_grammar"
+          ]
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on; \u0394state(Q_in_T101) { sign + }",
+          "reasons": [
+            "state-var Q_in_T101 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+          ]
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off; \u0394state(Q_in_T201) { sign -, monotone- }",
+          "reasons": [
+            "state-var Q_in_T201 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+          ]
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off; \u0394state(Q_out_T201) { sign -, monotone- }",
+          "reasons": [
+            "state-var Q_out_T201 not tracked in \u03c8 (only L_T101, L_T201, Cond_P2 tracked)"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "preregistered": "PREREGISTRATION.md (commit baa92d3)",
+  "criterion": "unexplained-only (code touches entity description never names)",
+  "detection": {
+    "A1_type_confusion": true,
+    "A2_magnitude": true,
+    "A3_sensor_aliasing": true,
+    "Z1_transient_overshoot": false,
+    "Z3_composition_a": false,
+    "Z3_composition_b": false
+  },
+  "false_positives": [
+    "set_dosing_rate"
+  ],
+  "n_fp": 1,
+  "n_tools": 14
+}

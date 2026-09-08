@@ -1,0 +1,73 @@
+{
+  "preregistered": "PREREGISTRATION_R.md E1b",
+  "K": 30,
+  "lhs_seed": 1030,
+  "lifter": "qwen3:14b prompt v1 (cached per tool/description)",
+  "composition_grid": "published 3 states (unchanged)",
+  "results": {
+    "A1": {
+      "detected": true,
+      "via": "both",
+      "n_states_per_tool": 30,
+      "rejected": [
+        "open_valve_MV101"
+      ]
+    },
+    "A2": {
+      "detected": true,
+      "via": "both",
+      "n_states_per_tool": 30,
+      "rejected": [
+        "set_dosing_rate"
+      ]
+    },
+    "A3": {
+      "detected": true,
+      "via": "both",
+      "n_states_per_tool": 30,
+      "rejected": [
+        "read_level_T101"
+      ]
+    },
+    "W1": {
+      "detected": false,
+      "via": "neither",
+      "n_states_per_tool": 30,
+      "rejected": []
+    },
+    "W2": {
+      "detected": false,
+      "via": "neither",
+      "n_states_per_tool": 30,
+      "rejected": []
+    },
+    "Z1": {
+      "detected": true,
+      "via": "per_tool",
+      "n_states_per_tool": 30,
+      "rejected": [
+        "open_valve_MV201"
+      ]
+    },
+    "Z2": {
+      "detected": true,
+      "via": "per_tool",
+      "n_states_per_tool": 30,
+      "rejected": [
+        "set_dosing_rate"
+      ]
+    },
+    "Z3": {
+      "detected": true,
+      "via": "composition",
+      "n_states_per_tool": 30,
+      "rejected": []
+    }
+  },
+  "n_detected": 6,
+  "unique_lifts": 21,
+  "predictions": {
+    "P1b_6of8": true
+  },
+  "seconds": 72.70005702972412
+}

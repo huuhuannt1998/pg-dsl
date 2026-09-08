@@ -1,0 +1,10 @@
+{
+  "msbNCpgdsl": "24/33 (73\\%, CI [56, 85])",
+  "msbNCmcpshield": "3/33 (9\\%, CI [3, 24])",
+  "msbPMpgdsl": "1/33 (3\\%, CI [1, 15])",
+  "msbPMmcpshield": "0/33 (0\\%, CI [0, 10])",
+  "msbPIpgdsl": "0/33 (0\\%, CI [0, 10])",
+  "msbPImcpshield": "0/33 (0\\%, CI [0, 10])",
+  "msbOPpgdsl": "1/33 (3\\%, CI [1, 15])",
+  "msbOPmcpshield": "0/33 (0\\%, CI [0, 10])"
+}

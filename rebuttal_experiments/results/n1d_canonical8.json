@@ -1,0 +1,676 @@
+{
+  "preregistered": "N1.2-N1.4 (full 8-attack set)",
+  "attacks": [
+    "A1",
+    "A2",
+    "A3",
+    "W1",
+    "W2",
+    "Z1",
+    "Z2",
+    "Z3"
+  ],
+  "n_twins": 18,
+  "nominal": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "W1": false,
+    "W2": false,
+    "Z1": true,
+    "Z2": false,
+    "Z3": true
+  },
+  "rows": [
+    {
+      "twin": "nominal",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "flow0.8",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "flow0.9",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "flow1.1",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "flow1.2",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "lat1s",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "lat2s",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "lat5s",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "lat10s",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "chem0.8",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "chem0.9",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "chem1.1",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "chem1.2",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "drift0.005",
+      "A1": {
+        "detected": true,
+        "via": "composition"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "drift0.01",
+      "A1": {
+        "detected": true,
+        "via": "composition"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "drift0.02",
+      "A1": {
+        "detected": true,
+        "via": "composition"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "corner_slow",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    },
+    {
+      "twin": "corner_fast",
+      "A1": {
+        "detected": true,
+        "via": "both"
+      },
+      "A2": {
+        "detected": true,
+        "via": "both"
+      },
+      "A3": {
+        "detected": true,
+        "via": "both"
+      },
+      "W1": {
+        "detected": false,
+        "via": "neither"
+      },
+      "W2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z1": {
+        "detected": true,
+        "via": "per_tool"
+      },
+      "Z2": {
+        "detected": false,
+        "via": "neither"
+      },
+      "Z3": {
+        "detected": true,
+        "via": "composition"
+      }
+    }
+  ],
+  "flips": [
+    [
+      "drift0.02",
+      "W1"
+    ]
+  ],
+  "note": "W1/W2 are runtime-only by design and are logged, not scored as admission misses",
+  "reproduces_published_stub_baseline": true,
+  "published_baseline": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "W1": false,
+    "W2": false,
+    "Z1": true,
+    "Z2": false,
+    "Z3": true
+  },
+  "regression_gate": "nominal 5/8 matches mission_3b/results/defense_asr_canonical_stub.json",
+  "detected_to_missed_flips": []
+}

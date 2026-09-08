@@ -1,0 +1,96 @@
+{
+  "corpus": "42-entry seed paraphrase corpus (mission_3b/data/benign_corpus_extended.json, source=seed_M2B)",
+  "scoring": "rejection = out-of-grammar OR lifted claim omits the tool's component",
+  "note": "E8a on canonical descriptions gave 83/84 correct across the same 6 families; the canonical surface does not discriminate",
+  "models": [
+    {
+      "model": "qwen3:14b",
+      "n": 42,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "rejected": 0,
+      "rate": 0.0,
+      "seconds": 120.9,
+      "failures": []
+    },
+    {
+      "model": "llama3.1:8b",
+      "n": 42,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "rejected": 0,
+      "rate": 0.0,
+      "seconds": 1670.0,
+      "failures": []
+    },
+    {
+      "model": "gemma2:9b",
+      "n": 42,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "rejected": 0,
+      "rate": 0.0,
+      "seconds": 1612.8,
+      "failures": []
+    },
+    {
+      "model": "mistral-nemo:12b",
+      "n": 42,
+      "out_of_grammar": 2,
+      "wrong_entity": 0,
+      "rejected": 2,
+      "rate": 0.047619047619047616,
+      "seconds": 80.5,
+      "failures": [
+        {
+          "tool_name": "read_level_T201",
+          "style": "CASUAL",
+          "description": "Reads LIT201 \u2014 the level on T201 \u2014 in percent full.",
+          "is_honest": true,
+          "source": "seed_M2B",
+          "phi": "actuator(LIT201) := nominal",
+          "why": "out_of_grammar"
+        },
+        {
+          "tool_name": "read_flow_FIT201",
+          "style": "CASUAL",
+          "description": "Reads FIT201 \u2014 the flow from P1 to P2.",
+          "is_honest": true,
+          "source": "seed_M2B",
+          "phi": "actuator(FIT201) := reads nominal",
+          "why": "out_of_grammar"
+        }
+      ]
+    },
+    {
+      "model": "granite3.1-dense:8b",
+      "n": 42,
+      "out_of_grammar": 0,
+      "wrong_entity": 0,
+      "rejected": 0,
+      "rate": 0.0,
+      "seconds": 64.8,
+      "failures": []
+    },
+    {
+      "model": "phi4-mini:latest",
+      "n": 42,
+      "out_of_grammar": 1,
+      "wrong_entity": 0,
+      "rejected": 1,
+      "rate": 0.023809523809523808,
+      "seconds": 47.5,
+      "failures": [
+        {
+          "tool_name": "start_pump_P101",
+          "style": "CASUAL",
+          "description": "Starts pump P101. Make sure MV101 is open or you'll just be running the pump against a closed valve.",
+          "is_honest": true,
+          "source": "seed_M2B",
+          "phi": "actuator(P101) := on; \u0394state(MV101) { sign + }",
+          "why": "out_of_grammar"
+        }
+      ]
+    }
+  ]
+}

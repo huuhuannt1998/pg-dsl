@@ -1,0 +1,99 @@
+{
+  "per_replay_ms": 0.025709867477416992,
+  "projection": [
+    {
+      "catalog": 14,
+      "actuator_tools": 8,
+      "replays": 168,
+      "projected_seconds": 0.0
+    },
+    {
+      "catalog": 50,
+      "actuator_tools": 28,
+      "replays": 2268,
+      "projected_seconds": 0.06
+    },
+    {
+      "catalog": 100,
+      "actuator_tools": 57,
+      "replays": 9576,
+      "projected_seconds": 0.25
+    },
+    {
+      "catalog": 200,
+      "actuator_tools": 114,
+      "replays": 38646,
+      "projected_seconds": 0.99
+    },
+    {
+      "catalog": 500,
+      "actuator_tools": 285,
+      "replays": 242820,
+      "projected_seconds": 6.24
+    },
+    {
+      "catalog": 1000,
+      "actuator_tools": 571,
+      "replays": 976410,
+      "projected_seconds": 25.1
+    }
+  ],
+  "prefilter": {
+    "ground_truth_unsafe": 15,
+    "kept": 24,
+    "lost": 14,
+    "coverage_loss": true,
+    "lost_examples": [
+      [
+        "close_valve_MV101",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV101",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV101",
+        "start_pump_P101",
+        "HIGH"
+      ],
+      [
+        "open_valve_MV201",
+        "close_valve_MV101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "open_valve_MV101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "start_dosing_pump_P201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "start_pump_P101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "stop_dosing_pump_P201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "stop_pump_P101",
+        "LOW"
+      ],
+      [
+        "start_dosing_pump_P201",
+        "open_valve_MV201",
+        "LOW"
+      ]
+    ]
+  }
+}

@@ -3,7 +3,8 @@
 **Physics-Grounded Description Lifting for Admission-Time Defence of
 LLM-Controlled Industrial Cyber-Physical Systems**
 
-Companion artifact to the ACSAC 2026 submission of the same title.
+Companion artifact to the paper accepted at **ACSAC 2026** (Huan Bui and
+Chenglong Fu, University of North Carolina at Charlotte).
 
 This repository contains the full reproducible implementation of
 PG-DSL — an admission-time defence that lifts each MCP tool
@@ -12,7 +13,7 @@ the tool against a digital twin (DT), and admits only those tools
 whose claimed effect matches DT-measured behaviour — together with
 the SWaT P1+P2 substrate, the LLM-based lifter, the matcher, the
 composition-aware DT verifier, every campaign script, every JSON
-output that backs a paper claim, and the LaTeX source of the paper.
+output that backs a paper claim.
 
 ## What's in the paper
 
@@ -29,9 +30,10 @@ grammar:
 - **T2** — lifting-soundness decomposition for tool descriptions
   drawn from a restricted CPS-grounded grammar; empirically
   `δ_lift = 0.44%` on a 227-paraphrase out-of-family corpus.
-- **T3** — strict-composition witness on a canonical 8-attack set,
-  showing admission-time and runtime defences cover complementary
-  visibility surfaces.
+- **T3** — admission/runtime visibility witness on a canonical 8-attack
+  set: admission sees an attack (A₂) no runtime invariant sees; with the
+  runtime IDS calibrated on benign traffic spanning the replay grid, W₁
+  and W₂ escape both layers (one-directional separation).
 
 ### Headline empirical results
 
@@ -42,14 +44,18 @@ On a SWaT P1+P2 substrate with 14 MCP tools:
 | Per-tool benign FPR | **0/42** rejections (Wilson 95% CI [0, 8.38]%, over 14 tools × 3 init states) |
 | Per-style benign FPR | **0.44%** (1/227, Wilson 95% CI [0.08, 2.45]%) on a mistral-generated 227-paraphrase corpus |
 | Canonical attacks blocked at admission | **6/8** (A₁, A₂, A₃, Z₁, Z₂, Z₃) |
-| Composed coverage (PG-DSL ⊕ INVARLLM) | **8/8** |
-| T2 adversarial probe battery | 25/31 = 80.6% CORRECT across 8 categories |
-| MSB cross-benchmark (32 instances, 4 classes) | PG-DSL ≥ MCPShield on every class |
-| Cross-model T3 validation | Locked partition {A₂, W₁, W₂} invariant across qwen3:14b and llama3.1:8b |
-| Real-agent end-to-end (N=10 operational-condition sweep) | A₁ 10/10 → 0/10 with defence; W₂ 9/10 unchanged (T3 runtime-only by design) |
+| Composed coverage (PG-DSL ⊕ INVARLLM, IDS calibrated on grid-spanning benign traffic) | **6/8** — W₁, W₂ outside both layers |
+| T2 adversarial probe battery | 28/31 = 90.3% CORRECT across 8 categories (3 read-tool aliasing prompts regraded: verifier-side, closed by the identity probe 30/30) |
+| MSB-adapted union (132 instances, 33 per class) | PG-DSL ≥ MCPShield on every class (NC 24/33 vs 3/33) |
+| Cross-model / six lifter families | A₂ static-only and W₁, W₂ outside both layers under qwen3:14b and llama3.1:8b; measured δ_cov 0/42 … 25/42 across six lifter families |
+| Real-agent end-to-end (N=10 operational-condition sweep) | A₁ 10/10 → 0/10 with defence; W₂ 9/10 unchanged (admission-invisible by design) |
+
+| Boundary characterisation (revision pass) | 134 mutants 70/134 → 94/134 hardened (86 / 110 at the adopted K=30 grid); 18 perturbed twins lose no nominal detection; probe-grid sweep 0/16 at K=3 → 16/16 at K=30 |
 
 Full provenance — every number above traces to a JSON output in
-`mission_3b/results/` (and `mission_2c/results/` for the M2C baselines)
+`mission_3b/results/`, `rebuttal_experiments/results/` (revision-pass
+experiments, with their pre-registration registers
+`rebuttal_experiments/PREREGISTRATION*.md`) and `mission_2c/results/` (M2C baselines)
 and to a campaign script under `mission_*/experiments/` or
 `mission_2d/scripts/`. The paper LaTeX source and the
 paper-claim-to-JSON map (`PROVENANCE.md`) are tracked outside this
@@ -90,6 +96,8 @@ mission_3b/                      # Canonical pipeline (per-tool ⊕ composition 
   - `qwen3:14b` (lifter, agent, MCPShield judge, INVARLLM extractor)
   - `mistral:7b` (out-of-family paraphraser for the extended corpus)
   - `llama3.1:8b` (cross-model T3 lifter ablation)
+  - `gemma2:9b`, `mistral-nemo:12b`, `granite3.1-dense:8b`, `phi4-mini`
+    (six-lifter-family sweep and the held-out benign corpus)
 - Python packages: `ollama`, `mcp` (≥ 1.27), `lark`, plus stdlib;
   the artifact pins versions in `requirements.txt` (per-mission).
 
@@ -123,6 +131,13 @@ python3 mission_3b/experiments/run_msb_subset_evaluation.py
 
 # εDT calibration + T1ᵥ sensitivity sweep
 python3 mission_3b/experiments/run_dt_calibration.py
+python3 mission_3a/t1_v_verify.py --n-trials 1000      # Fig. 1 (script default is 500)
+
+# Revision-pass experiments (mutation battery, probe-grid sweep, perturbed twins,
+# six lifter families, held-out corpus, identity probe, static baseline, K=30 re-runs,
+# INVARLLM calibration): one runner per experiment, predictions fixed beforehand in
+# rebuttal_experiments/PREREGISTRATION*.md; results land in rebuttal_experiments/results/
+ls rebuttal_experiments/*.py
 
 # RQ7 — Real-agent N=10 operational-condition sweep (~7.5 h on M4)
 python3 mission_2d/scripts/run_campaign.py \

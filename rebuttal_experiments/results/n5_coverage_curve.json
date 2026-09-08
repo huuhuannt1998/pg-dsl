@@ -1,0 +1,42 @@
+{
+  "preregistered": "N5.1-N5.4",
+  "trigger_width_w": 0.05714285714285714,
+  "rows": [
+    {
+      "K": 3,
+      "detected": 0,
+      "n": 16,
+      "rate": 0.0,
+      "predicted_1_minus_1_minus_w_K": 0.162,
+      "benign_fp": 0,
+      "seconds": 0.0
+    },
+    {
+      "K": 10,
+      "detected": 0,
+      "n": 16,
+      "rate": 0.0,
+      "predicted_1_minus_1_minus_w_K": 0.445,
+      "benign_fp": 0,
+      "seconds": 0.0
+    },
+    {
+      "K": 30,
+      "detected": 16,
+      "n": 16,
+      "rate": 1.0,
+      "predicted_1_minus_1_minus_w_K": 0.829,
+      "benign_fp": 0,
+      "seconds": 0.0
+    },
+    {
+      "K": 100,
+      "detected": 16,
+      "n": 16,
+      "rate": 1.0,
+      "predicted_1_minus_1_minus_w_K": 0.997,
+      "benign_fp": 0,
+      "seconds": 0.0
+    }
+  ]
+}

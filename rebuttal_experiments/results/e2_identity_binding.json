@@ -1,0 +1,419 @@
+{
+  "preregistered": "PREREGISTRATION.md (commit baa92d3)",
+  "separability": {
+    "LIT101~LIT201": {
+      "max_gap_over_probe_states": 10.0,
+      "separable": true,
+      "excitation_gap": 22.0,
+      "separable_under_excitation": true
+    },
+    "LIT101~FIT101": {
+      "max_gap_over_probe_states": 90.0,
+      "separable": true,
+      "excitation_gap": 24.0,
+      "separable_under_excitation": true
+    },
+    "LIT101~FIT201": {
+      "max_gap_over_probe_states": 90.0,
+      "separable": true,
+      "excitation_gap": 12.0,
+      "separable_under_excitation": true
+    },
+    "LIT101~AIT201": {
+      "max_gap_over_probe_states": 89.7,
+      "separable": true,
+      "excitation_gap": 39.3,
+      "separable_under_excitation": true
+    },
+    "LIT101~AIT202": {
+      "max_gap_over_probe_states": 83.0,
+      "separable": true,
+      "excitation_gap": 34.0,
+      "separable_under_excitation": true
+    },
+    "LIT101~AIT203": {
+      "max_gap_over_probe_states": 220.0,
+      "separable": true,
+      "excitation_gap": 209.0,
+      "separable_under_excitation": true
+    },
+    "LIT201~FIT101": {
+      "max_gap_over_probe_states": 90.0,
+      "separable": true,
+      "excitation_gap": 46.0,
+      "separable_under_excitation": true
+    },
+    "LIT201~FIT201": {
+      "max_gap_over_probe_states": 90.0,
+      "separable": true,
+      "excitation_gap": 34.0,
+      "separable_under_excitation": true
+    },
+    "LIT201~AIT201": {
+      "max_gap_over_probe_states": 89.7,
+      "separable": true,
+      "excitation_gap": 61.3,
+      "separable_under_excitation": true
+    },
+    "LIT201~AIT202": {
+      "max_gap_over_probe_states": 83.0,
+      "separable": true,
+      "excitation_gap": 56.0,
+      "separable_under_excitation": true
+    },
+    "LIT201~AIT203": {
+      "max_gap_over_probe_states": 220.0,
+      "separable": true,
+      "excitation_gap": 187.0,
+      "separable_under_excitation": true
+    },
+    "FIT101~FIT201": {
+      "max_gap_over_probe_states": 0.0,
+      "separable": false,
+      "excitation_gap": 12.0,
+      "separable_under_excitation": true
+    },
+    "FIT101~AIT201": {
+      "max_gap_over_probe_states": 0.3,
+      "separable": false,
+      "excitation_gap": 15.3,
+      "separable_under_excitation": true
+    },
+    "FIT101~AIT202": {
+      "max_gap_over_probe_states": 7.0,
+      "separable": true,
+      "excitation_gap": 10.0,
+      "separable_under_excitation": true
+    },
+    "FIT101~AIT203": {
+      "max_gap_over_probe_states": 250.0,
+      "separable": true,
+      "excitation_gap": 233.0,
+      "separable_under_excitation": true
+    },
+    "FIT201~AIT201": {
+      "max_gap_over_probe_states": 0.3,
+      "separable": false,
+      "excitation_gap": 27.3,
+      "separable_under_excitation": true
+    },
+    "FIT201~AIT202": {
+      "max_gap_over_probe_states": 7.0,
+      "separable": true,
+      "excitation_gap": 22.0,
+      "separable_under_excitation": true
+    },
+    "FIT201~AIT203": {
+      "max_gap_over_probe_states": 250.0,
+      "separable": true,
+      "excitation_gap": 221.0,
+      "separable_under_excitation": true
+    },
+    "AIT201~AIT202": {
+      "max_gap_over_probe_states": 6.7,
+      "separable": true,
+      "excitation_gap": 5.3,
+      "separable_under_excitation": true
+    },
+    "AIT201~AIT203": {
+      "max_gap_over_probe_states": 249.7,
+      "separable": true,
+      "excitation_gap": 248.3,
+      "separable_under_excitation": true
+    },
+    "AIT202~AIT203": {
+      "max_gap_over_probe_states": 243.0,
+      "separable": true,
+      "excitation_gap": 243.0,
+      "separable_under_excitation": true
+    }
+  },
+  "n_pairs": 21,
+  "separable_shipped": 18,
+  "separable_excitation": 21,
+  "cases": [
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "LIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT201"
+    },
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "FIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT101"
+    },
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "FIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT201"
+    },
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "AIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT201"
+    },
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "AIT202",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT202"
+    },
+    {
+      "tool": "read_level_T101",
+      "claimed": "LIT101",
+      "actual": "AIT203",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT203"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "LIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT101"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "FIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT101"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "FIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT201"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "AIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT201"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "AIT202",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT202"
+    },
+    {
+      "tool": "read_level_T201",
+      "claimed": "LIT201",
+      "actual": "AIT203",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT203"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "LIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT101"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "LIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT201"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "FIT201",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT201"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "AIT201",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT201"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "AIT202",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT202"
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "claimed": "FIT101",
+      "actual": "AIT203",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT203"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "LIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT101"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "LIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT201"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "FIT101",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT101"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "AIT201",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT201"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "AIT202",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT202"
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "claimed": "FIT201",
+      "actual": "AIT203",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT203"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "LIT101",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT101"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "LIT201",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "LIT201"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "FIT101",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT101"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "FIT201",
+      "shipped_detected": false,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "FIT201"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "AIT202",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT202"
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "claimed": "AIT201",
+      "actual": "AIT203",
+      "shipped_detected": true,
+      "shipped_detected_honest_label": true,
+      "e2_detected": true,
+      "identified_as": "AIT203"
+    }
+  ],
+  "n_cases": 30,
+  "shipped_detected": 24,
+  "e2_detected": 30,
+  "false_positives_e2": [],
+  "excitation": {
+    "LIT101": 41.0,
+    "LIT201": 63.0,
+    "FIT101": 17.0,
+    "FIT201": 29.0,
+    "AIT201": 1.7,
+    "AIT202": 7.0,
+    "AIT203": 250.0
+  }
+}

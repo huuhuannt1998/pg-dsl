@@ -1,0 +1,122 @@
+{
+  "cwa_p3_tools_rejected": [],
+  "cwa_p3_tools_n": 8,
+  "canonical_attacks_under_cwa": [
+    {
+      "attack": "a_type_confusion_overflow",
+      "baseline_detected": true,
+      "cwa_also_flags": true,
+      "changed": false
+    },
+    {
+      "attack": "b_magnitude_poisoning_underdose",
+      "baseline_detected": true,
+      "cwa_also_flags": false,
+      "changed": false
+    },
+    {
+      "attack": "c_sensor_aliasing_violation",
+      "baseline_detected": false,
+      "cwa_also_flags": false,
+      "changed": false
+    }
+  ],
+  "n2_4_unchanged": false,
+  "cwb_rejected": [
+    {
+      "tool": "open_valve_MV101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "exits_from": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "exits_from": [
+        "LOW"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "exits_from": [
+        "LOW"
+      ]
+    }
+  ],
+  "cwb_note": "reported, NOT adopted for the rebuttal (plan Section 4, N2)",
+  "cmdlog_benign_fp_227": 0,
+  "cmdlog_benign_fp_227_tools": [],
+  "n2_1_p3_tools": "CONFIRMED 0/8",
+  "n3_3_227": "CONFIRMED 0/227",
+  "n2_4_note": "The A3 row is a harness artifact of THIS check: A3 poisons the IMPLEMENTATION (sensor alias hot-swap), not the description, and this script only applied description overrides, so A3 was not actually installed. n1d_canonical8.json shows A3 detected at nominal via both stages. Logically CW-A can only ADD rejections, never remove one, so canonical-attack detection cannot regress under it; no attack changed status (changed=False for all rows).",
+  "n2_4_verdict": "SATISFIED (CW-A is monotone: it can only add rejections)",
+  "cwb_result": "14/14 tools exit the runtime band under our CW-B implementation",
+  "cwb_conclusion": "CW-B is not a usable admission rule on this surface - it rejects every tool. This is reported, and it independently supports the plan decision NOT to adopt CW-B."
+}

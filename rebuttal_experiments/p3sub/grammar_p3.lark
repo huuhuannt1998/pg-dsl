@@ -1,0 +1,111 @@
+// PG-DSL Class-C Grammar — SWaT P1+P2 coverage.
+// Produced for Mission 1A (mis_01KR2R4Q9Y3WZHZ53473PPZS66).
+// Implements the class C alphabet from jrn_01KR2JP8DJ0X21RAZGJMP1M3AA:
+//   * actuator(name) := value
+//   * sensor(name) reads value
+//   * Δstate(variable) { property+ }
+//
+// SCOPE: SWaT process stages P1 (raw water intake) and P2 (chemical dosing).
+// P3..P6 deliberately excluded — Mission 2.
+//
+// USAGE:
+//   from lark import Lark
+//   parser = Lark.open("grammar.lark", start="description", parser="lalr")
+//   tree = parser.parse(text)
+//
+// COVERAGE TABLE: see coverage.md (one-to-one with this grammar's terminals).
+
+start: description
+
+description: statement (";" statement)* ";"?
+
+statement: actuator_set
+         | sensor_reads
+         | delta_state
+
+// --- actuator(name) := value ------------------------------------------------
+actuator_set: "actuator" "(" actuator_name ")" ":=" actuator_value
+
+actuator_name: "MV101" -> mv101
+             | "MV201" -> mv201
+             | "P101"  -> p101
+             | "P102"  -> p102
+             | "P201"  -> p201   // HCl dosing pump
+             | "P202"  -> p202   // HCl dosing pump (redundant)
+             | "P203"  -> p203   // NaOCl dosing pump
+             | "P204"  -> p204   // NaOCl dosing pump (redundant)
+             | "P205"  -> p205   // NaCl dosing pump
+             | "P206"  -> p206   // NaCl dosing pump (redundant)
+             | "MV301" -> mv301  // [P3 EXT] UF feed valve
+             | "P301"  -> p301   // [P3 EXT] UF feed pump
+             | "P302"  -> p302   // [P3 EXT] UF feed pump (redundant)
+
+actuator_value: "open"   -> open_v
+              | "closed" -> closed_v
+              | "on"     -> on_v
+              | "off"    -> off_v
+
+// --- sensor(name) reads value -----------------------------------------------
+sensor_reads: "sensor" "(" sensor_name ")" "reads" sensor_value
+
+sensor_name: "LIT101" -> lit101   // raw-water tank level
+           | "LIT201" -> lit201   // P2 buffer-tank level         [added per dec_01KR2YPK31NM987H3KEVK9C2DT]
+           | "FIT101" -> fit101   // raw-water flow
+           | "FIT201" -> fit201   // P1→P2 cross-stage flow       [added per dec_01KR2YPK31NM987H3KEVK9C2DT]
+           | "AIT201" -> ait201   // conductivity
+           | "AIT202" -> ait202   // pH
+           | "AIT203" -> ait203   // ORP
+           | "LIT301" -> lit301   // [P3 EXT] UF feed tank level
+           | "FIT301" -> fit301   // [P3 EXT] UF feed flow
+           | "DPIT301" -> dpit301 // [P3 EXT] trans-membrane differential pressure
+
+sensor_value: NUMBER unit?
+            | qualitative
+
+unit: "%" -> pct
+    | "L_per_s" -> lps
+    | "uS_per_cm" -> uscm
+    | "pH_units" -> phu
+    | "mV" -> mv
+
+qualitative: "low"  -> qual_low
+           | "nominal" -> qual_nom
+           | "high" -> qual_high
+
+// --- Δstate(variable) { property+ } -----------------------------------------
+delta_state: "Δstate" "(" state_var ")" "{" property ("," property)* "}"
+
+state_var: "L_T101"     -> sv_l_t101
+         | "L_T201"     -> sv_l_t201        // P2 buffer-tank level     [added per dec_01KR2YPK31NM987H3KEVK9C2DT]
+         | "L_T301"     -> sv_l_t301        // referenced only as boundary; stage P2 outflow target
+         | "Q_in_T101"  -> sv_qin_t101
+         | "Q_out_T101" -> sv_qout_t101
+         | "Q_in_T201"  -> sv_qin_t201      // [added per dec_01KR2YPK31NM987H3KEVK9C2DT]
+         | "Q_out_T201" -> sv_qout_t201     // [added per dec_01KR2YPK31NM987H3KEVK9C2DT]
+         | "C_HCl"      -> sv_c_hcl         // HCl concentration in P2 pipe
+         | "C_NaOCl"    -> sv_c_naocl
+         | "C_NaCl"     -> sv_c_nacl
+         | "pH_P2"      -> sv_ph_p2
+         | "ORP_P2"     -> sv_orp_p2
+         | "Cond_P2"    -> sv_cond_p2
+
+property: monotone
+        | bounded
+        | sign
+
+monotone: "monotone" sign_dir?
+sign_dir: "+" -> pos
+        | "-" -> neg
+
+bounded: "bounded" "[" NUMBER "," NUMBER "]"
+
+sign: "sign" sign_lit
+sign_lit: "+" -> sign_pos
+        | "-" -> sign_neg
+        | "0" -> sign_zero
+
+// --- Lexical -----------------------------------------------------------------
+%import common.SIGNED_NUMBER -> NUMBER
+%import common.WS
+%ignore WS
+%ignore /\/\/[^\n]*/

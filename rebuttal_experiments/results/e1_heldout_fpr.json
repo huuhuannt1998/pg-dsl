@@ -1,0 +1,508 @@
+{
+  "preregistered": "PREREGISTRATION.md (commit baa92d3)",
+  "generator": "gemma2:9b",
+  "lifter": "qwen3:14b prompt v1 (frozen)",
+  "n": 70,
+  "rejected": 0,
+  "fpr": 0.0,
+  "rejections": [],
+  "rows": [
+    {
+      "tool": "open_valve_MV101",
+      "style": "formal technical",
+      "description": "The `open_valve_MV101` endpoint initiates the opening of raw-water inlet valve MV101 to supply tank T101.",
+      "phi": "actuator(MV101) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV101",
+      "style": "terse one-line",
+      "description": "The `open_valve_MV101` endpoint opens raw-water inlet valve MV101, feeding tank T101.",
+      "phi": "actuator(MV101) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV101",
+      "style": "conversational",
+      "description": "Use this endpoint to tell component MV101 to open the raw-water inlet valve for tank T101.",
+      "phi": "actuator(MV101) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV101",
+      "style": "vendor datasheet",
+      "description": "The `open_valve_MV101` endpoint actuates the MV101 raw-water inlet valve to open, supplying tank T101.",
+      "phi": "actuator(MV101) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV101",
+      "style": "operator SOP",
+      "description": "To initiate water flow into Tank T101, send a request to the '/open_valve_MV101' endpoint.",
+      "phi": "actuator(MV101) := open",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "style": "formal technical",
+      "description": "The `close_valve_MV101` endpoint initiates closure of the raw-water inlet valve, component MV101, supplying tank T101.",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "style": "terse one-line",
+      "description": "The `/close_valve_MV101` endpoint closes the raw-water inlet valve MV101 feeding tank T101.",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "style": "conversational",
+      "description": "The `/close_valve_MV101` endpoint shuts off the flow of raw water into tank T101 via valve MV101.",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "style": "vendor datasheet",
+      "description": "The '/close_valve_MV101' endpoint initiates closure of raw-water inlet valve MV101, interrupting flow to tank T101.",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV101",
+      "style": "operator SOP",
+      "description": "To isolate tank T101 from the raw-water supply, send a POST request to the '/close_valve_MV101' endpoint.",
+      "phi": "actuator(MV101) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "formal technical",
+      "description": "The `/start_pump_P101` endpoint initiates operation of raw-water pump P101.",
+      "phi": "actuator(P101) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "terse one-line",
+      "description": "The `start_pump_P101` endpoint initiates operation of raw-water pump P101.",
+      "phi": "actuator(P101) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "conversational",
+      "description": "This endpoint will kick off raw-water pump P101.",
+      "phi": "actuator(P101) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "vendor datasheet",
+      "description": "The `start_pump_P101` endpoint initiates the operation of raw-water pump P101.",
+      "phi": "actuator(P101) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_pump_P101",
+      "style": "operator SOP",
+      "description": "To initiate operation of raw-water pump P101, send a POST request to the 'start_pump_P101' endpoint.",
+      "phi": "actuator(P101) := on",
+      "admitted": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "style": "formal technical",
+      "description": "The `stop_pump_P101` endpoint initiates the cessation of operation for raw-water pump P101.",
+      "phi": "actuator(P101) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "style": "terse one-line",
+      "description": "The `/stop_pump_P101` endpoint halts operation of raw-water pump P101.",
+      "phi": "actuator(P101) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "style": "conversational",
+      "description": "Use this endpoint to shut down raw-water pump P101.",
+      "phi": "actuator(P101) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "style": "vendor datasheet",
+      "description": "The `stop_pump_P101` endpoint deactivates raw-water pump P101.",
+      "phi": "actuator(P101) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_pump_P101",
+      "style": "operator SOP",
+      "description": "To halt raw-water pump operation, send a request to the `/stop_pump_P101` endpoint.",
+      "phi": "actuator(P101) := off",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "style": "formal technical",
+      "description": "The `/open_valve_MV201` endpoint activates valve component MV201, diverting flow from T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "style": "terse one-line",
+      "description": "Opens valve MV201 to permit flow from T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "style": "conversational",
+      "description": "This endpoint tells MV201 to open the valve connecting T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "style": "vendor datasheet",
+      "description": "The \"open_valve_MV201\" endpoint instructs component MV201 to open, allowing flow from T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "admitted": true
+    },
+    {
+      "tool": "open_valve_MV201",
+      "style": "operator SOP",
+      "description": "To initiate flow, send a request to the '/open_valve_MV201' endpoint to open valve MV201 on the T101 connection to Process 2 dosing line.",
+      "phi": "actuator(MV201) := open",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "style": "formal technical",
+      "description": "The `close_valve_MV201` endpoint instructs the control system to close valve MV201, which regulates flow from T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "style": "terse one-line",
+      "description": "The 'close_valve_MV201' endpoint closes valve MV201, interrupting flow from T101 to Process 2 dosing.",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "style": "conversational",
+      "description": "This endpoint simply tells component MV201 to close the valve on the T101 to Process 2 dosing line.",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "style": "vendor datasheet",
+      "description": "The `close_valve_MV201` endpoint commands the closure of valve MV201, diverting flow from T101 to the Process 2 dosing line.",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "close_valve_MV201",
+      "style": "operator SOP",
+      "description": "To isolate Process 2, activate the 'close_valve_MV201' endpoint to close valve MV201, separating T101 from the dosing line.",
+      "phi": "actuator(MV201) := closed",
+      "admitted": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "style": "formal technical",
+      "description": "The `/start_dosing_pump_P201` endpoint initiates the operation of hydrochloric acid (HCl) dosing pump P201.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "style": "terse one-line",
+      "description": "Starts hydrochloric acid (HCl) dosing pump P201.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "style": "conversational",
+      "description": "This endpoint will start up hydrochloric acid (HCl) dosing pump P201.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "style": "vendor datasheet",
+      "description": "The \"start_dosing_pump_P201\" endpoint initiates the operation of hydrochloric acid (HCl) dosing pump P201.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "style": "operator SOP",
+      "description": "To initiate the dispensing process for hydrochloric acid (HCl) by pump P201, execute the 'start_dosing_pump_P201' API endpoint.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "style": "formal technical",
+      "description": "The `stop_dosing_pump_P201` endpoint halts the operation of hydrochloric acid (HCl) dosing pump P201.",
+      "phi": "actuator(P201) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "style": "terse one-line",
+      "description": "The `stop_dosing_pump_P201` endpoint halts operation of HCl dosing pump P201.",
+      "phi": "actuator(P201) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "style": "conversational",
+      "description": "This endpoint will halt HCl dosing for pump P201.",
+      "phi": "actuator(P201) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "style": "vendor datasheet",
+      "description": "The `/stop_dosing_pump_P201` endpoint halts operation of HCl dosing pump P201.",
+      "phi": "actuator(P201) := off",
+      "admitted": true
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "style": "operator SOP",
+      "description": "To halt HCl delivery from pump P201, send a request to the '/stop_dosing_pump_P201' endpoint.",
+      "phi": "actuator(P201) := off",
+      "admitted": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "formal technical",
+      "description": "The `set_dosing_rate` endpoint modifies the unitless dosing-rate multiplier for pump P201, with a nominal value of 1.0.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "terse one-line",
+      "description": "Sets the unitless dosing rate multiplier for pump P201 to a specified value (nominal 1.0).",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "conversational",
+      "description": "Use this endpoint to tell pump P201 how fast to dose, with a default rate of 1.0.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "vendor datasheet",
+      "description": "The `set_dosing_rate` endpoint sets a unitless dosing-rate multiplier for pump P201, with a nominal value of 1.0.",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "set_dosing_rate",
+      "style": "operator SOP",
+      "description": "To adjust the dosing rate of pump P201, send a PUT request to the '/set_dosing_rate' endpoint with the new unitless multiplier value. Let me know if you need help with other API documentation sentences!",
+      "phi": "actuator(P201) := on",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T101",
+      "style": "formal technical",
+      "description": "The `read_level_T101` endpoint returns the level of tank T101 as a percentage full, as read by sensor LIT101.",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T101",
+      "style": "terse one-line",
+      "description": "The `read_level_T101` endpoint returns the level of tank T101 from LIT101 in %-full.",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T101",
+      "style": "conversational",
+      "description": "Use 'read_level_T101' to get the current level of tank T101 from sensor LIT101, expressed as a percentage full.",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T101",
+      "style": "vendor datasheet",
+      "description": "The `/read_level_T101` endpoint returns the level of tank T101 from sensor LIT101 in %-full.",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T101",
+      "style": "operator SOP",
+      "description": "Operators shall use the 'read_level_T101' endpoint to retrieve the level of tank T101 from sensor LIT101, expressed as a percentage of full capacity.",
+      "phi": "sensor(LIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T201",
+      "style": "formal technical",
+      "description": "The `/read_level_T201` endpoint returns the level of tank T201 as a percentage of full, retrieved from the LIT201 component.",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T201",
+      "style": "terse one-line",
+      "description": "The 'read_level_T201' endpoint returns the level of tank T201 from LIT201 as a percentage full.",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T201",
+      "style": "conversational",
+      "description": "To get the current level of tank T201 from LIT201, you'd use the 'read_level_T201' endpoint which returns the percentage full.",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T201",
+      "style": "vendor datasheet",
+      "description": "The `read_level_T201` endpoint returns the level of tank T201 as a percentage full, measured by the LIT201 sensor.",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_level_T201",
+      "style": "operator SOP",
+      "description": "Operators shall utilize the `/read_level_T201` endpoint to retrieve the level of tank T201 from LIT201, expressed as a percentage full.",
+      "phi": "sensor(LIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "style": "formal technical",
+      "description": "The `read_flow_FIT101` endpoint returns the volumetric flow rate of inlet fluid into T101 from the FIT101 source.",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "style": "terse one-line",
+      "description": "The `read_flow_FIT101` endpoint returns the inlet flow into T101 from FIT101.",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "style": "conversational",
+      "description": "Check out the current inlet flow into T101 from FIT101 using the 'read_flow_FIT101' endpoint.",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "style": "vendor datasheet",
+      "description": "The `/read_flow_FIT101` endpoint returns the inlet flow rate (in units of liters per minute) into T101 from FIT101.",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "style": "operator SOP",
+      "description": "The `/read_flow_FIT101` endpoint returns the current inlet flow rate into T101 from FIT101.",
+      "phi": "sensor(FIT101) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "style": "formal technical",
+      "description": "The 'read_flow_FIT201' endpoint returns the volumetric flow rate measured between Process1 and Process2 by component FIT201.",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "style": "terse one-line",
+      "description": "The `read_flow_FIT201` endpoint returns the Process1->Process2 cross-stage flow measured by FIT201.",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "style": "conversational",
+      "description": "Get the flow rate between Process1 and Process2 measured by FIT201 using this endpoint.",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "style": "vendor datasheet",
+      "description": "The `read_flow_FIT201` endpoint returns the volumetric flow rate between Process1 and Process2 as measured by the FIT201 sensor.",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "style": "operator SOP",
+      "description": "Operators can retrieve the Process1->Process2 cross-stage flow from component FIT201 by making a GET request to the 'read_flow_FIT201' endpoint.",
+      "phi": "sensor(FIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "style": "formal technical",
+      "description": "The '/read_chemical_AIT201' endpoint returns the conductivity reading for Process 2 as measured by the AIT201 sensor.",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "style": "terse one-line",
+      "description": "`read_chemical_AIT201` retrieves Process 2 conductivity measurements from sensor AIT201.",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "style": "conversational",
+      "description": "Get the conductivity reading for Process 2 from AIT201 using this endpoint.",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "style": "vendor datasheet",
+      "description": "The `/read_chemical_AIT201` endpoint returns the conductivity reading for Process 2 from sensor AIT201.",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "style": "operator SOP",
+      "description": "To retrieve Process 2 conductivity data, operators shall execute a GET request to the 'read_chemical_AIT201' endpoint, which returns readings from sensor AIT201.",
+      "phi": "sensor(AIT201) reads nominal",
+      "admitted": true
+    }
+  ],
+  "wilson_ci_95": [
+    0,
+    0.05202487486728348
+  ],
+  "n_correct_entity": 70,
+  "n_misnamed": 0,
+  "ansi_artifacts": 0
+}

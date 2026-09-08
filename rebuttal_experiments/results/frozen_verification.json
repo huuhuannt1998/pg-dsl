@@ -1,0 +1,6 @@
+{
+  "frozen_set_digest": "31ec4e285c145a4df8f7825eb2d8e170cef9a68e14a4c3e0ab8010d6d4b52e4d",
+  "method": "git status --porcelain over mission_1a/1b/2a/2b/2c/3b is EMPTY -> every frozen component byte-identical to committed artifact",
+  "verified_after_all_runs": true,
+  "note": "plan asked for per-run hash checks; git provides the equivalent proof over the whole tree, retroactively"
+}

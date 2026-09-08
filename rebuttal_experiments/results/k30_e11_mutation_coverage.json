@@ -1,0 +1,1661 @@
+{
+  "preregistered": "PREREGISTRATION.md (commit baa92d3)",
+  "n_mutants": 134,
+  "aggregate_detected": 86,
+  "aggregate_rate": 0.6417910447761194,
+  "by_class": {
+    "M1_actuator_swap": {
+      "detected": 4,
+      "n": 8,
+      "rate": 0.5
+    },
+    "M2_actuator_invert": {
+      "detected": 8,
+      "n": 8,
+      "rate": 1.0
+    },
+    "M6_state_conditional": {
+      "detected": 16,
+      "n": 16,
+      "rate": 1.0
+    },
+    "M7_time_delayed": {
+      "detected": 0,
+      "n": 16,
+      "rate": 0.0
+    },
+    "M8_extra_side_effect": {
+      "detected": 0,
+      "n": 22,
+      "rate": 0.0
+    },
+    "M3_magnitude_scale": {
+      "detected": 4,
+      "n": 4,
+      "rate": 1.0
+    },
+    "M4_sensor_swap_honest_label": {
+      "detected": 30,
+      "n": 30,
+      "rate": 1.0
+    },
+    "M5_sensor_swap_lying_label": {
+      "detected": 24,
+      "n": 30,
+      "rate": 0.8
+    }
+  },
+  "ms_per_mutant": 4.008871405871947,
+  "rows": [
+    {
+      "tool": "open_valve_MV101",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "MV201",
+        "val": "open",
+        "act": "MV101"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "MV101",
+        "val": "open"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "open",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "MV201",
+        "val": "closed",
+        "act": "MV101"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "MV101",
+        "val": "closed"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV101 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV101",
+        "val": "closed",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "MV101",
+        "val": "open",
+        "act": "MV201"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "MV201",
+        "val": "open"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=open observed=closed"
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "open_valve_MV201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV201",
+        "val": "open",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "MV101",
+        "val": "closed",
+        "act": "MV201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "MV201",
+        "val": "closed"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator MV201 expected=closed observed=open"
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "close_valve_MV201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "MV201",
+        "val": "closed",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "P102",
+        "val": "on",
+        "act": "P101"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "P101",
+        "val": "on"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "on",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "P102",
+        "val": "off",
+        "act": "P101"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "P101",
+        "val": "off"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P101 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_pump_P101",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P101",
+        "val": "off",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "P202",
+        "val": "on",
+        "act": "P201"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "P201",
+        "val": "on"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=on observed=off"
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "on",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M1_actuator_swap",
+      "params": {
+        "other": "P202",
+        "val": "off",
+        "act": "P201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M2_actuator_invert",
+      "params": {
+        "act": "P201",
+        "val": "off"
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "trigger": 50.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M6_state_conditional",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "trigger": 80.0
+      },
+      "detected": true,
+      "reasons": [
+        "actuator P201 expected=off observed=on"
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "delay": 130.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M7_time_delayed",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "delay": 300.0
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "extra": "P102",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "extra": "MV201",
+        "extra_val": "open"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "class": "M8_extra_side_effect",
+      "params": {
+        "act": "P201",
+        "val": "off",
+        "extra": "P202",
+        "extra_val": "on"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "set_dosing_rate",
+      "class": "M3_magnitude_scale",
+      "params": {
+        "k": 0.0167
+      },
+      "detected": true,
+      "reasons": [
+        "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3167 (\u03b5_Cond_P2=0.05)"
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "class": "M3_magnitude_scale",
+      "params": {
+        "k": 0.05
+      },
+      "detected": true,
+      "reasons": [
+        "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 0.3499 (\u03b5_Cond_P2=0.05)"
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "class": "M3_magnitude_scale",
+      "params": {
+        "k": 20.0
+      },
+      "detected": true,
+      "reasons": [
+        "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 5.0000 (\u03b5_Cond_P2=0.05)"
+      ]
+    },
+    {
+      "tool": "set_dosing_rate",
+      "class": "M3_magnitude_scale",
+      "params": {
+        "k": 60.0
+      },
+      "detected": true,
+      "reasons": [
+        "bounded[0.4,1.5] expects steady-state in band, but trajectory ends at 5.0000 (\u03b5_Cond_P2=0.05)"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns LIT201"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 4.344 > \u03b5_DT=1.0",
+        "value gap 46.649 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns FIT101"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 27.235 > \u03b5_DT=1.0",
+        "value gap 28.327 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns FIT201"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 27.235 > \u03b5_DT=1.0",
+        "value gap 28.327 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns AIT201"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 26.935 > \u03b5_DT=1.0",
+        "value gap 28.027 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns AIT202"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 20.235 > \u03b5_DT=1.0",
+        "value gap 21.327 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT101, tool returns AIT203"
+      ]
+    },
+    {
+      "tool": "read_level_T101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT101",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 222.765 > \u03b5_DT=1.0",
+        "value gap 221.673 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns LIT101"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 4.344 > \u03b5_DT=1.0",
+        "value gap 46.649 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns FIT101"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.891 > \u03b5_DT=1.0",
+        "value gap 74.976 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns FIT201"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.891 > \u03b5_DT=1.0",
+        "value gap 74.976 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns AIT201"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.591 > \u03b5_DT=1.0",
+        "value gap 74.676 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns AIT202"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 15.891 > \u03b5_DT=1.0",
+        "value gap 67.976 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names LIT201, tool returns AIT203"
+      ]
+    },
+    {
+      "tool": "read_level_T201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "LIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 227.109 > \u03b5_DT=1.0",
+        "value gap 175.024 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns LIT101"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 27.235 > \u03b5_DT=1.0",
+        "value gap 28.327 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns LIT201"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.891 > \u03b5_DT=1.0",
+        "value gap 74.976 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns FIT201"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "FIT201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns AIT201"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns AIT202"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 7.000 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT101, tool returns AIT203"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT101",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT101",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 250.000 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns LIT101"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 27.235 > \u03b5_DT=1.0",
+        "value gap 28.327 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns LIT201"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.891 > \u03b5_DT=1.0",
+        "value gap 74.976 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns FIT101"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "FIT101"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns AIT201"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns AIT202"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 7.000 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names FIT201, tool returns AIT203"
+      ]
+    },
+    {
+      "tool": "read_flow_FIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "FIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 250.000 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns LIT101"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "LIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 26.935 > \u03b5_DT=1.0",
+        "value gap 28.027 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns LIT201"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "LIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 22.591 > \u03b5_DT=1.0",
+        "value gap 74.676 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "FIT101"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns FIT101"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "FIT101"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "FIT201"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns FIT201"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "FIT201"
+      },
+      "detected": false,
+      "reasons": []
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns AIT202"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "AIT202"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 6.700 > \u03b5_DT=1.0"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M4_sensor_swap_honest_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "sensor mismatch: claim names AIT201, tool returns AIT203"
+      ]
+    },
+    {
+      "tool": "read_chemical_AIT201",
+      "class": "M5_sensor_swap_lying_label",
+      "params": {
+        "claimed": "AIT201",
+        "actual": "AIT203"
+      },
+      "detected": true,
+      "reasons": [
+        "value gap 249.700 > \u03b5_DT=1.0"
+      ]
+    }
+  ]
+}

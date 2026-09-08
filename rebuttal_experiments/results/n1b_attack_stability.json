@@ -1,0 +1,118 @@
+{
+  "preregistered": "N1.2-N1.4",
+  "rows": [
+    {
+      "twin": "nominal",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "flow0.8",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "flow0.9",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "flow1.1",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "flow1.2",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "lat1s",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "lat2s",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "lat5s",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "lat10s",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "chem0.8",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "chem0.9",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "chem1.1",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "chem1.2",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "drift0.005",
+      "a_type_confusion_overflow": false,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "drift0.01",
+      "a_type_confusion_overflow": false,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "drift0.02",
+      "a_type_confusion_overflow": false,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "corner_slow",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    },
+    {
+      "twin": "corner_fast",
+      "a_type_confusion_overflow": true,
+      "b_magnitude_poisoning_underdose": true,
+      "c_sensor_aliasing_violation": true
+    }
+  ],
+  "flips_vs_nominal": 3,
+  "n_twins": 18,
+  "n_attack_verdicts": 54,
+  "flips_denominator": "3/54",
+  "flipped_detail": "all 3 flips are A1 (type confusion) under the drift twins"
+}

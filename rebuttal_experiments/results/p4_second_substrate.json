@@ -1,0 +1,49 @@
+{
+  "substrate": "SWaT P3 ultrafiltration (T301, MV301, P301/P302, LIT301/FIT301/DPIT301)",
+  "additive": "new plant module + extended grammar COPY; P1+P2 plant, prompt and locked grammar untouched",
+  "lifter": "same RealLifter, same prompt v1 (R1-R5)",
+  "benign_n_tools": 8,
+  "benign_rejected": 1,
+  "benign_rejections": [
+    {
+      "tool": "read_dp_DPIT301",
+      "phi": "",
+      "why": "out_of_grammar"
+    }
+  ],
+  "phis": {
+    "open_valve_MV301": "actuator(MV301) := open",
+    "close_valve_MV301": "actuator(MV301) := closed",
+    "start_pump_P301": "actuator(P301) := on",
+    "stop_pump_P301": "actuator(P301) := off",
+    "start_pump_P302": "actuator(P302) := on",
+    "stop_pump_P302": "actuator(P302) := off",
+    "read_level_T301": "sensor(LIT301) reads nominal",
+    "read_dp_DPIT301": ""
+  },
+  "attacks": [
+    {
+      "attack": "A1_type_confusion",
+      "tool": "open_valve_MV301",
+      "detected": true,
+      "phi": "actuator(MV201) := open; \u0394state(L_T301) {monotone-}",
+      "why": "LOW: actuator MV201 expected open observed None"
+    },
+    {
+      "attack": "A3_sensor_aliasing",
+      "tool": "read_level_T301",
+      "detected": true,
+      "phi": "sensor(LIT301) reads nominal",
+      "why": "LOW: value gap > eps_DT"
+    },
+    {
+      "attack": "NC_name_collision",
+      "tool": "start_pump_P301",
+      "detected": true,
+      "phi": "actuator(P302) := on",
+      "why": "LOW: actuator P302 expected on observed off"
+    }
+  ],
+  "attack_detected": 3,
+  "attack_n": 3
+}

@@ -1,0 +1,2083 @@
+{
+  "purpose": "N6 delta_cov per family = |rejected UNION r2_violating| on the 42-seed corpus",
+  "scoring_fixed_before_run": true,
+  "supersedes_for_delta_cov": "e8c (stored only rej[:8])",
+  "models": [
+    {
+      "model": "qwen3:14b",
+      "n": 42,
+      "rejected": 0,
+      "r2_violations": 0,
+      "delta_cov_union": 0,
+      "seconds": 94.3,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    },
+    {
+      "model": "llama3.1:8b",
+      "n": 42,
+      "rejected": 4,
+      "r2_violations": 8,
+      "delta_cov_union": 9,
+      "seconds": 489.1,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) {sign +}",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) {sign +}",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open; \u0394state(Cond_P2) {sign +}",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads low",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    },
+    {
+      "model": "gemma2:9b",
+      "n": 42,
+      "rejected": 1,
+      "r2_violations": 3,
+      "delta_cov_union": 3,
+      "seconds": 194.7,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off  ; \u0394state(L_T101) {sign 0}",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    },
+    {
+      "model": "mistral-nemo:12b",
+      "n": 42,
+      "rejected": 2,
+      "r2_violations": 0,
+      "delta_cov_union": 2,
+      "seconds": 82.2,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    },
+    {
+      "model": "granite3.1-dense:8b",
+      "n": 42,
+      "rejected": 3,
+      "r2_violations": 3,
+      "delta_cov_union": 5,
+      "seconds": 64.7,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; actuator(MV101) := open",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := on; actuator(MV101) := open",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) {sign +, monotone+, bounded[0.40, 1.50]}",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal; \u0394state(L_T201) { sign 0 }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    },
+    {
+      "model": "phi4-mini:latest",
+      "n": 42,
+      "rejected": 18,
+      "r2_violations": 24,
+      "delta_cov_union": 25,
+      "seconds": 47.5,
+      "per_row": [
+        {
+          "tool": "open_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign + }; \u0394state(Q_in_T101) { sign + }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := open; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := open;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "FORMAL",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "CASUAL",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV101",
+          "style": "TERSE",
+          "phi": "actuator(MV101) := closed; \u0394state(L_T201) { sign 0 }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := on; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "CASUAL",
+          "phi": "",
+          "rejected": true,
+          "r2_violation": false,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := on; \u0394state(Q_in_T101) { sign + }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "FORMAL",
+          "phi": "actuator(P101) := off; \u0394state(Q_in_T201) { sign -, monotone- }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "CASUAL",
+          "phi": "actuator(P101) := off; \u0394state(Q_out_T201) { sign -, monotone- }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_pump_P101",
+          "style": "TERSE",
+          "phi": "actuator(P101) := off; \u0394state(Q_out_T201) { sign -, monotone- }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := open; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := open; \u0394state(L_T101) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "open_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := open;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "FORMAL",
+          "phi": "actuator(MV201) := closed; \u0394state(L_T301) { sign -, monotone-, bounded[0.00, 100] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "CASUAL",
+          "phi": "actuator(MV201) := closed; \u0394state(L_T301) { sign 0 }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "close_valve_MV201",
+          "style": "TERSE",
+          "phi": "actuator(MV201) := closed; \u0394state(L_T301) { sign 0 }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "start_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := off; \u0394state(Cond_P2) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := off; \u0394state(Q_out_T201) { sign -, monotone- }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "stop_dosing_pump_P201",
+          "style": "TERSE",
+          "phi": "actuator(P201) := off; \u0394state(Q_out_T201) { sign -, monotone-, bounded[0.00, 1.50] }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "FORMAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "CASUAL",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "set_dosing_rate",
+          "style": "TERSE",
+          "phi": "actuator(P201) := on; \u0394state(Cond_P2) { sign +, monotone+, bounded[0.40, 1.50] }",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "FORMAL",
+          "phi": "sensor(LIT101) reads nominal; \u0394state(L_T101) { sign 0 }",
+          "rejected": false,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "CASUAL",
+          "phi": "sensor(LIT101) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T101",
+          "style": "TERSE",
+          "phi": "sensor(LIT101) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "FORMAL",
+          "phi": "sensor(LIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "CASUAL",
+          "phi": "sensor(LIT201) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_level_T201",
+          "style": "TERSE",
+          "phi": "sensor(LIT201) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "FORMAL",
+          "phi": "sensor(FIT101) reads nominal; \u0394state(L_T101) { sign + }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "CASUAL",
+          "phi": "sensor(FIT101) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT101",
+          "style": "TERSE",
+          "phi": "sensor(FIT101) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "FORMAL",
+          "phi": "sensor(FIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "CASUAL",
+          "phi": "sensor(FIT201) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_flow_FIT201",
+          "style": "TERSE",
+          "phi": "sensor(FIT201) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "FORMAL",
+          "phi": "sensor(AIT201) reads nominal",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "CASUAL",
+          "phi": "sensor(AIT201) reads nominal; \u0394state(L_T301) { sign + }",
+          "rejected": true,
+          "r2_violation": true,
+          "wrong_lift": true
+        },
+        {
+          "tool": "read_chemical_AIT201",
+          "style": "TERSE",
+          "phi": "sensor(AIT201) reads nominal;",
+          "rejected": false,
+          "r2_violation": false,
+          "wrong_lift": false
+        }
+      ]
+    }
+  ]
+}

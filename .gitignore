@@ -68,3 +68,8 @@ ai-cyber-paper-reviewer/
 manuscript_revision_prompt_template.md
 PG-DSL_plain_english_report.md
 PG-DSL_advisor_questions_plain_english.md
+[FINAL](ACSAC 2026) PG-DSL/
+# Experiment run logs and bytecode caches from the rebuttal/revision passes
+rebuttal_experiments/*.log
+rebuttal_experiments/__pycache__/
+rebuttal_experiments/p3sub/__pycache__/

@@ -1,0 +1,113 @@
+{
+  "purpose": "substantiate or correct the 'charitable reading' asserted in RESULTS.md/rebuttal B4",
+  "charitable_definition": "keep ordered pair iff MEASURED affected-state sets intersect",
+  "affected_states": {
+    "open_valve_MV101": [
+      "MV101"
+    ],
+    "close_valve_MV101": [],
+    "open_valve_MV201": [
+      "FIT201",
+      "LIT101",
+      "LIT201",
+      "MV201"
+    ],
+    "close_valve_MV201": [],
+    "start_pump_P101": [
+      "P101"
+    ],
+    "stop_pump_P101": [],
+    "start_dosing_pump_P201": [
+      "AIT201",
+      "P201"
+    ],
+    "stop_dosing_pump_P201": []
+  },
+  "ground_truth_unsafe": 15,
+  "literal": {
+    "kept": 24,
+    "lost": 14
+  },
+  "charitable": {
+    "kept": 0,
+    "lost": 15,
+    "lost_examples": [
+      [
+        "close_valve_MV101",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "close_valve_MV201",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV101",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV101",
+        "start_pump_P101",
+        "HIGH"
+      ],
+      [
+        "open_valve_MV201",
+        "close_valve_MV101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "open_valve_MV101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "start_dosing_pump_P201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "start_pump_P101",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "stop_dosing_pump_P201",
+        "LOW"
+      ],
+      [
+        "open_valve_MV201",
+        "stop_pump_P101",
+        "LOW"
+      ],
+      [
+        "start_dosing_pump_P201",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "start_pump_P101",
+        "open_valve_MV101",
+        "HIGH"
+      ],
+      [
+        "start_pump_P101",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "stop_dosing_pump_P201",
+        "open_valve_MV201",
+        "LOW"
+      ],
+      [
+        "stop_pump_P101",
+        "open_valve_MV201",
+        "LOW"
+      ]
+    ]
+  },
+  "rebuttal_claim_4_of_15_confirmed": false
+}

@@ -1,0 +1,998 @@
+{
+  "supersedes": "n3_command_log.json field n3_1_all_H1 (was a hardcoded literal)",
+  "n_mutants": 8,
+  "n_poststate_misses": 4,
+  "misses": [
+    {
+      "tool": "close_valve_MV101",
+      "phi": "actuator(MV101) := closed",
+      "class": "H1",
+      "why": "MV101 already == 'closed' at LOW/MID/HIGH before the call",
+      "claimed": [
+        [
+          "MV101",
+          "closed"
+        ]
+      ],
+      "mutated_to": "MV201"
+    },
+    {
+      "tool": "close_valve_MV201",
+      "phi": "actuator(MV201) := closed",
+      "class": "H1",
+      "why": "MV201 already == 'closed' at LOW/MID/HIGH before the call",
+      "claimed": [
+        [
+          "MV201",
+          "closed"
+        ]
+      ],
+      "mutated_to": "MV101"
+    },
+    {
+      "tool": "stop_pump_P101",
+      "phi": "actuator(P101) := off",
+      "class": "H1",
+      "why": "P101 already == 'off' at LOW/MID/HIGH before the call",
+      "claimed": [
+        [
+          "P101",
+          "off"
+        ]
+      ],
+      "mutated_to": "P102"
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "phi": "actuator(P201) := off",
+      "class": "H1",
+      "why": "P201 already == 'off' at LOW/MID/HIGH before the call",
+      "claimed": [
+        [
+          "P201",
+          "off"
+        ]
+      ],
+      "mutated_to": "P202"
+    }
+  ],
+  "n3_1_all_H1_computed": true,
+  "rows": [
+    {
+      "tool": "open_valve_MV101",
+      "phi": "actuator(MV101) := open",
+      "claims": [
+        [
+          "MV101",
+          "open"
+        ]
+      ],
+      "detected_poststate": true,
+      "classification": null,
+      "why": null,
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "open",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV101) := open"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "open",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV101) := open"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "open",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV101) := open"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV101",
+      "phi": "actuator(MV101) := closed",
+      "claims": [
+        [
+          "MV101",
+          "closed"
+        ]
+      ],
+      "detected_poststate": false,
+      "classification": "H1",
+      "why": "MV101 already == 'closed' at LOW/MID/HIGH before the call",
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV101) := closed"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV101) := closed"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV201",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV101) := closed"
+        }
+      ]
+    },
+    {
+      "tool": "open_valve_MV201",
+      "phi": "actuator(MV201) := open",
+      "claims": [
+        [
+          "MV201",
+          "open"
+        ]
+      ],
+      "detected_poststate": true,
+      "classification": null,
+      "why": null,
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "open",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV201) := open"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "open",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV201) := open"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "open",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "open"
+            ]
+          ],
+          "phi": "actuator(MV201) := open"
+        }
+      ]
+    },
+    {
+      "tool": "close_valve_MV201",
+      "phi": "actuator(MV201) := closed",
+      "claims": [
+        [
+          "MV201",
+          "closed"
+        ]
+      ],
+      "detected_poststate": false,
+      "classification": "H1",
+      "why": "MV201 already == 'closed' at LOW/MID/HIGH before the call",
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV201) := closed"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV201) := closed"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "MV101",
+              "closed"
+            ]
+          ],
+          "phi": "actuator(MV201) := closed"
+        }
+      ]
+    },
+    {
+      "tool": "start_pump_P101",
+      "phi": "actuator(P101) := on",
+      "claims": [
+        [
+          "P101",
+          "on"
+        ]
+      ],
+      "detected_poststate": true,
+      "classification": null,
+      "why": null,
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "on",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P101) := on"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "on",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P101) := on"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "on",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P101) := on"
+        }
+      ]
+    },
+    {
+      "tool": "stop_pump_P101",
+      "phi": "actuator(P101) := off",
+      "claims": [
+        [
+          "P101",
+          "off"
+        ]
+      ],
+      "detected_poststate": false,
+      "classification": "H1",
+      "why": "P101 already == 'off' at LOW/MID/HIGH before the call",
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P101) := off"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P101) := off"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P102",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P101) := off"
+        }
+      ]
+    },
+    {
+      "tool": "start_dosing_pump_P201",
+      "phi": "actuator(P201) := on",
+      "claims": [
+        [
+          "P201",
+          "on"
+        ]
+      ],
+      "detected_poststate": true,
+      "classification": null,
+      "why": null,
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "on",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P201) := on"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "on",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P201) := on"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "on",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "on"
+            ]
+          ],
+          "phi": "actuator(P201) := on"
+        }
+      ]
+    },
+    {
+      "tool": "stop_dosing_pump_P201",
+      "phi": "actuator(P201) := off",
+      "claims": [
+        [
+          "P201",
+          "off"
+        ]
+      ],
+      "detected_poststate": false,
+      "classification": "H1",
+      "why": "P201 already == 'off' at LOW/MID/HIGH before the call",
+      "per_state": [
+        {
+          "state": "LOW",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P201) := off"
+        },
+        {
+          "state": "MID",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P201) := off"
+        },
+        {
+          "state": "HIGH",
+          "actuator_pre": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "actuator_post": {
+            "MV101": "closed",
+            "P101": "off",
+            "P102": "off",
+            "MV201": "closed",
+            "P201": "off",
+            "P202": "off",
+            "P203": "off",
+            "P204": "off",
+            "P205": "off",
+            "P206": "off"
+          },
+          "command_log": [
+            [
+              "P202",
+              "off"
+            ]
+          ],
+          "phi": "actuator(P201) := off"
+        }
+      ]
+    }
+  ]
+}
