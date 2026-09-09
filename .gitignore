@@ -80,3 +80,6 @@ rebuttal_experiments/p3sub/__pycache__/
 # Stray output dir created when mission_3a/t1_v_verify.py is run from the repo
 # root; its canonical outputs live in mission_3a/results/.
 /results/
+# Artifact-evaluation submission folder (separate AE HotCRP, not the camera-ready).
+# Brackets escaped for the same reason as [FINAL] above.
+\[ARTIFACT\](ACSAC 2026) PG-DSL/

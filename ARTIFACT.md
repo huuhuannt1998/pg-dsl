@@ -28,7 +28,8 @@ All software, all data, no external services.
 
 **No proprietary components, no sensitive data, no special hardware, no network access at
 run time.** Everything runs on a single machine against a local [Ollama](https://ollama.com)
-server. Total repository size is about 3 MB.
+server. Checked out, the repository is about 54 MB (the replay-trace JSONs dominate); a clone
+transfers about 3 MB because they compress well.
 
 ## 2. Requirements
 
