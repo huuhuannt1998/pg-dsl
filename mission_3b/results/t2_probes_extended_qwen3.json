@@ -8,7 +8,7 @@
   "correct_rate": 0.9032258064516129,
   "grading_rule": "R1 lifter fidelity: CORRECT means the lift faithfully formalises what the description asserts, not what the tool truly does. See Sec. 5.7 'Grading correction on the SA category'.",
   "n_correct_legacy_grading": 25,
-  "legacy_grading_note": "Superseded pre-rebuttal grading, which scored the three SA aliasing probes against the tool's true sensor and so asked the lifter to do the verifier's job. Reported here so the regrade is checkable from a single run; the underlying gap is reported verifier-side in Sec. 5.8.",
+  "legacy_grading_note": "Superseded pre-rebuttal grading, which scored the three SA aliasing probes against the tool's true sensor and so asked the lifter to do the verifier's job. Reported here so the regrade is checkable from a single run. Replayed against their honest implementations the shipped verifier rejects all three on the returned sensor name; the Sec. 5.8 gap is the label-falsifying variant.",
   "by_category": {
     "formal_jargon": {
       "n": 4,
@@ -377,5 +377,5 @@
       "verdict": "CORRECT"
     }
   ],
-  "wall_clock_s": 80.3944799900055
+  "wall_clock_s": 77.36538791656494
 }

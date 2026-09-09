@@ -38,10 +38,15 @@ An earlier draft graded the SA probes against the tool's true sensor and
 reported 25/31. That asked the lifter to do the verifier's work. The
 expectations below are the R1-faithful ones (28/31); the superseded
 expectations are kept in LEGACY_EXPECTED_PHI and the old count is still
-reported, so both gradings stay auditable from one run. The gap those
-three probes expose is real and is reported verifier-side instead: only
-18 of 21 sensor pairs separate at the probed states (Sec. 5.8), where the
-shipped matcher scores 24/30 and the identity probe closes it at 30/30.
+reported, so both gradings stay auditable from one run.
+
+Downstream, the three probes expose no verifier gap: replayed against
+their honest implementations, the shipped verifier rejects all three on
+the returned sensor name (rebuttal_experiments/sa_probes_shipped_verifier.py,
+a post-hoc diagnostic). The verifier-side gap of Sec. 5.8 is the stronger
+label-falsifying variant, where the implementation also lies about which
+sensor it read: only 18 of 21 pairs then separate by value at the probed
+states, the shipped matcher scores 24/30, and the identity probe 30/30.
 
 The lifter is RealLLMAdmissionLayer with prompt_variant="v1" (paper-canonical),
 i.e., qwen3:14b at temperature 0.0, seed 42, think=False.
@@ -343,10 +348,11 @@ def main() -> int:
     print(f"  The {n_correct - n_correct_legacy} probe(s) that differ are the "
           f"{n_sa} SA aliasing cases. Under R1 a lift that")
     print("  reproduces the sensor the DESCRIPTION names is correct; detecting")
-    print("  that the description lies is the verifier's job. The earlier")
-    print("  grading expected the sensor the tool truly reads. The gap is")
-    print("  reported verifier-side in Sec. 5.8 (18/21 pairs separable,")
-    print("  shipped matcher 24/30, identity probe 30/30).")
+    print("  that the description lies is the verifier's job, and the shipped")
+    print("  verifier rejects all three on the returned sensor name (see")
+    print("  rebuttal_experiments/sa_probes_shipped_verifier.py). The Sec. 5.8")
+    print("  gap is the label-falsifying variant: 18/21 pairs separable by")
+    print("  value, shipped matcher 24/30, identity probe 30/30.")
 
     out = {
         "model": "qwen3:14b",
@@ -366,8 +372,10 @@ def main() -> int:
             "Superseded pre-rebuttal grading, which scored the three SA "
             "aliasing probes against the tool's true sensor and so asked "
             "the lifter to do the verifier's job. Reported here so the "
-            "regrade is checkable from a single run; the underlying gap "
-            "is reported verifier-side in Sec. 5.8."),
+            "regrade is checkable from a single run. Replayed against their "
+            "honest implementations the shipped verifier rejects all three "
+            "on the returned sensor name; the Sec. 5.8 gap is the "
+            "label-falsifying variant."),
         "by_category": by_cat,
         "probes": results,
         "wall_clock_s": time.time() - t0,

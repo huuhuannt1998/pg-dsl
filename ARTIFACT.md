@@ -102,7 +102,7 @@ which is not part of this artifact, and exits cleanly with an explanation on a f
 | 6 of 8 canonical attacks blocked | Table 3 | `run_canonical_defense_asr_qwen3.py` | `mission_3b/results/defense_asr_canonical_qwen3.json` |
 | T3 partition; W1, W2 outside both layers | Table 4, §4.6 | `run_canonical_t3_partition_qwen3.py`, then `rebuttal_experiments/r3_invarllm_recalibrated.py` | `mission_3b/results/t3_partition_canonical.json`, `results/r3_invarllm_recalibrated.json` |
 | IDS fires on 42/42 honest traces (why 8/8 was withdrawn) | §5.4 | `rebuttal_experiments/r2_invarllm_benign.py` | `results/r2_invarllm_benign.json` |
-| 28/31 adversarial probes | §5.7 | `run_t2_probes_extended.py` | `mission_3b/results/t2_probes_extended_qwen3.json` |
+| 28/31 adversarial probes; the 3 aliasing probes are then rejected by the verifier | §5.7, §5.3 | `run_t2_probes_extended.py`, `rebuttal_experiments/sa_probes_shipped_verifier.py` (post-hoc diagnostic) | `mission_3b/results/t2_probes_extended_qwen3.json`, `results/sa_probes_shipped_verifier.json` |
 | Identity probe 30/30, shipped 24/30 | §5.8 | `rebuttal_experiments/e2_identity.py` | `results/e2_identity_binding.json` |
 | Six lifter families, δ_cov 0/42 … 25/42 | Table 10 | `rebuttal_experiments/e8c_crossmodel_fullpipe.py`, `e8d_deltacov.py` | `results/e8c_crossmodel_fullpipe.json`, `results/e8d_deltacov.json` |
 | 134 mutants, 70/134 → 94/134 | Table 8 | `e11_mutation.py`, `n2_closed_world.py`, `n3_command_log.py` | `results/e11_mutation_coverage.json`, `results/n2_closed_world.json`, `results/n3_command_log.json` |

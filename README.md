@@ -50,7 +50,7 @@ On a SWaT P1+P2 substrate with 14 MCP tools:
 | Per-style benign FPR | **0.44%** (1/227, Wilson 95% CI [0.08, 2.45]%) on a mistral-generated 227-paraphrase corpus |
 | Canonical attacks blocked | **6/8** — five tools withheld at admission (A₁, A₂, A₃, Z₁, Z₂); the Z₃ pair is identified at admission and blocked at invocation |
 | Composed coverage (PG-DSL ⊕ INVARLLM, IDS calibrated on grid-spanning benign traffic) | **6/8** — W₁, W₂ outside both layers |
-| T2 adversarial probe battery | 28/31 = 90.3% CORRECT across 8 categories (3 read-tool aliasing prompts regraded: verifier-side, closed by the identity probe 30/30) |
+| T2 adversarial probe battery | 28/31 = 90.3% CORRECT across 8 categories (3 read-tool aliasing prompts regraded under R1; the shipped verifier then rejects all three on the returned sensor name) |
 | MSB-adapted union (132 instances, 33 per class) | PG-DSL ≥ MCPShield on every class (NC 24/33 vs 3/33) |
 | Cross-model / six lifter families | A₂ static-only and W₁, W₂ outside both layers under qwen3:14b and llama3.1:8b; measured δ_cov 0/42 … 25/42 across six lifter families |
 | Real-agent end-to-end (N=10 operational-condition sweep) | A₁ 10/10 → 0/10 with defence; W₂ 9/10 unchanged (admission-invisible by design) |
