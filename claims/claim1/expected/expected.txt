@@ -1,0 +1,10 @@
+CLAIM 1
+PG-DSL admits every honest tool description: 0 of 42 rejections over 3 repetitions of the 14 canonical tools (Table 2).
+
+EXPECTED OUTCOME
+mission_3b/results/benign_fpr_canonical_qwen3.json reports n_total_decisions=42, n_admit=42, fpr_per_tool_overall=0.0, and a 95% Wilson upper bound of 0.084. About 40 s.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim1` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

@@ -1,0 +1,1 @@
+On 31 adversarial paraphrase probes the lifter produces a faithful claim or fails closed: 28 of 31 correct, 1 out of grammar, 2 wrong (Section 5.7).

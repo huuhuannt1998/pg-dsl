@@ -1,0 +1,36 @@
+Intended use, limitations, and destructive actions
+==================================================
+
+This is the `use` and `destructive` text from metadata.toml, reproduced here
+because the ACSAC evaluator guide asks for a top-level use.txt.
+
+INTENDED USE AND LIMITATIONS
+----------------------------
+Intended use: a research prototype demonstrating admission-time checking of
+MCP tool descriptions against a digital twin, and the reproduction package
+for the paper's measurements. NOT suitable for: any production safety
+function or a real plant's control path. The twin is a coarse mass-balance
+and linearised-chemistry model of SWaT stages P1 and P2; the Theorem 1v
+guarantee is conditional on a twin-fidelity term that this artifact does not
+certify, and Section 5.11 shows the margin on one stage is zero. The attack
+corpus and the MSB-adapted instances are author-constructed, results cover
+one substrate (with a smaller P3 transfer check), and two of the eight
+canonical attacks are not caught at admission.
+
+DESTRUCTIVE ACTIONS
+-------------------
+None. All actuation is simulated against the bundled digital twin; no real
+plant, device, network host, or external service is contacted at run time.
+Scripts write only under mission_*/results/ and
+rebuttal_experiments/results/, overwriting their own prior JSON outputs --
+so re-running an experiment replaces that experiment's result file. The only
+effect outside the clone is pulling models into the local Ollama store (9.3
+GB for the required model, about 25 GB if all seven are pulled).
+
+SCOPE OF THE EVALUATION
+-----------------------
+Two of the eight claims are negative results the paper reports against
+itself: claim 4 (the runtime IDS of the submitted version fires on 42 of 42
+honest traces) and claim 7 (the Section 4.4 pre-filter drops 14 of the 15
+unsafe pairs, and is withdrawn). They reproduce as failures of an earlier
+design, which is the point; expected/expected.txt in each says so.

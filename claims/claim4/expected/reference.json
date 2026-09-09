@@ -1,0 +1,27 @@
+{
+  "claim_id": "claim4",
+  "claim": "Negative result the paper reports against itself: the runtime IDS instance used in the submitted version fires on 42 of 42 honest replay traces, which is why the submitted 8-of-8 composed-coverage claim was withdrawn (Section 5.4).",
+  "requires_model": false,
+  "assertions": [
+    {
+      "result_json": "rebuttal_experiments/results/r2_invarllm_benign.json",
+      "path": "canonical_42.n",
+      "expected": 42
+    },
+    {
+      "result_json": "rebuttal_experiments/results/r2_invarllm_benign.json",
+      "path": "canonical_42.fired",
+      "expected": 42
+    },
+    {
+      "result_json": "rebuttal_experiments/results/r2_invarllm_benign.json",
+      "path": "canonical_42.mass_balance_violations",
+      "expected": 0
+    },
+    {
+      "result_json": "rebuttal_experiments/results/r2_invarllm_benign.json",
+      "path": "lhs_240.fired",
+      "expected": 233
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "claim_id": "claim8",
+  "claim": "On 31 adversarial paraphrase probes the lifter produces a faithful claim or fails closed: 28 of 31 correct, 1 out of grammar, 2 wrong (Section 5.7).",
+  "requires_model": true,
+  "assertions": [
+    {
+      "result_json": "mission_3b/results/t2_probes_extended_qwen3.json",
+      "path": "n_probes",
+      "expected": 31
+    },
+    {
+      "result_json": "mission_3b/results/t2_probes_extended_qwen3.json",
+      "path": "n_correct",
+      "expected": 28
+    },
+    {
+      "result_json": "mission_3b/results/t2_probes_extended_qwen3.json",
+      "path": "n_out_of_grammar",
+      "expected": 1
+    },
+    {
+      "result_json": "mission_3b/results/t2_probes_extended_qwen3.json",
+      "path": "n_wrong_lift",
+      "expected": 2
+    },
+    {
+      "result_json": "mission_3b/results/t2_probes_extended_qwen3.json",
+      "path": "n_correct_legacy_grading",
+      "expected": 25
+    }
+  ]
+}

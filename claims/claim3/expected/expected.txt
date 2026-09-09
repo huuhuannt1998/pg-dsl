@@ -1,0 +1,10 @@
+CLAIM 3
+Admission and the runtime IDS see different attacks, and two attacks escape both. Once the IDS is re-mined on grid-spanning benign traffic, admission catches A2 that runtime misses, runtime catches nothing admission misses, and W1 and W2 fall outside both layers -- so composed coverage is 6 of 8, not 8 of 8 (Table 4, Section 4.6, Section 5.4).
+
+EXPECTED OUTCOME
+rebuttal_experiments/results/r3_invarllm_recalibrated.json reports lanes_new with static_only=["A2"], runtime_only=[], intersection=[A1,A3,Z1,Z2,Z3], and W1 and W2 in neither lane; held-out honest false positives fall to 0 of 240.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim3` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

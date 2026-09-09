@@ -1,0 +1,28 @@
+{
+  "claim_id": "claim7",
+  "claim": "Pairwise composition is cheap, and the Section 4.4 pre-filter that was meant to make it cheaper does not work: it drops 14 of the 15 unsafe pairs, so the paper withdraws it (Section 4.4).",
+  "requires_model": false,
+  "assertions": [
+    {
+      "result_json": "rebuttal_experiments/results/e7_scale.json",
+      "path": "prefilter.ground_truth_unsafe",
+      "expected": 15
+    },
+    {
+      "result_json": "rebuttal_experiments/results/e7_scale.json",
+      "path": "prefilter.lost",
+      "expected": 14
+    },
+    {
+      "result_json": "rebuttal_experiments/results/e7_scale.json",
+      "path": "per_replay_ms",
+      "expected": 0.026,
+      "tolerance": 0.05
+    },
+    {
+      "result_json": "rebuttal_experiments/results/n7b_prefilter_variants.json",
+      "path": "any_reading_prunes_without_loss",
+      "expected": false
+    }
+  ]
+}

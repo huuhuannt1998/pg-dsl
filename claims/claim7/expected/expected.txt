@@ -1,0 +1,10 @@
+CLAIM 7
+Pairwise composition is cheap, and the Section 4.4 pre-filter that was meant to make it cheaper does not work: it drops 14 of the 15 unsafe pairs, so the paper withdraws it (Section 4.4).
+
+EXPECTED OUTCOME
+rebuttal_experiments/results/e7_scale.json reports per_replay_ms of about 0.026 and a prefilter block with ground_truth_unsafe=15 and lost=14. rebuttal_experiments/n7b_prefilter_variants.py then tests three readings of the sign rule and reports any_reading_prunes_without_loss=false: the only reading that loses nothing prunes nothing.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim7` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

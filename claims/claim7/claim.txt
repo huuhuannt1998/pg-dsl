@@ -1,0 +1,1 @@
+Pairwise composition is cheap, and the Section 4.4 pre-filter that was meant to make it cheaper does not work: it drops 14 of the 15 unsafe pairs, so the paper withdraws it (Section 4.4).

@@ -1,0 +1,15 @@
+https://chameleoncloud.org
+
+PG-DSL needs no testbed-specific feature. It is pure Python plus a local
+Ollama server and runs on any x86-64 or arm64 host with enough RAM for a
+14B-parameter model. Chameleon is named here because it appears in ACSAC's
+list of public research infrastructure and its standard compute nodes exceed
+the requirement comfortably; CloudLab, SPHERE and FABRIC work equally well.
+
+Disclosure: the numbers in the paper were produced on the authors' own
+machine (Apple M4, 24 GB RAM, macOS), not on a testbed. We have verified
+that the artifact carries no macOS-only code, no hardcoded absolute paths
+and no BSD-specific shell idioms, but we have not executed a full run on
+Chameleon ourselves. An evaluator who prefers a testbed should not need any
+change to the artifact; if anything does not work there, tell us through
+HotCRP and we will fix it during the evaluation period.

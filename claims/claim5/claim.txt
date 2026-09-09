@@ -1,0 +1,1 @@
+Replay certifies less than the canonical eight attacks suggest: of 134 description mutants across 8 pre-declared classes, the shipped checker detects 70 (Table 8).

@@ -1,0 +1,10 @@
+CLAIM 8
+On 31 adversarial paraphrase probes the lifter produces a faithful claim or fails closed: 28 of 31 correct, 1 out of grammar, 2 wrong (Section 5.7).
+
+EXPECTED OUTCOME
+mission_3b/results/t2_probes_extended_qwen3.json reports n_probes=31, n_correct=28, n_out_of_grammar=1, n_wrong_lift=2, matching the 28/31 in the paper. The script also prints n_correct_legacy_grading=25: an earlier draft graded the three sensor-aliasing probes against the sensor each tool truly reads, which asks the lifter to do the verifier's job and is what restraint rule R1 forbids. Section 5.7 states that regrade, the script implements it, and both numbers come out of one run so the correction is checkable. Downstream those three probes are then rejected by the shipped verifier on the returned sensor name (rebuttal_experiments/sa_probes_shipped_verifier.py, results/sa_probes_shipped_verifier.json: 3/3 rejected under both lifters). About 70 s.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim8` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

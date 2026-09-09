@@ -1,0 +1,23 @@
+Resource requirements for one evaluation host
+=============================================
+
+CPU        any x86-64 or arm64, 4 cores is comfortable, 2 works
+GPU        none. CPU-only inference throughout
+RAM        16 GB minimum. qwen3:14b holds roughly 10 GB resident at a
+           4096-token context; 24 GB on the reference host
+DISK       12 GB free for the required model + 54 MB checkout.
+           25 GB if all seven cross-family models are pulled
+NETWORK    needed only to clone, pip install, and pull models.
+           Nothing at run time. No API keys, no paid services
+OS         Linux or macOS. Python >= 3.11
+TIME       5 min for the model-free smoke path
+           ~1 h for the eight claim scripts under claims/
+           ~9 h for a full reproduction, dominated by a 7.5 h agent sweep
+
+This artifact does NOT fit a minimal 1 CPU / 2 GB RAM / 10 GB disk VM,
+because of the local model. The deterministic-stub path (ARTIFACT.md
+section 3a, and claims 3-7, which need no model) does fit such a VM.
+
+Suggested Chameleon node: any compute_skylake or compute_cascadelake
+instance. Suggested CloudLab node: c220g2 or newer. Both far exceed the
+requirement; the binding constraint is RAM, not cores.

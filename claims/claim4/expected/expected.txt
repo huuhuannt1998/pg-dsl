@@ -1,0 +1,10 @@
+CLAIM 4
+Negative result the paper reports against itself: the runtime IDS instance used in the submitted version fires on 42 of 42 honest replay traces, which is why the submitted 8-of-8 composed-coverage claim was withdrawn (Section 5.4).
+
+EXPECTED OUTCOME
+rebuttal_experiments/results/r2_invarllm_benign.json reports canonical_42.fired=42 of 42 and lhs_240.fired=233 of 240, with mass_balance_violations=0 -- every firing is a band violation at the start of the trajectory, i.e. the same alarm it raises on benign traffic.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim4` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

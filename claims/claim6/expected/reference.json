@@ -1,0 +1,27 @@
+{
+  "claim_id": "claim6",
+  "claim": "A fixed probe grid is a coverage limit, not a guarantee: at the 3 published states all 16 state-conditional mutants are invisible; at 30 random states all 16 are caught; benign false positives stay at 0 for every grid size; and narrow triggers stay about 42% invisible even at 100 states (Table 11).",
+  "requires_model": false,
+  "assertions": [
+    {
+      "result_json": "rebuttal_experiments/results/n5b_coverage_curve.json",
+      "path": "first_design_result.0.detected",
+      "expected": 0
+    },
+    {
+      "result_json": "rebuttal_experiments/results/n5b_coverage_curve.json",
+      "path": "first_design_result.2.detected",
+      "expected": 16
+    },
+    {
+      "result_json": "rebuttal_experiments/results/n5b_coverage_curve.json",
+      "path": "benign_by_K.3",
+      "expected": 0
+    },
+    {
+      "result_json": "rebuttal_experiments/results/n5b_coverage_curve.json",
+      "path": "benign_by_K.100",
+      "expected": 0
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+CLAIM 5
+Replay certifies less than the canonical eight attacks suggest: of 134 description mutants across 8 pre-declared classes, the shipped checker detects 70 (Table 8).
+
+EXPECTED OUTCOME
+rebuttal_experiments/results/e11_mutation_coverage.json reports n_mutants=134, aggregate_detected=70, and the per-class breakdown of Table 8 (for example M2 actuator-invert 8 of 8, M1 actuator-swap 4 of 8). Under a minute.
+
+MECHANICAL CHECK
+After run.sh, `python3 claims/_check.py claims/claim5` compares the fields
+listed in reference.json against the result JSON and prints PASS/FAIL per
+field. run.sh already does this at the end, so a plain `./run.sh` is enough.

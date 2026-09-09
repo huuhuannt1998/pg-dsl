@@ -47,6 +47,29 @@ transfers about 3 MB because they compress well.
 The deterministic-stub configuration needs **no models at all** — see the 5-minute path
 below, which exercises the plant, grammar, matcher and composition pass end to end.
 
+## 2b. ACSAC packaging layout
+
+The ACSAC evaluator guide asks for a specific top-level layout. It is present:
+
+| Guide expects | Here |
+|---|---|
+| `install.sh` | at the root; `--no-model` for the model-free path |
+| `claims/claimN/` with `claim.txt`, `run.sh`, `expected/` | `claims/claim1` … `claims/claim8` |
+| `infrastructure/` metadata | `infrastructure/{url,resources,allocation}` |
+| `README.txt`, `license.txt`, `use.txt` | at the root, beside the Markdown originals |
+| `artifact/` | see `artifact/README.txt` — the code stays at the repository root so the paths printed in the paper's Appendix F stay correct; that file maps the two |
+
+Each `claims/claimN/run.sh` runs the underlying script and then calls
+`claims/_check.py`, which compares the result JSON against the fields recorded in
+`claims/claimN/expected/reference.json` and prints PASS or FAIL per field. So:
+
+```bash
+./claims/claim5/run.sh      # deterministic, under a minute, no model
+```
+
+ends with a verdict rather than a JSON to eyeball. Claims 3–7 need no model at all;
+claims 1, 2 and 8 need `qwen3:14b`.
+
 ## 3. Suggested evaluation path
 
 Full reproduction is about **9 hours**, dominated by the real-agent sweep (~7.5 h). Three

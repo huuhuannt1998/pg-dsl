@@ -1,0 +1,30 @@
+{
+  "claim_id": "claim3",
+  "claim": "Admission and the runtime IDS see different attacks, and two attacks escape both. Once the IDS is re-mined on grid-spanning benign traffic, admission catches A2 that runtime misses, runtime catches nothing admission misses, and W1 and W2 fall outside both layers -- so composed coverage is 6 of 8, not 8 of 8 (Table 4, Section 4.6, Section 5.4).",
+  "requires_model": false,
+  "assertions": [
+    {
+      "result_json": "rebuttal_experiments/results/r3_invarllm_recalibrated.json",
+      "path": "lanes_new.static_only",
+      "expected": [
+        "A2"
+      ]
+    },
+    {
+      "result_json": "rebuttal_experiments/results/r3_invarllm_recalibrated.json",
+      "path": "lanes_new.runtime_only",
+      "expected": []
+    },
+    {
+      "result_json": "rebuttal_experiments/results/r3_invarllm_recalibrated.json",
+      "path": "lanes_new.intersection",
+      "expected": [
+        "A1",
+        "A3",
+        "Z1",
+        "Z2",
+        "Z3"
+      ]
+    }
+  ]
+}

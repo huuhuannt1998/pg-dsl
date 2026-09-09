@@ -1,0 +1,26 @@
+Allocation and setup
+====================
+
+No special allocation, reservation or quota is needed: one ordinary
+general-purpose node for a few hours is enough. No privileged access, no
+custom images, no multi-node topology.
+
+  # 1. allocate any Linux node meeting infrastructure/resources
+  # 2. install Ollama (https://ollama.com/download/linux)
+  curl -fsSL https://ollama.com/install.sh | sh
+  ollama serve &
+
+  # 3. get the artifact and install it
+  git clone https://github.com/huuhuannt1998/pg-dsl
+  cd pg-dsl
+  ./install.sh                 # deps + qwen3:14b (9.3 GB), ends with a smoke test
+  ./install.sh --no-model      # deps only, for the model-free path
+
+  # 4. run any claim
+  ./claims/claim1/run.sh       # each prints PASS/FAIL per asserted field
+
+Claims 3, 4, 5, 6 and 7 are deterministic and need no model, so they run on
+a node without the 12 GB of model storage. Claims 1, 2 and 8 need
+qwen3:14b.
+
+The model pull is the only slow setup step (9.3 GB). Start it early.

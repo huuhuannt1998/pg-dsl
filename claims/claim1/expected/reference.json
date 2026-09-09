@@ -1,0 +1,22 @@
+{
+  "claim_id": "claim1",
+  "claim": "PG-DSL admits every honest tool description: 0 of 42 rejections over 3 repetitions of the 14 canonical tools (Table 2).",
+  "requires_model": true,
+  "assertions": [
+    {
+      "result_json": "mission_3b/results/benign_fpr_canonical_qwen3.json",
+      "path": "n_total_decisions",
+      "expected": 42
+    },
+    {
+      "result_json": "mission_3b/results/benign_fpr_canonical_qwen3.json",
+      "path": "n_admit",
+      "expected": 42
+    },
+    {
+      "result_json": "mission_3b/results/benign_fpr_canonical_qwen3.json",
+      "path": "fpr_per_tool_overall",
+      "expected": 0.0
+    }
+  ]
+}
