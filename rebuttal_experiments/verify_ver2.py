@@ -67,6 +67,14 @@ chk("MSB disjoint + non-NC tool", n4['n4_1_disjoint'] and all(h['target_tool']==
 chk("P4 1/8, 3/3, DPIT301", p4['benign_rejected']==1 and p4['attack_detected']==3 and p4['benign_rejections'][0]['tool']=='read_dp_DPIT301')
 # manuscript-side assertions
 chk("tex macro 28/31", '{\\tTwoCorrect}{28/31}' in tex)
+# The probe script's own grading must agree with the macro the paper prints; an
+# earlier draft graded the 3 SA aliasing probes against the tool's true sensor
+# and produced 25/31, which is now reported alongside as the superseded number.
+_t2 = json.load(open(_ROOT + '/mission_3b/results/t2_probes_extended_qwen3.json'))
+chk("probe JSON agrees with the 28/31 macro",
+    _t2['n_correct'] == 28 and _t2['n_probes'] == 31)
+chk("superseded 25/31 grading still reported",
+    _t2.get('n_correct_legacy_grading') == 25)
 chk("tex macro 90.3", '{\\tTwoCorrectPct}{90.3}' in tex)
 chk("tex MSB macros 24/33", '24/33' in tex and '3/33' in tex)
 chk("prefilter withdrawn", 'We withdraw that claim' in ds)

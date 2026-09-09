@@ -121,8 +121,11 @@ which is not part of this artifact, and exits cleanly with an explanation on a f
 The plant, matcher, grammar and composition pass are **deterministic**: those numbers should
 reproduce exactly. Anything routed through an LLM can vary:
 
-- The lifter runs at temperature 0 with a fixed seed and `think=False`, and was
-  bit-stable across our runs, but Ollama version or quantisation changes can shift a lift.
+- The lifter runs at temperature 0 with a fixed seed and `think=False`. It is stable up to
+  whitespace, not byte-identical: re-running the 31-probe battery reproduced 30 of 31 lifts
+  exactly and emitted the 31st (CT2) with different spacing inside the braces. The matcher
+  normalises whitespace, so no verdict moved. Ollama version or quantisation changes can
+  shift a lift further than that.
   The failure mode is visible, not silent: a changed lift shows up as a changed admission
   verdict, and `δ_cov` is exactly the rate at which lifts go wrong.
 - The real-agent campaign samples operating conditions per rep rather than decoding
