@@ -189,29 +189,41 @@ is in [`mission_2c/baselines/real_lifter.py`](mission_2c/baselines/real_lifter.p
 - **Untrusted**: MCP tool description (the channel), tool
   implementation (may be poisoned), runtime telemetry (may be
   spoofed).
-- **Complementary**: a runtime CPS-IDS (INVARLLM here) catches
-  runtime-only attacks (W₁ sub-noise-floor stealth, W₂ post-admission
-  spoof) outside admission-time visibility by construction; T3
-  formalizes the composition.
+- **Admission-invisible**: W₁ (sub-noise-floor stealth drift) and W₂
+  (post-admission spoof) are outside admission-time visibility by
+  construction. T3 formalizes the separation, and it is
+  one-directional: admission sees an attack (A₂) no runtime invariant
+  sees, while a runtime CPS-IDS calibrated on benign traffic spanning
+  our replay grid misses W₁ and W₂ as well — composed coverage is 6/8,
+  not 8/8. The residual names what a telemetry-independent check must
+  catch. See `rebuttal_experiments/results/r2_invarllm_benign.json`
+  and `r3_invarllm_recalibrated.json`.
 
 ## Citation
 
-When the paper is published, please cite:
+Accepted at ACSAC 42 — the 42nd IEEE Annual Computer Security
+Applications Conference, 7–11 December 2026, Los Angeles, CA, USA.
+Please cite:
 
 ```bibtex
 @inproceedings{pgdsl_acsac26,
-  title     = {{PG-DSL}: Physics-Grounded Description Lifting for
-               Admission-Time Defence of {LLM}-Controlled Industrial
-               Cyber-Physical Systems},
-  author    = {[Anonymous Submission, ACSAC 2026]},
-  booktitle = {ACSAC},
+  title     = {{PG-DSL}: Physics-Grounded Admission Checking for
+               {MCP}-Controlled {CPS} Tools},
+  author    = {Bui, Huan and Fu, Chenglong},
+  booktitle = {Proceedings of the 42nd Annual Computer Security
+               Applications Conference (ACSAC)},
+  address   = {Los Angeles, CA, USA},
+  month     = dec,
   year      = {2026}
 }
 ```
 
+Page numbers and the DOI will be added once the proceedings appear.
+
 ## License
 
-Code: MIT. Paper LaTeX source: CC BY-NC-SA 4.0. See `LICENSE`.
+MIT — see [`LICENSE`](LICENSE). The paper's LaTeX source is not part of
+this artifact repository.
 
 ## Acknowledgements
 
