@@ -1,3 +1,5 @@
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 # SUPERSEDED_BY: n7b_prefilter_variants.py
 # WHY_WRONG: models "charitable" by MEASURING each tool's affected-state set from the
 #   default initial state. close_*/stop_* tools move nothing from a state where the valve
@@ -22,9 +24,9 @@ This is the most generous sign-classifier-style prefilter that still prunes
 anything: it keeps every pair that could interact through a shared state var.
 """
 import sys, itertools, json
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_3b')
+sys.path.insert(0,_ROOT+'/mission_3b')
 from admission_layer.composition_verifier import (DEFAULT_INITIAL_STATES, SAFE_BAND_LIT101,
                                   SAFE_BAND_LIT201, COMPOSITION_HORIZON_S)
 

@@ -1,10 +1,12 @@
 """N1: perturbed-twin verdict stability. Closes RB-B3 and RC's DT-fidelity assumption.
 Pre-registered N1.1-N1.6. The frozen plant is subclassed, never edited; the nominal config
 must reproduce frozen behaviour exactly before any perturbed result is reported."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time, copy
 sys.path.insert(0,'.')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b')
+sys.path.insert(0,_ROOT+'/mission_1b')
 from plant import SwatP1P2Plant, PlantParams
 
 class PerturbedPlant(SwatP1P2Plant):

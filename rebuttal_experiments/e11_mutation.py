@@ -1,6 +1,8 @@
 """E11 - mutation-based replay-coverage measurement. Pre-registered 2026-08-20."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time
-sys.path.insert(0, '/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0, _ROOT+'/rebuttal_experiments')
 from harness import *
 m2a = sys.modules['_m2a_adm']
 

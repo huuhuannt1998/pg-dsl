@@ -10,10 +10,12 @@ This script tries three progressively more generous readings, including the one 
 actuator -> touched-tank topology, which is charitable because it ignores direction
 and state and keeps any pair that could interact through shared plant topology.
 """
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, itertools, json
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_3b')
+sys.path.insert(0,_ROOT+'/mission_3b')
 from admission_layer.composition_verifier import (DEFAULT_INITIAL_STATES,
     SAFE_BAND_LIT101, SAFE_BAND_LIT201, COMPOSITION_HORIZON_S)
 

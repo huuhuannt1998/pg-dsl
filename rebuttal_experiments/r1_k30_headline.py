@@ -6,11 +6,13 @@ module globals at call time, so overriding that attribute runs the SHIPPED per-t
 and matcher over 30 Latin-hypercube initial states with no code change. The composition pass
 keeps its own published 3-state grid (DEFAULT_INITIAL_STATES) so that the per-tool K effect is
 isolated. harness.save is redirected so the K=3 result files are never overwritten."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, random, time, re
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 import harness as H
 from harness import *
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (ROOT, f'{ROOT}/mission_1b', f'{ROOT}/mission_2a', f'{ROOT}/mission_2b', f'{ROOT}/mission_3b'):
     sys.path.insert(0,p)
 

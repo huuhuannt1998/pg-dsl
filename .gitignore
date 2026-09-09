@@ -68,8 +68,15 @@ ai-cyber-paper-reviewer/
 manuscript_revision_prompt_template.md
 PG-DSL_plain_english_report.md
 PG-DSL_advisor_questions_plain_english.md
-[FINAL](ACSAC 2026) PG-DSL/
+# NOTE: [ ] are glob metacharacters in gitignore -- a bare [FINAL] is a
+# character class matching one of F,I,N,A,L and does NOT match the literal
+# folder name. The brackets must be escaped.
+\[FINAL\](ACSAC 2026) PG-DSL/
 # Experiment run logs and bytecode caches from the rebuttal/revision passes
 rebuttal_experiments/*.log
 rebuttal_experiments/__pycache__/
 rebuttal_experiments/p3sub/__pycache__/
+
+# Stray output dir created when mission_3a/t1_v_verify.py is run from the repo
+# root; its canonical outputs live in mission_3a/results/.
+/results/

@@ -1,9 +1,11 @@
 """E6 - adaptive attacker suite + structural cause. Pre-registered 2026-08-20."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, itertools
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
 m2a = sys.modules['_m2a_adm']
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_3b')
+sys.path.insert(0,_ROOT+'/mission_3b')
 from admission_layer.composition_verifier import SAFE_BAND_LIT101, SAFE_BAND_LIT201, DEFAULT_INITIAL_STATES, COMPOSITION_HORIZON_S
 
 print("== structural cause: how many lifted claims constrain the physical trajectory? ==")

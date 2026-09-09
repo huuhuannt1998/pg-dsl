@@ -1,9 +1,11 @@
 """E3 - INVARLLM re-mined on grid-spanning benign traffic; runtime column recomputed. Pre-registered."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, random, re, time
 from pathlib import Path
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (ROOT, f'{ROOT}/mission_1b', f'{ROOT}/mission_2a', f'{ROOT}/mission_2b', f'{ROOT}/mission_2b/baselines', f'{ROOT}/mission_3b'):
     sys.path.insert(0,p)
 from invarllm_runtime import INVARLLMRuntime

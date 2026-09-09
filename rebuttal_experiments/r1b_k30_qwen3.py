@@ -1,9 +1,11 @@
 """E1b - canonical 8 under the DEPLOYED lifter (qwen3:14b, prompt v1) at K=30. Pre-registered."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, random, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 import harness as H
 from harness import *
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (ROOT, f'{ROOT}/mission_1b', f'{ROOT}/mission_2a', f'{ROOT}/mission_2b', f'{ROOT}/mission_2c', f'{ROOT}/mission_3b'):
     sys.path.insert(0,p)
 K=30

@@ -1,6 +1,8 @@
 """N2: CW-A closed-world rule on unclaimed actuator transitions. Pre-registered N2.1-N2.5.
 M(D) = actuator names verbatim in the description + the actuator named in phi.
 Reject if the replay's transition log moves an actuator outside M(D)."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json
 sys.path.insert(0,'.')
 from harness import *
@@ -35,7 +37,7 @@ print("== N2.1 benign cost ==")
 p,s=fresh(); tools=[t['name'] for t in s.list_tools()]
 fp42=[t for t in tools if cwa_rejects(t, s._tools[t].description, lay.gate_one_tool(t,fresh()[1]).phi)]
 print(f"   canonical 14 tools x 3 states: {len(fp42)}/14 rejected  {fp42}")
-para=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'))
+para=json.load(open(_ROOT+'/mission_3b/data/benign_corpus_extended.json'))
 fpp=[]
 for r in para:
     p2,s2=fresh(); s2.apply_description_overrides({r['tool_name']:r['description']})

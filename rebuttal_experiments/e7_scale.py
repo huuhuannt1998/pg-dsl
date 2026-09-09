@@ -1,10 +1,12 @@
 """E7 - composition-pass scale curve. Answers RC '14 tools' and RB 'O(n^2) scalability'.
 Measures real wall-clock of the pairwise replay budget at synthetic catalog sizes, and
 tests the paper's claim that a monotone sign-classifier prefilter prunes 'without coverage loss'."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, time, itertools, json
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_3b')
+sys.path.insert(0,_ROOT+'/mission_3b')
 from admission_layer.composition_verifier import (SAFE_BAND_LIT101, SAFE_BAND_LIT201,
     DEFAULT_INITIAL_STATES, COMPOSITION_HORIZON_S)
 

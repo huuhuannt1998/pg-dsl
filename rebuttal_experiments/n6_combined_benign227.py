@@ -7,13 +7,15 @@ Reports, per rule and as a UNION with the shipped rejection:
   CW-A           : reject if the replay moves an actuator outside M(D)
   command-log    : reject if a claimed actuator command is absent from the replay log
 Scoring fixed before the run. Replay-only; no Ollama call."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json
 sys.path.insert(0,'.')
 from harness import *
 m2a=sys.modules['_m2a_adm']
 
-CACHE='/Users/huanbui/Desktop/PG-DSL/mission_3b/results/per_style_canonical_extended_qwen3.json'
-CORPUS='/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'
+CACHE=_ROOT+'/mission_3b/results/per_style_canonical_extended_qwen3.json'
+CORPUS=_ROOT+'/mission_3b/data/benign_corpus_extended.json'
 dec=json.load(open(CACHE))['decisions']
 corpus=json.load(open(CORPUS))
 assert len(dec)==227 and len(corpus)==227, (len(dec),len(corpus))

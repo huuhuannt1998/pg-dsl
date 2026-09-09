@@ -15,7 +15,6 @@
 | Ollama runtime | RUNNING | `/usr/local/bin/ollama`, API at `http://localhost:11434/v1` |
 | **Qwen model (canonical)** | PULLED | **`qwen3:14b`** (Q4_K_M, 9.3 GB on disk, 10 GB resident @ 4096 ctx) |
 | Qwen3 thinking-mode | DISABLED at API level | `ollama.chat(..., think=False)` in `qwen_client.call()` |
-| claw-code-local source | CLONED | `/Users/huanbui/Desktop/agenttrace/claw-code-local/` |
 | Disk free | OK | 256 GiB available |
 
 ### Runtime verification (paper provenance)
@@ -152,8 +151,9 @@ qwen3:14b reruns under `mission_2c/results/*_qwen3.json` and
 
 ## claw-code-local note
 
-For Mission 2D's real-agent campaign (per `jrn_01KR3TK3MCFKXMEQD4HDEVAQ9X`),
-the agent harness MUST be `claw-code-local` (the cloned Rust workspace at
-`/Users/huanbui/Desktop/agenttrace/claw-code-local/`). Custom Ollama wrappers
-in the agent role are NOT acceptable for the Threat-Model section's empirical
-claim. See `mission_2d/INSTALL.md` for that integration.
+For Mission 2D's real-agent campaign the agent harness is the **official
+Python MCP SDK** (`mcp` >= 1.27) driving the SWaT real-MCP server; see
+`mission_2d/baselines/real_mcp_agent.py` and `mission_2d/INSTALL.md`. An
+earlier design used a local Rust agent fork; it is superseded and is not part
+of this artifact. Custom Ollama wrappers in the agent role are NOT acceptable
+for the Threat-Model section's empirical claim.

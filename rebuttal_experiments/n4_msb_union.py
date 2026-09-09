@@ -1,9 +1,11 @@
 """N4: score the 8 hand-written MSB instances per class with the SAME scorer used for the
 25-instance grid, so the union (33/class) is internally consistent. Pre-registered N4.1-N4.3."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_3b/data')
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/mission_3b/data')
+sys.path.insert(0,_ROOT+'/mission_2c/baselines')
 from harness import fresh, save
 from msb_subset import MSB_INSTANCES
 from real_admission_layer import RealLLMAdmissionLayer

@@ -6,11 +6,13 @@ from mission_1b/results/benign/rep*.json). It is then fed honest traces it has n
 each of the 14 canonical tools executed once from LOW/MID/HIGH on a fresh plant and stepped
 for the 120 s admission horizon (42 traces), plus the 8 actuator tools from the 30 LHS states
 of E1 (240 traces). A trace is a false positive iff check() reports >= 1 violation."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, random, re
 from pathlib import Path
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (f'{ROOT}/mission_2b', f'{ROOT}/mission_2b/baselines', f'{ROOT}/mission_1b', f'{ROOT}/mission_2a'):
     sys.path.insert(0,p)
 from invarllm_runtime import INVARLLMRuntime

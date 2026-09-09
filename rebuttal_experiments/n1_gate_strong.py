@@ -4,10 +4,12 @@ chemistry-invariant (eps_DT_emp = 0.0 on every chem twin), it could not exercise
 chemistry branch of PerturbedPlant.step at all. This gate covers ALL 14 tools x 3 initial
 states x ALL 7 sensors x 120 steps, and byte-compares serialised nominal trajectories
 against the frozen plant."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, hashlib
 sys.path.insert(0,'.')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b')
+sys.path.insert(0,_ROOT+'/mission_1b')
 from plant import SwatP1P2Plant, PlantParams
 from mcp_server import MCPServer
 from n1_perturbed_twin import PerturbedPlant

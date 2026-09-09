@@ -2,10 +2,12 @@
 inside every perturbed twin, per plan Section 4 N1 'PER TWIN REQUIRED WORKLOAD'.
 Z3 goes through the 168-replay composition pass. W1/W2 are logged for completeness and are
 known runtime-only misses by design. Closes N1.2, N1.3, N1.4."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time
 sys.path.insert(0,'.')
 from harness import *
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (ROOT, f'{ROOT}/mission_1b', f'{ROOT}/mission_2a', f'{ROOT}/mission_2b', f'{ROOT}/mission_3b'):
     sys.path.insert(0,p)
 from plant import PlantParams

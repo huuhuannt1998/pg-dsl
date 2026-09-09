@@ -1,8 +1,10 @@
 """E4 - program-analysis baseline vs PG-DSL. Pre-registered 2026-08-20. Decision experiment."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json, inspect, subprocess, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b')
+sys.path.insert(0,_ROOT+'/mission_1b')
 from attacks.poisoned_descriptions import all_attacks, SENSOR_ALIASING_IMPL_HOOK, SENSOR_ALIASING_TARGET
 
 VOCAB = list(SENSORS)+["MV101","MV201","P101","P102","P201","P202","P203","P204","P205","P206",

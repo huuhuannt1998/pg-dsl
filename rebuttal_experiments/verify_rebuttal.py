@@ -1,6 +1,24 @@
+
+# --- AUTHOR-ONLY GATE -------------------------------------------------------
+# This script cross-checks the author-response text against the raw result JSONs. The LaTeX
+# source is not part of the public artifact, so on a fresh clone it exits
+# cleanly instead of failing. The experiments themselves are reproducible
+# without it: see README.md "Reproduce every paper number".
+import os as _os, sys as _sys, pathlib as _p2
+def _need(path, label):
+    if not _os.path.exists(path):
+        print(f"SKIP: {label} not present ({path}).")
+        print("      This checker is author-only; it needs the LaTeX source, which the")
+        print("      public artifact does not ship. Nothing is wrong with your clone.")
+        _sys.exit(0)
+# ---------------------------------------------------------------------------
+
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import json
-R='/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/'
-REB='/Users/huanbui/Desktop/PG-DSL/(ACSAC 2026) PG-DSL_ Physics-Grounded Description Lifting for Admission-Time Defence of LLM-Controlled Industrial Cyber-Physical Systems/rebuttal/final-v5.md'
+R=_ROOT+'/rebuttal_experiments/results/'
+REB=_ROOT+'/(ACSAC 2026) PG-DSL_ Physics-Grounded Description Lifting for Admission-Time Defence of LLM-Controlled Industrial Cyber-Physical Systems/rebuttal/final-v5.md'
+_need(REB, 'author-response text')
 L=lambda f: json.load(open(R+f))
 T=open(REB).read()
 ok=[];bad=[]

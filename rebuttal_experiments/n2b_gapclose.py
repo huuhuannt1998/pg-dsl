@@ -4,6 +4,8 @@
   (c) N2    Rule CW-B (solo safety band) - INFORMATION ONLY, reported not adopted
   (d) N3.3  command-log benign regression on all 227 paraphrases (was only 14)
 All replay-only; no Ollama call."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json, time
 sys.path.insert(0,'.')
 from harness import *
@@ -53,7 +55,7 @@ print(f"(a) N2.1 CW-A on P4's 8 SWaT-P3 tools: {len(p3fp)}/8 rejected  {p3fp}", 
 res["cwa_p3_tools_rejected"]=p3fp; res["cwa_p3_tools_n"]=len(P4TOOLS)
 
 # ---------- (b) CW-A on the canonical attacks ------------------------------
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b/attacks')
+sys.path.insert(0,_ROOT+'/mission_1b/attacks')
 from poisoned_descriptions import (all_attacks, SENSOR_ALIASING_IMPL_HOOK,
                                    SENSOR_ALIASING_TARGET)
 def transitions(tool,init,server):
@@ -124,7 +126,7 @@ def cmdlog_rejects(tool,desc,phi):
     if not cl: return False
     log=command_log(tool,desc)
     return any((n,v) not in log for n,v in cl)
-para=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'))
+para=json.load(open(_ROOT+'/mission_3b/data/benign_corpus_extended.json'))
 fp227=[]
 phicache={}
 for r in para:

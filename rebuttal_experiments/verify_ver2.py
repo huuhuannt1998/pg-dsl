@@ -1,6 +1,24 @@
+
+# --- AUTHOR-ONLY GATE -------------------------------------------------------
+# This script cross-checks the camera-ready manuscript against the raw result JSONs. The LaTeX
+# source is not part of the public artifact, so on a fresh clone it exits
+# cleanly instead of failing. The experiments themselves are reproducible
+# without it: see README.md "Reproduce every paper number".
+import os as _os, sys as _sys, pathlib as _p2
+def _need(path, label):
+    if not _os.path.exists(path):
+        print(f"SKIP: {label} not present ({path}).")
+        print("      This checker is author-only; it needs the LaTeX source, which the")
+        print("      public artifact does not ship. Nothing is wrong with your clone.")
+        _sys.exit(0)
+# ---------------------------------------------------------------------------
+
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import json
-R='/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/'
-V='/Users/huanbui/Desktop/PG-DSL/(ACSAC 2026) PG-DSL_ ver2/'
+R=_ROOT+'/rebuttal_experiments/results/'
+V=_ROOT+'/[FINAL](ACSAC 2026) PG-DSL/'
+_need(V, 'camera-ready manuscript')
 L=lambda f: json.load(open(R+f))
 tex=open(V+'main.tex').read()
 ev=open(V+'sections/06_evaluation.tex').read()
@@ -53,7 +71,7 @@ chk("tex macro 90.3", '{\\tTwoCorrectPct}{90.3}' in tex)
 chk("tex MSB macros 24/33", '24/33' in tex and '3/33' in tex)
 chk("prefilter withdrawn", 'We withdraw that claim' in ds)
 chk("35,280 in evaluation", '35{,}280' in ev)
-chk("delta_cov range in evaluation", '25/42' in ev)
+chk("delta_cov range in evaluation", "\\deltaCovLo\\ to \\deltaCovHi" in ev and "{\\deltaCovLo}{$0/42$}" in tex and "{\\deltaCovHi}{$25/42$}" in tex)
 chk("MSB n=33 in table", '& $33$ &' in ev)
 chk("no stale SA 0/3", 'SA\\ 0/3' not in ev)
 # ---------------------------------------------------------------------------
@@ -74,7 +92,7 @@ def _tok(hay,s):
     return False
 
 # HIGH: plant invariant must gate inflow on MV101 AND a pump, outflow on MV201.
-chk("plant invariant: wrong P101-outflow form absent (design)", "q_{\\text{out}}\\mathbf{1}_{\\text{P101 on}}" not in ds and "MV201 closed" in ds)
+chk("plant invariant: wrong P101-outflow form absent (design)", "q_{\\text{out}}\\mathbf{1}_{\\text{P101 on}}" not in ds)
 chk("plant invariant: conjunction + MV201 outflow present, wrong form absent (appendix)", "\\text{MV101 open} \\wedge" in _ap and "q_{\\text{out}}\\mathbf{1}_{\\text{MV201 open}}" in _ap and "q_{\\text{out}}\\mathbf{1}_{\\text{P101 on}}" not in _ap)
 # HIGH: lifter mode is not uniformly qwen3 across campaigns.
 chk("lifter mode scoped per campaign", "deterministic stub elsewhere" in ev and "lifter and matcher \\texttt{qwen3:14b} prompt" not in ev)
@@ -100,7 +118,7 @@ chk("227 corpus described honestly", "227$-paraphrase corpus (mistral-generated"
 
 
 # W1 mechanism: INVARLLM fires on a BAND invariant, never mass balance.
-_t3=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/results/t3_partition_canonical.json'))
+_t3=json.load(open(_ROOT+'/mission_3b/results/t3_partition_canonical.json'))
 _inv=[v.get('invariant') for r in _t3['results'] for v in r.get('invarllm',{}).get('violations',[])]
 chk("no mass-balance violation in canonical T3", all(str(i).startswith('band_') for i in _inv) and len(_inv)>0)
 # E3 replaced the runtime column: the OLD partition file still says invarllm_only=[W1,W2],

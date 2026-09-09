@@ -5,8 +5,10 @@ calls'. It is needed: the manuscript's MSB table otherwise mixes n=8 MCPShield n
 with n=33 PG-DSL numbers.
 Scoring is unchanged from mission_3b/experiments/run_msb_subset_evaluation.py:
 detection = the Stage-1 judge returns INCONSISTENT (verdict.admitted == False)."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time
-ROOT='/Users/huanbui/Desktop/PG-DSL'
+ROOT=_ROOT
 for p in (ROOT, f'{ROOT}/mission_1b', f'{ROOT}/mission_2c', f'{ROOT}/mission_2c/baselines',
           f'{ROOT}/mission_3b'):
     sys.path.insert(0,p)

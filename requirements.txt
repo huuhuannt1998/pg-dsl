@@ -1,0 +1,15 @@
+# PG-DSL artifact — Python dependencies (Python >= 3.11)
+#
+#   python3 -m pip install -r requirements.txt
+#
+# These are the versions the reported results were produced with (Apple M4,
+# macOS, Python 3.12). The lifter, agent, MCPShield judge and INVARLLM
+# extractor all run against a LOCAL Ollama server (https://ollama.com): no
+# cloud API key is needed, and no network access is required once the models
+# listed in README.md have been pulled.
+
+numpy==2.4.3
+matplotlib==3.10.8
+ollama==0.6.1          # local Ollama HTTP client
+mcp==1.27.1            # official Model Context Protocol Python SDK
+lark==1.1.5            # LALR parser for the class-C claim grammar

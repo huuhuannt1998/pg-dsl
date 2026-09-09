@@ -7,6 +7,8 @@ matching semantics, and reports BOTH:
   (1) LITERAL matching, exactly as the plan specifies
   (2) VALUE-NORMALISED matching (open==on, closed==off), disclosed as a rule change
 """
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json
 sys.path.insert(0,'.')
 from harness import *
@@ -38,7 +40,7 @@ def rejects(tool, desc, phi, normalise):
     return False
 
 lay=E.PGDSLAdmissionLayer()
-para=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'))
+para=json.load(open(_ROOT+'/mission_3b/data/benign_corpus_extended.json'))
 print(f"corpus: {len(para)} paraphrases")
 phis={}
 out={}

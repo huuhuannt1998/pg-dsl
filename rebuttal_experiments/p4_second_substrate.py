@@ -9,15 +9,17 @@ SCORING (fixed before running):
 The lifter, prompt v1 (R1-R5) and matcher are the SAME artifacts used for P1+P2; only the
 substrate and grammar vocabulary change. That is the transfer claim under test.
 """
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, re, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/p3sub')
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments/p3sub')
+sys.path.insert(0,_ROOT+'/mission_2c/baselines')
 from plant_p3 import SwatP3Plant, P3Params
 from real_lifter import RealLifter
 from pathlib import Path
 
-GRAM = Path('/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/p3sub/grammar_p3.lark')
+GRAM = Path(_ROOT+'/rebuttal_experiments/p3sub/grammar_p3.lark')
 INIT = [{"name":"LOW","LIT301":30.0},{"name":"MID","LIT301":60.0},{"name":"HIGH","LIT301":90.0}]
 
 TOOLS = {  # honest descriptions, same register as the P1+P2 surface
@@ -117,5 +119,5 @@ json.dump({"substrate":"SWaT P3 ultrafiltration (T301, MV301, P301/P302, LIT301/
  "additive":"new plant module + extended grammar COPY; P1+P2 plant, prompt and locked grammar untouched",
  "lifter":"same RealLifter, same prompt v1 (R1-R5)","benign_n_tools":8,"benign_rejected":len(rej),
  "benign_rejections":rej,"phis":phis,"attacks":res,"attack_detected":det,"attack_n":len(res)},
- open('/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/p4_second_substrate.json','w'),indent=2)
+ open(_ROOT+'/rebuttal_experiments/results/p4_second_substrate.json','w'),indent=2)
 print("-> p4_second_substrate.json")

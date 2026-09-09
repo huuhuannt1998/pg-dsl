@@ -4,17 +4,19 @@ with the command log captured over the SAME replay the admission layer performs
 
 Supersedes n6_combined_benign227.py, whose direct call_tool() replay omitted the
 pre-condition and therefore reported a spurious 19/227."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, re, json
 sys.path.insert(0,'.')
 from harness import *
 import importlib.util as ilu
 m2a=sys.modules['_m2a_adm']
-sp=ilu.spec_from_file_location("_dtv4","/Users/huanbui/Desktop/PG-DSL/mission_2a/dt_verifier/dt_verifier.py")
+sp=ilu.spec_from_file_location("_dtv4",_ROOT+"/mission_2a/dt_verifier/dt_verifier.py")
 mv=ilu.module_from_spec(sp); sys.modules["_dtv4"]=mv; sp.loader.exec_module(mv)
 verify_tool, INIT = mv.verify_tool, mv.INITIAL_STATES
 
-dec=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/results/per_style_canonical_extended_qwen3.json'))['decisions']
-corpus=json.load(open('/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'))
+dec=json.load(open(_ROOT+'/mission_3b/results/per_style_canonical_extended_qwen3.json'))['decisions']
+corpus=json.load(open(_ROOT+'/mission_3b/data/benign_corpus_extended.json'))
 def full_desc(d):
     pre=d['description_excerpt'].rstrip('.').rstrip('…')[:60]
     for c in corpus:

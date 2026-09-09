@@ -1,8 +1,10 @@
 """E1 - genuinely held-out benign corpus. Pre-registered 2026-08-20.
 Spec-to-description mode: the generator NEVER sees the 42 seed descriptions,
 so this is held out in content, not merely in surface form."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time, ollama
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
 SPEC = {
  "open_valve_MV101":("MV101","opens the raw-water inlet valve feeding tank T101"),
@@ -42,10 +44,10 @@ print(f"generated {len(rows)} held-out descriptions in {time.time()-t0:.0f}s wit
 save("e1_heldout_corpus", {"generator":model,"mode":"spec-to-description (seeds never shown)","rows":rows})
 
 # score with the FROZEN qwen3 lifter, one pass, no regeneration
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+sys.path.insert(0,_ROOT+'/mission_2c/baselines')
 from real_lifter import RealLifter
 import importlib.util as ilu
-_s=ilu.spec_from_file_location("_rl", "/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines/real_admission_layer.py")
+_s=ilu.spec_from_file_location("_rl", _ROOT+"/mission_2c/baselines/real_admission_layer.py")
 try:
     _m=ilu.module_from_spec(_s); sys.modules["_rl"]=_m; _s.loader.exec_module(_m)
     Layer=_m.RealLLMAdmissionLayer; lay=Layer(prompt_variant="v1")

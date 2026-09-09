@@ -8,8 +8,10 @@ PREDICTION (fixed before running): detection turns on sharply at the published t
 below it the attack evades, above it the attack is caught, with the empirical boundary
 within one sweep step of the predicted value.
 """
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 from harness import *
 m2a=sys.modules['_m2a_adm']
 EPS_DT=1.0   # deployed level tolerance, matcher.EPS_DT

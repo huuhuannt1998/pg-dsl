@@ -2,8 +2,10 @@
 and RA 'a specific lifter prompt/model setup'. Scoring rule fixed before running:
 FPR = fraction of the 14 honest canonical descriptions rejected; entity-correctness =
 fraction whose lifted claim names the component the tool actually controls."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, os, json, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
 MODELS = ["qwen3:14b","llama3.1:8b","gemma2:9b","mistral-nemo:12b","granite3.1-dense:8b","phi4-mini:latest"]
 EXP={"open_valve_MV101":"MV101","close_valve_MV101":"MV101","start_pump_P101":"P101",
  "stop_pump_P101":"P101","open_valve_MV201":"MV201","close_valve_MV201":"MV201",
@@ -18,7 +20,7 @@ for m in MODELS:
         sys.modules.pop(mod,None)
     try:
         from harness import fresh
-        sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+        sys.path.insert(0,_ROOT+'/mission_2c/baselines')
         import importlib, qwen_client; importlib.reload(qwen_client)
         import real_lifter; importlib.reload(real_lifter)
         lifter = real_lifter.RealLifter()
@@ -44,5 +46,5 @@ for m in MODELS:
     out.append(rec)
     print(f"{m:26s} resolved={actual:22s} in-grammar={14-oog}/14  entity-correct={14-oog-wrong}/14  ({el:.0f}s)", flush=True)
 json.dump({"preregistered":"scoring rule fixed pre-run; all models reported including failures",
-           "models":out}, open('/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/e8_crossmodel.json','w'), indent=2)
+           "models":out}, open(_ROOT+'/rebuttal_experiments/results/e8_crossmodel.json','w'), indent=2)
 print("-> e8_crossmodel.json")

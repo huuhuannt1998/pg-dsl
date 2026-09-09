@@ -3,9 +3,11 @@ E8a used the canonical descriptions and every family scored ~14/14, which only s
 canonical surface is easy. The paper's own Table 7 reports llama3.1:8b at 4/42 on the
 42-entry seed paraphrase corpus, so that is the discriminating test. Scoring rule fixed
 before running: rejection = out-of-grammar OR lifted claim does not name the tool's component."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, os, json, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
-CORPUS='/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
+CORPUS=_ROOT+'/mission_3b/data/benign_corpus_extended.json'
 rows=[r for r in json.load(open(CORPUS)) if r['source']=='seed_M2B']
 print(f"paraphrase seed corpus: n={len(rows)}")
 MODELS=["qwen3:14b","llama3.1:8b","gemma2:9b","mistral-nemo:12b","granite3.1-dense:8b","phi4-mini:latest"]
@@ -18,7 +20,7 @@ out=[]
 for m in MODELS:
     os.environ["PG_DSL_LIFTER_MODEL"]=m
     for k in [x for x in list(sys.modules) if 'lifter' in x or 'qwen_client' in x]: sys.modules.pop(k,None)
-    sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+    sys.path.insert(0,_ROOT+'/mission_2c/baselines')
     import importlib, qwen_client; importlib.reload(qwen_client)
     import real_lifter; importlib.reload(real_lifter)
     lifter=real_lifter.RealLifter(); t0=time.time(); oog=0; wrong=0; bad=[]
@@ -37,5 +39,5 @@ for m in MODELS:
 json.dump({"corpus":"42-entry seed paraphrase corpus (mission_3b/data/benign_corpus_extended.json, source=seed_M2B)",
   "scoring":"rejection = out-of-grammar OR lifted claim omits the tool's component",
   "note":"E8a on canonical descriptions gave 83/84 correct across the same 6 families; the canonical surface does not discriminate",
-  "models":out}, open('/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/e8b_crossmodel_paraphrase.json','w'), indent=2)
+  "models":out}, open(_ROOT+'/rebuttal_experiments/results/e8b_crossmodel_paraphrase.json','w'), indent=2)
 print("-> e8b_crossmodel_paraphrase.json")

@@ -5,9 +5,11 @@ pair for every one of the 42 descriptions and every family. Scoring fixed before
   rejected   = canonical per-tool admission gate rejects the tool
   r2_violation = lifted phi contains a Delta-state clause on a tool other than set_dosing_rate
   wrong_lift = rejected OR r2_violation      <- this is delta_cov(C, L_verify)"""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, os, json, time
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
-CORPUS='/Users/huanbui/Desktop/PG-DSL/mission_3b/data/benign_corpus_extended.json'
+sys.path.insert(0,_ROOT+'/rebuttal_experiments')
+CORPUS=_ROOT+'/mission_3b/data/benign_corpus_extended.json'
 rows=[r for r in json.load(open(CORPUS)) if r['source']=='seed_M2B']
 MODELS=["qwen3:14b","llama3.1:8b","gemma2:9b","mistral-nemo:12b","granite3.1-dense:8b","phi4-mini:latest"]
 out=[]
@@ -15,7 +17,7 @@ for m in MODELS:
     os.environ["PG_DSL_LIFTER_MODEL"]=m
     for k in [x for x in list(sys.modules) if 'lifter' in x or 'qwen_client' in x
               or 'real_admission' in x or 'harness' in x or '_m2a' in x]: sys.modules.pop(k,None)
-    sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_2c/baselines')
+    sys.path.insert(0,_ROOT+'/mission_2c/baselines')
     from harness import fresh
     import importlib, qwen_client; importlib.reload(qwen_client)
     import real_lifter; importlib.reload(real_lifter)
@@ -45,5 +47,5 @@ for m in MODELS:
     json.dump({"purpose":"N6 delta_cov per family = |rejected UNION r2_violating| on the 42-seed corpus",
       "scoring_fixed_before_run":True,"supersedes_for_delta_cov":"e8c (stored only rej[:8])",
       "models":out},
-      open('/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments/results/e8d_deltacov.json','w'),indent=2)
+      open(_ROOT+'/rebuttal_experiments/results/e8d_deltacov.json','w'),indent=2)
 print("-> e8d_deltacov.json")

@@ -2,15 +2,17 @@
 (14 tools x LOW/MID/HIGH), taken from the SHIPPED admission pipeline's
 decision_per_initial_state - not from a re-implemented proxy verdict function.
 Supersedes the 14-granularity figure in n1_perturbed_twin.json."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json, time
 sys.path.insert(0,'.')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b')
+sys.path.insert(0,_ROOT+'/mission_1b')
 from plant import PlantParams
 from mcp_server import MCPServer
 from n1_perturbed_twin import PerturbedPlant, TWINS
 import importlib.util as ilu
-M2A='/Users/huanbui/Desktop/PG-DSL/mission_2a'
+M2A=_ROOT+'/mission_2a'
 _s=ilu.spec_from_file_location("_dtv2",f"{M2A}/dt_verifier/dt_verifier.py")
 _m=ilu.module_from_spec(_s); sys.modules["_dtv2"]=_m; _s.loader.exec_module(_m)
 verify_tool, INITIAL_STATES = _m.verify_tool, _m.INITIAL_STATES

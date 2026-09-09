@@ -1,6 +1,8 @@
 """E2 - sensor-identity binding at admission. Pre-registered 2026-08-20."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, itertools, json
-sys.path.insert(0, '/Users/huanbui/Desktop/PG-DSL/rebuttal_experiments')
+sys.path.insert(0, _ROOT+'/rebuttal_experiments')
 from harness import *
 m2a = sys.modules['_m2a_adm']
 INITIAL_STATES = m2a.INITIAL_STATES

@@ -152,8 +152,7 @@ extra rep).
 ## 6. Reproduce Mission 2D Campaign
 
 ```bash
-# from repo root
-cd /Users/huanbui/Desktop/agenttrace
+# from the repository root
 
 # (Optional) smoke test: 5-step benign run
 python3 mission_2d/scripts/smoke_test.py

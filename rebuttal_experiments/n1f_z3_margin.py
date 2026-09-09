@@ -5,10 +5,12 @@ delta_v is the per-coordinate max excursion outside the safe band, exactly as
 mission_3a/t1_v_verify.py vector_matcher computes it:
   A_eff = [25,95] on LIT101 and [20,95] on LIT201, horizon 30 s, ordered pair from HIGH.
 Then compare ||delta_v||_inf against delta*_v = 2(eps_L + eps_DT^emp) per twin."""
+import pathlib as _pl
+_ROOT = str(_pl.Path(__file__).resolve().parent.parent)   # repo root; no absolute paths
 import sys, json
 sys.path.insert(0,'.')
 from harness import *
-sys.path.insert(0,'/Users/huanbui/Desktop/PG-DSL/mission_1b')
+sys.path.insert(0,_ROOT+'/mission_1b')
 from plant import PlantParams
 from mcp_server import MCPServer
 from n1_perturbed_twin import PerturbedPlant, TWINS
