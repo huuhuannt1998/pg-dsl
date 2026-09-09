@@ -3,8 +3,15 @@
   "title": "PG-DSL: Physics-Grounded Admission Checking for MCP-Controlled CPS Tools",
   "description": "<p>Artifact for the ACSAC 2026 paper <em>PG-DSL: Physics-Grounded Admission Checking for MCP-Controlled CPS Tools</em>.</p><p>PG-DSL is an admission-time checker for Model Context Protocol tools that act on a cyber-physical system. It lifts each natural-language tool description into a restricted CPS-grounded formal claim, replays the tool implementation in a SWaT P1+P2 digital twin, and admits the tool only when the claimed effect matches the measured physical trajectory.</p><p>The repository contains the digital-twin plant, a JSON-RPC 2.0 MCP server exposing the 14 canonical tools, the full admission pipeline (claim grammar, LLM lifter, digital-twin verifier, formal matcher, composition-aware pair verifier), the MCPShield and INVARLLM baselines, a real-agent campaign harness built on the official Python MCP SDK, every campaign script, and every result JSON behind a number in the paper. It also ships the pre-registration registers for all 50 predictions fixed before execution, of which 14 were falsified and reported.</p><p>See ARTIFACT.md for a claim-to-script-to-JSON mapping and three time-boxed evaluation paths.</p>",
   "creators": [
-    { "name": "Bui, Huan", "affiliation": "University of North Carolina at Charlotte" },
-    { "name": "Fu, Chenglong", "affiliation": "University of North Carolina at Charlotte" }
+    {
+      "name": "Bui, Huan",
+      "affiliation": "University of North Carolina at Charlotte"
+    },
+    {
+      "name": "Fu, Chenglong",
+      "affiliation": "University of North Carolina at Charlotte",
+      "orcid": "0000-0001-6555-9858"
+    }
   ],
   "license": "mit",
   "access_right": "open",
