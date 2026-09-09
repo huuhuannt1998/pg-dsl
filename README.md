@@ -1,10 +1,13 @@
 # PG-DSL
 
-**Physics-Grounded Description Lifting for Admission-Time Defence of
-LLM-Controlled Industrial Cyber-Physical Systems**
+**Physics-Grounded Admission Checking for MCP-Controlled CPS Tools**
 
 Companion artifact to the paper accepted at **ACSAC 2026** (Huan Bui and
 Chenglong Fu, University of North Carolina at Charlotte).
+
+> **Artifact evaluators start here:** [`ARTIFACT.md`](ARTIFACT.md) — requirements,
+> three time-boxed evaluation paths (5 minutes with no models, ~1 hour, full ~9 hours),
+> and a claim-to-script-to-JSON mapping for every number in the paper.
 
 This repository contains the full reproducible implementation of
 PG-DSL — an admission-time defence that lifts each MCP tool
@@ -27,9 +30,11 @@ grammar:
 - **T1ᵥ** — vectorized detection threshold
   `δ*ᵥ = 2‖εL,v + εDT,v‖∞` above which bounded-error detection is
   deterministic.
-- **T2** — lifting-soundness decomposition for tool descriptions
-  drawn from a restricted CPS-grounded grammar; empirically
-  `δ_lift = 0.44%` on a 227-paraphrase out-of-family corpus.
+- **T2** — lifting-soundness decomposition for tool descriptions drawn
+  from a restricted CPS-grounded grammar: `δ_lift ≤ δ_cov + δ_gram`.
+  Both terms are measured, not assumed — `δ_gram = 0/227` on the
+  paraphrase corpus, and `δ_cov` runs `0/42` (qwen3:14b) to `25/42`
+  (phi4-mini) across six lifter families.
 - **T3** — admission/runtime visibility witness on a canonical 8-attack
   set: admission sees an attack (A₂) no runtime invariant sees; with the
   runtime IDS calibrated on benign traffic spanning the replay grid, W₁
@@ -43,23 +48,22 @@ On a SWaT P1+P2 substrate with 14 MCP tools:
 |---|---|
 | Per-tool benign FPR | **0/42** rejections (Wilson 95% CI [0, 8.38]%, over 14 tools × 3 init states) |
 | Per-style benign FPR | **0.44%** (1/227, Wilson 95% CI [0.08, 2.45]%) on a mistral-generated 227-paraphrase corpus |
-| Canonical attacks blocked at admission | **6/8** (A₁, A₂, A₃, Z₁, Z₂, Z₃) |
+| Canonical attacks blocked | **6/8** — five tools withheld at admission (A₁, A₂, A₃, Z₁, Z₂); the Z₃ pair is identified at admission and blocked at invocation |
 | Composed coverage (PG-DSL ⊕ INVARLLM, IDS calibrated on grid-spanning benign traffic) | **6/8** — W₁, W₂ outside both layers |
 | T2 adversarial probe battery | 28/31 = 90.3% CORRECT across 8 categories (3 read-tool aliasing prompts regraded: verifier-side, closed by the identity probe 30/30) |
 | MSB-adapted union (132 instances, 33 per class) | PG-DSL ≥ MCPShield on every class (NC 24/33 vs 3/33) |
 | Cross-model / six lifter families | A₂ static-only and W₁, W₂ outside both layers under qwen3:14b and llama3.1:8b; measured δ_cov 0/42 … 25/42 across six lifter families |
 | Real-agent end-to-end (N=10 operational-condition sweep) | A₁ 10/10 → 0/10 with defence; W₂ 9/10 unchanged (admission-invisible by design) |
-
 | Boundary characterisation (revision pass) | 134 mutants 70/134 → 94/134 hardened (86 / 110 at the adopted K=30 grid); 18 perturbed twins lose no nominal detection; probe-grid sweep 0/16 at K=3 → 16/16 at K=30 |
 
 Full provenance — every number above traces to a JSON output in
 `mission_3b/results/`, `rebuttal_experiments/results/` (revision-pass
 experiments, with their pre-registration registers
 `rebuttal_experiments/PREREGISTRATION*.md`) and `mission_2c/results/` (M2C baselines)
-and to a campaign script under `mission_*/experiments/` or
-`mission_2d/scripts/`. The paper LaTeX source and the
-paper-claim-to-JSON map (`PROVENANCE.md`) are tracked outside this
-public artifact repository.
+and to a campaign script under `mission_*/experiments/`,
+`mission_2d/scripts/` or `rebuttal_experiments/`. The
+claim-to-script-to-JSON mapping is in [`ARTIFACT.md`](ARTIFACT.md); the
+paper's LaTeX source is not part of this repository.
 
 ## Repository layout
 
@@ -85,6 +89,11 @@ mission_3b/                      # Canonical pipeline (per-tool ⊕ composition 
 ├── data/                        # extended 227-paraphrase corpus, MSB subset
 ├── experiments/                 # campaign scripts (one per RQ in the paper)
 └── results/                     # JSON outputs (one per campaign)
+
+rebuttal_experiments/            # Revision-pass experiments (19 campaigns)
+├── PREREGISTRATION*.md          # predictions + scoring rules, fixed before each run
+├── e*.py n*.py p*.py r*.py      # one runner per experiment
+└── results/                     # 42 JSON outputs
 ```
 
 ## Quick start
@@ -98,8 +107,9 @@ mission_3b/                      # Canonical pipeline (per-tool ⊕ composition 
   - `llama3.1:8b` (cross-model T3 lifter ablation)
   - `gemma2:9b`, `mistral-nemo:12b`, `granite3.1-dense:8b`, `phi4-mini`
     (six-lifter-family sweep and the held-out benign corpus)
-- Python packages: `ollama`, `mcp` (≥ 1.27), `lark`, plus stdlib;
-  the artifact pins versions in `requirements.txt` (per-mission).
+- Python packages: `python3 -m pip install -r requirements.txt`
+  (numpy, matplotlib, ollama, mcp ≥ 1.27, lark), pinned to the versions
+  the reported results were produced with.
 
 ### Reproduce every paper number
 
@@ -126,8 +136,10 @@ python3 mission_3b/experiments/run_canonical_pipeline_llama3.py
 # RQ4 — T2 adversarial probe battery (31 prompts)
 python3 mission_3b/experiments/run_t2_probes_extended.py
 
-# RQ5/RQ6 — MSB-adapted cross-benchmark (32 instances, 4 classes)
-python3 mission_3b/experiments/run_msb_subset_evaluation.py
+# RQ5/RQ6 — MSB-adapted union (132 instances, 33 per class, both defences)
+python3 mission_3b/experiments/run_msb_subset_evaluation.py   # hand-written subset
+python3 rebuttal_experiments/n4_msb_union.py                  # PG-DSL union
+python3 rebuttal_experiments/n4b_mcpshield_union.py           # MCPShield union
 
 # εDT calibration + T1ᵥ sensitivity sweep
 python3 mission_3b/experiments/run_dt_calibration.py
@@ -146,10 +158,9 @@ python3 mission_2d/scripts/run_campaign.py \
     --out-aggregate mission_3b/results/real_agent_asr_n10.json
 ```
 
-All campaign outputs land in `mission_3b/results/*.json`. The paper
-LaTeX source consumes these JSONs via a separate backfill driver
-that is not part of this artifact repository; the JSON outputs
-themselves are the canonical record of every paper claim.
+Campaign outputs land in `mission_3b/results/*.json` and
+`rebuttal_experiments/results/*.json`. These JSON outputs are the
+canonical record of every paper claim.
 
 ### Smoke test
 
