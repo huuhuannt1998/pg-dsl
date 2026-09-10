@@ -1,5 +1,7 @@
 # PG-DSL
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22697137.svg)](https://doi.org/10.5281/zenodo.22697137)
+
 **Physics-Grounded Admission Checking for MCP-Controlled CPS Tools**
 
 Companion artifact to the paper accepted at **ACSAC 2026** (Huan Bui and
@@ -217,6 +219,16 @@ Applications Conference, 7–11 December 2026, Los Angeles, CA, USA.
 Please cite:
 
 ```bibtex
+@software{pgdsl_artifact,
+  title     = {{PG-DSL} artifact: Physics-Grounded Admission Checking for
+               {MCP}-Controlled {CPS} Tools},
+  author    = {Bui, Huan and Fu, Chenglong},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22697137},
+  url       = {https://doi.org/10.5281/zenodo.22697137}
+}
+
 @inproceedings{pgdsl_acsac26,
   title     = {{PG-DSL}: Physics-Grounded Admission Checking for
                {MCP}-Controlled {CPS} Tools},

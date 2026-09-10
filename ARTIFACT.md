@@ -173,9 +173,16 @@ what we predicted is what we reported.
 
 ## 7. Public release
 
-The artifact is already public at **https://github.com/huuhuannt1998/pg-dsl** under the MIT
-licence. On acceptance of the evaluation we will deposit the evaluated commit in a permanent
-archive with a DOI (Zenodo) and cite it in the camera-ready.
+The artifact is public at **https://github.com/huuhuannt1998/pg-dsl** under the MIT licence
+and archived on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22697137.svg)](https://doi.org/10.5281/zenodo.22697137)
+
+- **Concept DOI `10.5281/zenodo.22697137`** — always resolves to the latest release. Cite this.
+- Version DOI `10.5281/zenodo.22697138` — release `v1.0.0`, the artifact-evaluation submission.
+
+If evaluation prompts changes we will cut a further release; the concept DOI follows it, so
+the citation in the camera-ready stays correct.
 
 ## 8. Contact
 
